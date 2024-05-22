@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button onclick="fetchData()">fetch data</button>
+		<form id="myform">
+			<input
+				name="username"
+				placeholder="enter name"
+				value="muadh"
+				type="text"
+			/>
+			<input name="email" placeholder="enter email" value="muadh@gmail.com" />
+			<button type="submit">Submit</button>
+		</form>
+		<script>
+			const fetchData = async () => {
+				const response = await fetch('http://localhost:8080/');
+				const output = await response.json();
+				console.log(output);
+			};
+			myform.onsubmit = async (e) => {
+				e.preventDefault();
+
+				const formData = new FormData(myform);
+				console.log(formData.entries());
+				for (const pair of formData.entries()) {
+					console.log(`${pair[0]}: ${pair[1]}`);
+				}
+
+				try {
+					const response = await fetch('http://localhost:8080/', {
+						method: 'POST',
+						body: formData,
+					});
+					let result = await response.json();
+					console.log(result);
+				} catch (e) {
+					console.log(e);
+				}
+			};
+		</script>
+	</body>
+</html>
