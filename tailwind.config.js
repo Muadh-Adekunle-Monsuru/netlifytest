@@ -6,10 +6,6 @@ module.exports = {
 			fontFamily: {
 				'satoshi': ['Satoshi', 'sans'],
 			},
-			backgroundImage: {
-				'header-bg':"url('/src/assets/Hospital-image.jpg')",
-			}
-			
 		},
 	},
 	plugins: [],
