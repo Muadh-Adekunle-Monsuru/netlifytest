@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+    .active{
+        background-color: #f0f8ff;
+       
+    }
+ </style>
 <body class="font-satoshi">
     <!-- SIDEBAR NAVIGATION -->
     <aside id="sidebar-section" class="h-screen fixed" onmouseover="dark()" onmouseout="undark()">
@@ -75,42 +81,42 @@
       
             <!-- HOSPITAL CONTENT -->
       
-            <div class="bg-[#f0f8ff] pl-16 md:pl-56 w-full">
-                <div class="mb-4">
+            <div class="bg-[#f0f8ff] pl-24 md:pl-56 w-full">
+                <div class="py-4">
                     <h2 class="text-xl font-bold">Dashboard Overview</h2>
                 </div>
     
                 <!-- Stats Cards  -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="bg-white p-4 rounded-lg lg:w-[220px] shadow-md">
+                <div class="grid grid-cols-1 gap-5 pr-3 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-white shadow-md  p-4 rounded-lg lg:w-[220px] shadow-black">
                         <h3 class="text-lg font-bold">Total Patients</h3>
                         <p class="text-2xl">150</p>
                         <img src="../../assets/graph-blue.svg" alt="">
                     </div>
-                    <div class="bg-white p-4 rounded-lg lg:w-[220px]  shadow-md">
+                    <div class="bg-white p-4 rounded-lg lg:w-[220px]  shadow-md shadow-black">
                         <h3 class="text-lg font-bold mb-2">Appointments</h3>
                         <p class="text-2xl">640</p>
                         <img src="../../assets/graph-green.svg" alt="">
                     </div>
-                    <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md">
+                    <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md shadow-black">
                         <h3 class="text-lg font-bold mb-2">Operations</h3>
                         <p class="text-2xl">54</p>
                         <img src="../../assets/graph-orange.svg" alt="">
                     </div>
-                    <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md">
+                    <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md shadow-black">
                         <h3 class="text-lg font-bold mb-2">Earnings</h3>
                         <p class="text-2xl">#54, 000</p>
                         <img src="../../assets/graph-purple.svg" alt="">
                     </div>
                 </div>
     
-                <div class="py-10 flex flex-col lg:flex-row gap-10">
-                    <div class="bg-white rounded-md">
+                <div class="py-10 flex flex-col lg:flex-row gap-10 pr-3">
+                    <div class="bg-white rounded-md shadow-md shadow-black">
                         <h1 class="text-2xl font-semibold py-5 pl-4">Hospital Survey</h1>
                         <img src="../../assets/hospital-graph.svg" alt="">
                     </div>
     
-                    <div class="bg-white rounded-md">
+                    <div class="bg-white rounded-md shadow-md shadow-black">
                         <h1 class="text-2xl font-semibold py-5 pl-4">Common Diseases Report</h1>
                         <img src="../../assets/hospital-suvey.svg" alt="">
                     </div>
@@ -119,7 +125,7 @@
                 <!-- Recent Appointments Table -->
                 <div>
                     <h3 class="text-lg font-bold mb-2">Recent Appointments</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-7 lg:pr-7">             
+                    <div class="pr-3 space-y-7">             
                         <div class="overflow-x-auto bg-white rounded-lg shadow-md">
                             <table class="min-w-full bg-white">
                                 <thead class="bg-gray-200 text-gray-600">
@@ -183,40 +189,36 @@
                             </table>
                         </div>
     
-                        <div class="overflow-x-auto w-full bg-white rounded-lg shadow-md">
+                        <div class="overflow-x-auto bg-white rounded-lg shadow-md">
                             <table class="min-w-full bg-white">
                                 <thead class="bg-gray-200 text-gray-600">
                                     <tr>
                                         <th class="py-2 px-4 text-left">Doctor Name</th>
                                         <th class="py-2 px-4 text-left">Specialties</th>
                                         <th class="py-2 px-4 text-left">Experience</th>
-                                        <th class="py-2 px-4 text-left">Status</th>
+                                        <th class="py-2 px-4 text-left">Contact</th>
                                     </tr>
     
                                     <tbody>
                                         <tr class="border-b">
                                             <td class="py-2 px-4">Dr. Abudu</td>
-                                            <td class="py-2 px-4">Available</td>
+                                            <td class="py-2 px-4">Dermatologist</td>
+                                            <td class="py-2 px-4">20yrs</td>
+                                            <td class="py-2 px-4">09058277020</td>
                                         </tr>
     
                                         <tr class="border-b">
-                                            <td class="py-2 px-4">Dr. Abudu</td>
-                                            <td class="py-2 px-4">Available</td>
+                                            <td class="py-2 px-4">Dr. Adeola</td>
+                                            <td class="py-2 px-4">Neurosurgeon</td>
+                                            <td class="py-2 px-4">5yrs</td>
+                                            <td class="py-2 px-4">09051068912</td>
                                         </tr>
     
                                         <tr class="border-b">
-                                            <td class="py-2 px-4">Dr. Abudu</td>
-                                            <td class="py-2 px-4">Available</td>
-                                        </tr>
-    
-                                        <tr class="border-b">
-                                            <td class="py-2 px-4">Dr. Abudu</td>
-                                            <td class="py-2 px-4">Available</td>
-                                        </tr>
-    
-                                        <tr class="border-b">
-                                            <td class="py-2 px-4">Dr. Abudu</td>
-                                            <td class="py-2 px-4">Available</td>
+                                            <td class="py-2 px-4">Dr. Daodu</td>
+                                            <td class="px-4">General Practitionist</td>
+                                            <td class="py-2 px-4">5yrs</td>
+                                            <td class="py-2 px-4">9021644324</td>
                                         </tr>
                                     </tbody>
                                 </thead>
