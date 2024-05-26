@@ -59,5 +59,31 @@
            </nav>
         </div>
      </aside> 
+
+     <!-- SECTION MAIN CONTENT -->
+     <section  class="md:ml-20">
+        
+     </section>
+
+     <script>
+        let navList = document.getElementById("nav-list")
+      let items = navList.getElementsByClassName("nav-item ");
+
+      for(let i = 0; i<items.length; i++){
+
+          items[i].addEventListener("click", function(){
+
+
+              let current = document.querySelectorAll(".active");
+
+
+              current.forEach(element => {
+                  element.classList.remove('active');
+              });
+
+              this.classList.add('active')
+          })
+      }
+    </script>
 </body>
 </html>
