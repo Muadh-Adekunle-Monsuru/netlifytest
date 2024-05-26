@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="font-satoshi">
+<body class="font-satoshi bg-gray-100 leading-normal tracking-normal">
     <!-- SIDEBAR NAVIGATION -->
     <aside id="sidebar-section" class="h-screen fixed" onmouseover="dark()" onmouseout="undark()">
         <div id="sidebar" class="fixed h-screen top-0 left-0  bg-white shadow-md shadow-black w-20 hover:w-72 md:w-72 duration-500">
@@ -61,9 +61,156 @@
      </aside> 
 
      <!-- SECTION MAIN CONTENT -->
-     <section  class="md:ml-20">
-        
-     </section>
+     <secton class="w-full p-4">
+        <div class="mb-4">
+            <h2 class="text-xl font-bold">Dashboard Overview</h2>
+        </div>
+
+        <!-- Stats Cards  -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg lg:w-[220px] shadow-md">
+                <h3 class="text-lg font-bold">Total Patients</h3>
+                <p class="text-2xl">150</p>
+                <img src="../../graph-blue.svg" alt="">
+            </div>
+            <div class="bg-white p-4 rounded-lg lg:w-[220px]  shadow-md">
+                <h3 class="text-lg font-bold mb-2">Appointments</h3>
+                <p class="text-2xl">640</p>
+                <img src="../../assets/graph-orange.svg" alt="">
+            </div>
+            <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md">
+                <h3 class="text-lg font-bold mb-2">Operations</h3>
+                <p class="text-2xl">54</p>
+                <img src="../../assets/graph-green.svg" alt="">
+            </div>
+            <div class="bg-white p-4 lg:w-[220px] rounded-lg shadow-md">
+                <h3 class="text-lg font-bold mb-2">Earnings</h3>
+                <p class="text-2xl">#54, 000</p>
+                <img src="../../assets/graph-purple.svg" alt="">
+            </div>
+        </div>
+
+        <div class="py-10 flex flex-col lg:flex-row gap-5">
+            <div class="bg-white rounded-md">
+                <h1 class="text-2xl font-semibold py-5 pl-4">Hospital Survey</h1>
+                <img src="../../assets/hospital-graph.svg" alt="">
+            </div>
+
+            <div class="bg-white rounded-md">
+                <h1 class="text-2xl font-semibold py-5 pl-4">Common Diseases Report</h1>
+                <img src="../../assets/hospital-suvey.svg" alt="">
+            </div>
+        </div>
+
+        <!-- Recent Appointments Table -->
+        <div>
+            <h3 class="text-lg font-bold mb-2">Recent Appointments</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">             
+                <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead class="bg-gray-200 text-gray-600">
+                            <tr>
+                                <th class="py-2 px-4 text-left">Patient</th>
+                                <th class="py-2 px-4 text-left">Date</th>
+                                <th class="py-2 px-4 text-left">Time</th>
+                                <th class="py-2 px-4 text-left">Diseases</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">John Doe</td>
+                                <td class="py-2 px-4">2024-05-26</td>
+                                <td class="py-2 px-4">10:00 AM</td>
+                                <td class="py-2 px-4">Fever</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Jane Smith</td>
+                                <td class="py-2 px-4">2024-05-26</td>
+                                <td class="py-2 px-4">01:00 PM</td>
+                                <td class="py-2 px-4">Malaria</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Okafor Obi</td>
+                                <td class="py-2 px-4">2024-04-26</td>
+                                <td class="py-2 px-4">02:30 PM</td>
+                                <td class="py-2 px-4">Typhoid</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Ajayi Ola</td>
+                                <td class="py-2 px-4">2024-05-26</td>
+                                <td class="py-2 px-4">09:30 AM</td>
+                                <td class="py-2 px-4">Cholera</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Ben Tola</td>
+                                <td class="py-2 px-4">2024-05-22</td>
+                                <td class="py-2 px-4">11:30 AM</td>
+                                <td class="py-2 px-4">Infection</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Jane Smith</td>
+                                <td class="py-2 px-4">2024-05-26</td>
+                                <td class="py-2 px-4">01:30 PM</td>
+                                <td class="py-2 px-4">Jaundice</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <td class="py-2 px-4">Jane Smith</td>
+                                <td class="py-2 px-4">2024-05-26</td>
+                                <td class="py-2 px-4">12:00 PM</td>
+                                <td class="py-2 px-4">Headache</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="overflow-x-auto w-full bg-white rounded-lg shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead class="bg-gray-200 text-gray-600">
+                            <tr>
+                                <th class="py-2 px-4 text-left">Doctor Name</th>
+                                <th class="py-2 px-4 text-left">Specialties</th>
+                                <th class="py-2 px-4 text-left">Experience</th>
+                                <th class="py-2 px-4 text-left">Status</th>
+                            </tr>
+
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4">Dr. Abudu</td>
+                                    <td class="py-2 px-4">Available</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-4">Dr. Abudu</td>
+                                    <td class="py-2 px-4">Available</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-4">Dr. Abudu</td>
+                                    <td class="py-2 px-4">Available</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-4">Dr. Abudu</td>
+                                    <td class="py-2 px-4">Available</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-4">Dr. Abudu</td>
+                                    <td class="py-2 px-4">Available</td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </secton>
 
      <script>
         let navList = document.getElementById("nav-list")
