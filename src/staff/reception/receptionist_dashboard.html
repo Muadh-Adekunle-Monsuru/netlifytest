@@ -4,107 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yabatech Receptionist Dashboard</title>
-    <link rel="stylesheet" href="../output.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
+ <style>
+    .active{
+        background-color: #f0f8ff;
+       
+    }
+ </style>
 <body class="font-satoshi">
-    <aside class="fixed top-0 left-0 z-40 w-72 h-screen transition-transform  translate-x-0 hidden sm:block">
-        <div class="bg-[#f7f7f7] py-2 font-bold flex items-start lg:items-center gap-3 px-3">
-           <img src="../assets/yabatech_logo.png" alt="Yaba Logo" class="w-14"/>
-           <div>
-              <h1 class="text-2xl">YabaTech <span class="text-green-700">Medical Center</span></h1>
-           </div>
-        </div>
-        <div class="h-full px-3 py-4 overflow-y-auto bg-[#3bac2c]">
-           <ul class="flex flex-col gap-10 font-medium">
-              <li>
-                 <a href="receptionistDashboard.html" class="flex items-start lg:items-center p-2 text-gray-900 rounded-lg bg-white shadow-md shadow-black">
-                    <ion-icon name="calendar-outline" class="text-3xl text-green-600 font-bold"></ion-icon>
-                    <span class="flex-1 ms-3 whitespace-nowrap text-lg font-bold">Patient Appointment</span>
-                 </a>
-              </li>
-              <li>
-                 <a href="#" class="flex items-start lg:items-center p-2 text-gray-900 rounded-lg bg-white shadow-md shadow-black">
-                    <ion-icon name="checkmark-done-outline" class="text-3xl text-green-600 font-bold"></ion-icon>
-                    <span class="flex-1 ms-3 whitespace-nowrap text-base font-bold">Verify Patient Appointment</span>
-                 </a>
-              </li>
-              <li>
-                 <a href="#" class="flex items-start lg:items-center p-2 text-gray-900 rounded-lg bg-white shadow-md shadow-black">
-                    <ion-icon name="medical-outline" class="text-3xl text-green-600 font-bold"></ion-icon>
-                    <span class="flex-1 ms-3 whitespace-nowrap text-base font-bold">Patients Medical History</span>
-                 </a>
-              </li>
-           </ul>
-        </div>
-     </aside>
+    <!-- SIDEBAR NAVIGATION -->
+    <aside id="sidebar-section" class="h-screen fixed" onmouseover="dark()" onmouseout="undark()">
+      <div id="sidebar" class="fixed h-screen top-0 left-0  bg-white shadow-md shadow-black w-20 md:w-72 duration-500">
+  
+         <nav role="navigation" class="pl-4 pt-8 mt-2">
+              <div class="mt- relative overflow-hidden">
+                  <div class="">
+                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name pl-2 pr-3 pb-5"/>  
+                      <h1 hid id="main" class="hidden md:block text-2xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
+                  </div>
+
+                  <ul class="nav-list space-y-8 " id="nav-list">
+                     <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                          <a href="receptionist_dashboard.html" class="flex items-center gap-5">
+                           <i class="fa-regular fa-calendar-check fa-2x"></i>
+                              <span class="font-semibold text-xl">Book Appointments</span>
+                          </a>
+                     </li>
+
+                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                          <a href="" class="flex items-center gap-5">
+                           <i class="fa-solid fa-book fa-2x"></i>
+                              <span class="font-semibold text-xl">View Appointments</span>
+                          </a>
+                      </li>
+
+                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                          <a href="" class="flex items-center gap-6">
+                           <i class="fa-solid fa-prescription-bottle-medical fa-2x"></i>
+                              <span class="font-semibold text-xl">Prescriptions</span>
+                          </a>
+                      </li>
+
+                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                        <a href="" class="flex items-center gap-6">
+                           <i class="fa-solid fa-notes-medical fa-2x"></i>
+                           <span class="font-semibold text-xl">Medical Record</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                     <a href="" class="flex items-center gap-6">
+                        <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+                        <span class="font-semibold text-xl">Logout</span>
+                     </a>
+                 </li>
+                  </ul>
+              </div>
+         </nav>
+      </div>
+   </aside>
      
 
-     <section class="bg-[#f3f3f5] h-screen px-3 py-7 sm:p-8 sm:ml-72">
-       <form>
-         <div class="bg-white py-10 rounded-md shadow-3xl">
-            <h1 class="text-black text-center text-lg sm:text-2xl font-bold pb-6">PATIENT APPOINTMENT BOOKING FORM</h1>
-            
-            <!-- PATIENT INFORMATION -->
-            <div class="px-5 pt-4 flex flex-col lg:flex-row items-center justify-between gap-10">
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-green-600 text-start text-lg sm:text-xl font-semibold">PATIENT INFORMATION</h3>
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-12">
-                        <label for="name" class="font-bold text-sm sm:text-base">FULL NAME: </label>
-                        <input type="text" id="name" placeholder="Patient Full Name" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
+   <!-- SECTION MAIN CONTENT -->
+   <section class="md:ml-20">
+      <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
+         <button class="w-20 rounded-md mr-2">
+            <i class="fa-solid fa-bell fa-xl"></i>
+         </button>
 
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-5">
-                        <label for="birth" class="font-bold text-sm sm:text-base">DATE OF BIRTH: </label>
-                        <input type="date" id="birth" placeholder="dd/mm/yy" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
+         <button class="w-20 rounded-md font-bold">
+            Profile
+            <i class="fa-solid fa-circle-user fa-xl"></i>
+         </button>
+      </div>
 
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2">
-                        <label for="email" class="font-bold text-sm sm:text-base">E-MAIL ADDRESS: </label>
-                        <input type="email" id="email" placeholder="Patient E-mail" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-4">
-                        <label for="name" class="font-bold text-sm sm:text-base">HOME ADDRESS: </label>
-                        <input type="text" id="name" placeholder="Patient Residential Address" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-6">
-                    <h3 class="text-green-600 text-start text-lg sm:text-xl font-semibold">APPOINTMENT DETAILS</h3>
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
-                        <label for="date" class="font-bold text-sm sm:text-base">CONSULTATION: </label>
-                        <input type="date" id="date" placeholder="Patient Full Name" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-5">
-                        <label for="time" class="font-bold text-sm sm:text-base">CONSULTING TIME: </label>
-                        <input type="time" id="time" placeholder="" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center  gap-2 lg:gap-4">
-                        <label for="date" class="font-bold text-sm sm:text-base">ALTERNATIVE DATE: </label>
-                        <input type="date" id="date" placeholder="Patient E-mail" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-4">
-                        <label for="clock" class="font-bold text-sm sm:text-base">ALTERNATIVE TIME: </label>
-                        <input type="time" id="clock" placeholder="Patient Residential Address" class="p-2 bg-transparent w-[300px] md:w-[350px] lg:w-[300px] outline-none hover:border-2
-                         hover:border-black shadow-3xl rounded-md text-lg cursor-pointer"/>
-                    </div>
-                </div>
-            </div>
+<!-- HOSPITAL CONTENT -->
+      <div class="bg-[#f0f8ff] pl-16 md:pl-52 w-full">
+         <div class="flex items-center gap-4 pl-10 py-7">
+            <h2 class="font-bold text-xl">Book Appointments</h2>
+            <i class="fa-solid fa-angle-right fa-lg"></i> 
+            <i class="fa-solid fa-house fa-lg"></i>
          </div>
-       </form>
-     </section>
+         <!-- DASHBOARD APPOINTMENT -->
+         <div class="rounded-md">
+            <form id="form" onsubmit="return handleSubmit(event)">
+               <div class="mx-10 md:mx-10 space-y-5 lg:space-y-8">
+                  <h3 class="text-green-600 font-bold">Book Appointments</h3>
+                  <input type="text" placeholder="First name" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
+
+                  <input type="text" placeholder="Last name" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
+
+                  <select name="gender" id="gender" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+                  <option value="#">Gender</option>
+                  <option value="">Male</option>
+                  <option value="female">Female</option>
+                  </select>
+
+                  <input type="number" placeholder="Mobile number" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+
+                  <div>
+                     <textarea name="address" id="address" placeholder="Address"
+                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
+                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"></textarea>
+                  </div>
+
+                  <input type="email" placeholder="Email" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+
+                  <input type="text" placeholder="Date Of Birth" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+               </div>
+
+               <div class="py-10 lg:pt-20 mx-10 md:mx-10 space-y-5 lg:space-y-8">
+                  <h3 class="text-green-600 font-bold">Appointment Details</h3>
+                  <select name="doctor" id="doctor" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+                  <option value="#">Consulting Doctor</option>
+                  <option value="">Male</option>
+                  <option value="female">Female</option>
+                  </select>
+
+                  <input type="date" placeholder="Date Of Appointment" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+
+                  <input type="text" placeholder="Time Of Appointment" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+
+                  <input type="text" placeholder="Injury/Conditon" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
+                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
+
+                  <div>
+                     <textarea name="address" id="address" placeholder="Note"
+                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
+                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"></textarea>
+                  </div>
+
+                     <input type="file" id="files" placeholder="Upload Files"
+                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
+                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
+                     
+                     <div>
+                        <button class="bg-blue-700 text-white px-6 py-2 font-semibold rounded-md">Submit</button>
+                        <button class="bg-red-700 text-white px-6 py-2 font-semibold rounded-md">Cancel</button>
+                     </div>
+               </div>
+
+            </form>
+         </div>
+      </div>
+   </section>
+
+   <script>
+      let navList = document.getElementById("nav-list")
+      let items = navList.getElementsByClassName("nav-item ");
+
+      for(let i = 0; i<items.length; i++){
+
+          items[i].addEventListener("click", function(){
+
+
+              let current = document.querySelectorAll(".active");
+
+
+              current.forEach(element => {
+                  element.classList.remove('active');
+              });
+
+              this.classList.add('active')
+          })
+      }
+
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        const myform = document.querySelector('#form');
+        const userData = new FormData(myform);
+        console.log('from submitted');
+        try {
+            const response = await fetch (
+               'https://yabatech-backend.vercel.app/submit',
+               {
+                method: 'POST',
+                body: userData,
+               } 
+            );
+
+            const result = await response.json();
+            console.log(result)
+        }catch (e){
+            console.log('Error communicating with backend');
+            console.log(e);
+        }
+        console.log('form submitted')
+        }
+
+
+      const dark = () => {
+          const hidding = document.querySelector('#main');
+          hidding.hidden= false;
+      }
+
+      const undark = () => {
+          const btn = document.querySelector('#main');
+          btn.hidden = true;
+      }
+  </script>
 </body>
 </html>
