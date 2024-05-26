@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yabatech Receptionist Dashboard</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- SIDEBAR NAVIGATION -->
+    <aside id="sidebar-section" class="h-screen fixed" onmouseover="dark()" onmouseout="undark()">
+        <div id="sidebar" class="fixed h-screen top-0 left-0  bg-white shadow-md shadow-black w-20 md:w-72 duration-500">
+    
+           <nav role="navigation" class="pl-4 pt-8 mt-2">
+                <div class="mt- relative overflow-hidden">
+                    <div class="">
+                       <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name pl-2 pr-3 pb-5"/>  
+                        <h1 hid id="main" class="hidden md:block text-2xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
+                    </div>
+  
+                    <ul class="nav-list space-y-8 " id="nav-list">
+                       <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                            <a href="receptionist_dashboard.html" class="flex items-center gap-5">
+                             <i class="fa-regular fa-calendar-check fa-2x"></i>
+                                <span class="font-semibold text-xl">Book Appointments</span>
+                            </a>
+                       </li>
+  
+                        <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                            <a href="" class="flex items-center gap-5">
+                             <i class="fa-solid fa-book fa-2x"></i>
+                                <span class="font-semibold text-xl">View Appointments</span>
+                            </a>
+                        </li>
+  
+                        <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                            <a href="" class="flex items-center gap-6">
+                             <i class="fa-solid fa-prescription-bottle-medical fa-2x"></i>
+                                <span class="font-semibold text-xl">Prescriptions</span>
+                            </a>
+                        </li>
+  
+                        <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                          <a href="" class="flex items-center gap-6">
+                             <i class="fa-solid fa-notes-medical fa-2x"></i>
+                             <span class="font-semibold text-xl">Medical Record</span>
+                          </a>
+                      </li>
+  
+                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                       <a href="" class="flex items-center gap-6">
+                          <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+                          <span class="font-semibold text-xl">Logout</span>
+                       </a>
+                   </li>
+                    </ul>
+                </div>
+           </nav>
+        </div>
+    </aside>
+
+
+    <section class="md:ml-20">
+        <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
+            <button class="w-20 rounded-md mr-2">
+               <i class="fa-solid fa-bell fa-xl"></i>
+            </button>
+   
+            <button class="w-20 rounded-md font-bold">
+               Profile
+               <i class="fa-solid fa-circle-user fa-xl"></i>
+            </button>
+         </div>
+    </section>
+
+    <script>
+        let navList = document.getElementById("nav-list")
+      let items = navList.getElementsByClassName("nav-item ");
+
+      for(let i = 0; i<items.length; i++){
+
+          items[i].addEventListener("click", function(){
+
+
+              let current = document.querySelectorAll(".active");
+
+
+              current.forEach(element => {
+                  element.classList.remove('active');
+              });
+
+              this.classList.add('active')
+          })
+      }
+    </script>
+</body>
+</html>
