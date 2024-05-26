@@ -16,16 +16,23 @@
 <body class="font-satoshi">
     <!-- SIDEBAR NAVIGATION -->
     <aside id="sidebar-section" class="h-screen fixed" onmouseover="dark()" onmouseout="undark()">
-      <div id="sidebar" class="fixed h-screen top-0 left-0  bg-white shadow-md shadow-black w-20 md:w-72 duration-500">
+      <div id="sidebar" class="fixed h-screen top-0 left-0  bg-white shadow-md shadow-black w-20 hover:w-72 md:w-72 duration-500">
   
          <nav role="navigation" class="pl-4 pt-8 mt-2">
               <div class="mt- relative overflow-hidden">
                   <div class="">
-                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name pl-2 pr-3 pb-5"/>  
-                      <h1 hid id="main" class="hidden md:block text-2xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
+                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name w-28 mx-auto pl-2 pr-3 pb-5"/>  
+                      <h1 hidden id="main" class="md:block text-xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
                   </div>
 
                   <ul class="nav-list space-y-8 " id="nav-list">
+                     <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
+                        <a href="doctors.html" class="flex items-center gap-5">
+                           <i class="fa-solid fa-table-columns fa-2x"></i>
+                            <span class="font-semibold text-xl">Doctor Dashboard</span>
+                        </a>
+                   </li>
+
                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
                           <a href="receptionist_dashboard.html" class="flex items-center gap-5">
                            <i class="fa-regular fa-calendar-check fa-2x"></i>
@@ -34,16 +41,9 @@
                      </li>
 
                       <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
-                          <a href="" class="flex items-center gap-5">
+                          <a href="view_appointments.html" class="flex items-center gap-5">
                            <i class="fa-solid fa-book fa-2x"></i>
                               <span class="font-semibold text-xl">View Appointments</span>
-                          </a>
-                      </li>
-
-                      <li class="nav-item text-xl p-2 rounded-l-xl text-green-700">
-                          <a href="" class="flex items-center gap-6">
-                           <i class="fa-solid fa-prescription-bottle-medical fa-2x"></i>
-                              <span class="font-semibold text-xl">Prescriptions</span>
                           </a>
                       </li>
 
