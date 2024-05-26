@@ -3,9 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NurseDashbord</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .hidden-sidebar {
+            transform: translateX(-100%);
+        }
+    </style>
 </head>
-<body>
-    
+<body class="font-sans antialiased bg-gray-100">
+
+<!-- Mobile Menu -->
+<div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+    <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
+    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+</div>
+
+      <section class="flex ">
+        
+          <!-- Sidebar -->
+          <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:static lg:translate-x-0 lg:h-auto">
+              <div class="flex flex-col items-center p-6">
+                  <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
+                  <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
+              </div>
+              <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
+                      <span class="ml-3">Dashboard</span>
+                  </a>
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
+                      <span class="ml-3">Appointments</span>
+                  </a>
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
+                      <span class="ml-3">Book Appointment</span>
+                  </a>
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
+                      <span class="ml-3">Prescriptions</span>
+                  </a>
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
+                      <span class="ml-3">Medical Record</span>
+                  </a>
+                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                      <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
+                      <span class="ml-3">Logout</span>
+                  </a>
+              </nav>
+          </aside>
+              <section class="">
+                  
+                  <!-- Main Content -->
+                  <div class="flex flex-col p-4 lg:flex-row lg:ml-44 lg:p-10 lg:mt-10">
+                      <main class="flex-1">
+                          <!-- Dashboard Widgets -->
+                          <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-4">
+                              <!-- Appointments Widget -->
+                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md ">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-gray-700">Appointments</h3>
+                                      <p class="text-2xl font-bold text-gray-900">650</p>
+                                  </div>
+                                  <div class="p-2 bg-purple-100 rounded-full">
+                                      <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                              <!-- Operations Widget -->
+                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-gray-700">Operations</h3>
+                                      <p class="text-2xl font-bold text-gray-900">54</p>
+                                  </div>
+                                  <div class="p-2 bg-orange-100 rounded-full">
+                                      <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                              <!-- New Patients Widget -->
+                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-gray-700">New Patients</h3>
+                                      <p class="text-2xl font-bold text-gray-900">129</p>
+                                  </div>
+                                  <div class="p-2 bg-green-100 rounded-full">
+                                      <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4H8m4 0h4"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                              <!-- Earning Widget -->
+                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-gray-700">Earnings</h3>
+                                      <p class="text-2xl font-bold text-gray-900">$20,125</p>
+                                  </div>
+                                  <div class="p-2 bg-blue-100 rounded-full">
+                                      <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
+                  
+                          <!-- Charts -->
+                          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                              <!-- Hospital Survey Chart -->
+                              <div class="p-4 bg-white rounded-lg shadow-md">
+                                  <h3 class="mb-2 text-lg font-semibold text-gray-700">Hospital Survey</h3>
+                                  <canvas id="hospitalSurveyChart"></canvas>
+                              </div>
+                              <!-- Common Diseases Report Chart -->
+                              <div class="p-4 bg-white rounded-lg shadow-md">
+                  
+                                  <h3 class="mb-2 text-lg font-semibold text-gray-700">Common Diseases Report</h3>
+                                  <canvas id="commonDiseasesChart"></canvas>
+                              </div>
+                          </div>
+                      </main>
+                  </div>
+              </section>
+      </section>
+
+<script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const openSidebarBtn = document.getElementById('openSidebarBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+    openSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.remove('hidden-sidebar');
+        openSidebarBtn.classList.add('hidden');
+        closeSidebarBtn.classList.remove('hidden');
+    });
+
+    closeSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.add('hidden-sidebar');
+        openSidebarBtn.classList.remove('hidden');
+        closeSidebarBtn.classList.add('hidden');
+    });
+
+    // Chart.js configuration
+    const hospitalSurveyCtx = document.getElementById('hospitalSurveyChart').getContext('2d');
+    const hospitalSurveyChart = new Chart(hospitalSurveyCtx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [
+                {
+                    label: 'New Patients',
+                    data: [50, 60, 70, 80, 60, 70, 90],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                },
+                {
+                    label: 'Old Patients',
+                    data: [30, 40, 60, 70, 50, 60, 80],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const commonDiseasesCtx = document.getElementById('commonDiseasesChart').getContext('2d');
+    const commonDiseasesChart = new Chart(commonDiseasesCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [
+                {
+                    label: 'Disease A',
+                    data: [30, 40, 50, 60, 70, 80, 90],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Disease B',
+                    data: [20, 30, 40, 50, 60, 70, 80],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Disease C',
+                    data: [10, 20, 30, 40, 50, 60, 70],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
