@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #sidebar {
+            transform: translateX(-100%);
+        }
+        #sidebar.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100 lg:flex-row">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:translate-x-0 lg:static lg:h-auto">
+        <div class="flex flex-col items-center p-6">
+            <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
+            <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
+        </div>
+        <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
+                <span class="ml-3">Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
+                <span class="ml-3">Appointments</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
+                <span class="ml-3">Book Appointment</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
+                <span class="ml-3">Prescriptions</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
+                <span class="ml-3">Medical Record</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
+                <span class="ml-3">Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex flex-col flex-1">
+        <!-- Mobile Menu -->
+        <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+            <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
+            <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Add Patient Form -->
+        <div class="w-full p-8 mx-auto mt-4 bg-white rounded-lg shadow-lg lg:max-w-lg lg:mx-0 lg:mt-0">
+            <h2 class="mb-6 text-2xl font-semibold">Add Patient</h2>
+            <form id="add-patient-form">
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="fullName">Full Name</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="text" id="fullName" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="email">Email</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="email" id="email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="phoneNumber">Phone Number</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="tel" id="phoneNumber" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="address">Address</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="text" id="address" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="gender">Gender</label>
+                    <select class="w-full px-3 py-2 border rounded-lg" id="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="dob">Date of Birth</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="date" id="dob" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="bloodGroup">Blood Group</label>
+                    <select class="w-full px-3 py-2 border rounded-lg" id="bloodGroup" required>
+                        <option value="" disabled selected>Select Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="photo">Upload Photo</label>
+                    <input class="w-full px-3 py-2 border rounded-lg" type="file" id="photo">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700" for="notes">Notes</label>
+                    <textarea class="w-full px-3 py-2 border rounded-lg" id="notes" rows="3"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('openSidebarBtn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.add('show');
+            document.getElementById('openSidebarBtn').classList.add('hidden');
+            document.getElementById('closeSidebarBtn').classList.remove('hidden');
+        });
+
+        document.getElementById('closeSidebarBtn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('show');
+            document.getElementById('openSidebarBtn').classList.remove('hidden');
+            document.getElementById('closeSidebarBtn').classList.add('hidden');
+        });
+
+        document.getElementById('add-patient-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const address = document.getElementById('address').value;
+            const gender = document.getElementById('gender').value;
+            const dob = document.getElementById('dob').value;
+            const bloodGroup = document.getElementById('bloodGroup').value;
+            const photo = document.getElementById('photo').files[0];
+            const notes = document.getElementById('notes').value;
+
+            if (!fullName || !email || !phoneNumber || !address || !gender || !dob || !bloodGroup) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            console.log('Full Name:', fullName);
+            console.log('Email:', email);
+            console.log('Phone Number:', phoneNumber);
+            console.log('Address:', address);
+            console.log('Gender:', gender);
+            console.log('Date of Birth:', dob);
+            console.log('Blood Group:', bloodGroup);
+            console.log('Photo:', photo);
+            console.log('Notes:', notes);
+
+            alert('Patient added successfully!');
+            document.getElementById('add-patient-form').reset();
+        });
+    </script>
+</body>
+</html>

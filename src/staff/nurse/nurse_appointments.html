@@ -42,89 +42,98 @@
         </svg>
     </button>
 </div>
-
-<aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:static lg:translate-x-0 lg:h-auto">
-    <div class="flex flex-col items-center p-6">
-        <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
-        <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
-    </div>
-    <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
-            <span class="ml-3">Dashboard</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
-            <span class="ml-3">Appointments</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
-            <span class="ml-3">Book Appointment</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
-            <span class="ml-3">Prescriptions</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
-            <span class="ml-3">Medical Record</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-            <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
-            <span class="ml-3">Logout</span>
-        </a>
-    </nav>
-</aside>
-  
-
-    <!-- Main content -->
-    <div class="p-4 ml-64">
-        <header class="flex items-center justify-between p-4 bg-white shadow">
-            <h2 class="text-xl font-semibold">Appointments</h2>
-            <div>
-                <input id="search" type="text" placeholder="Search" class="px-4 py-2 border rounded">
+<section class=" lg:flex">
+    
+    <section>
+        
+        <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:static lg:translate-x-0 lg:h-auto">
+            <div class="flex flex-col items-center p-6">
+                <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
+                <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
             </div>
-        </header>
-        <div class="flex justify-end mt-4 space-x-4">
-            <button id="addBtn" class="px-4 py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700">Add</button>
-            <button class="px-4 py-2 text-white bg-green-600 rounded-full hover:bg-green-700">Refresh</button>
-            <button class="px-4 py-2 text-white bg-gray-600 rounded-full hover:bg-gray-700">Export</button>
-        </div>
-        <main class="p-4 mt-4 overflow-x-auto bg-white rounded shadow">
-            <table class="w-full table-auto">
-                <thead>
-                    <tr>
-                        <th class="px-4 py-2 border">Image</th>
-                        <th class="px-4 py-2 border">Name</th>
-                        <th class="px-4 py-2 border">Email</th>
-                        <th class="px-4 py-2 border">Gender</th>
-                        <th class="px-4 py-2 border">Date</th>
-                        <th class="px-4 py-2 border">Time</th>
-                        <th class="px-4 py-2 border">Mobile</th>
-                        <th class="px-4 py-2 border">Doctor</th>
-                        <th class="px-4 py-2 border">Injury/Condition</th>
-                        <th class="px-4 py-2 border">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="appointmentTable">
-                    <!-- Sample row for demonstration -->
-                    <tr>
-                        <td class="px-4 py-2 border"><img src="avatar1.jpg" alt="Avatar" class="w-8 h-8 rounded-full"></td>
-                        <td class="px-4 py-2 border">Cara Stevens</td>
-                        <td class="px-4 py-2 border">test@email.com</td>
-                        <td class="px-4 py-2 border"><span class="px-2 py-1 text-green-700 bg-green-200 rounded">Male</span></td>
-                        <td class="px-4 py-2 border">02/25/2018</td>
-                        <td class="px-4 py-2 border">10:18</td>
-                        <td class="px-4 py-2 border">1234567890</td>
-                        <td class="px-4 py-2 border">Dr. Rajesh</td>
-                        <td class="px-4 py-2 border">Fever</td>
-                        <td class="px-4 py-2 border"><button onclick="openModal(this)" class="text-blue-500 hover:text-blue-700">Edit</button></td>
-                    </tr>
-                    <!-- More rows here -->
-                </tbody>
-            </table>
-        </main>
-    </div>
+            <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
+                    <span class="ml-3">Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
+                    <span class="ml-3">Appointments</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
+                    <span class="ml-3">Book Appointment</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
+                    <span class="ml-3">Prescriptions</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
+                    <span class="ml-3">Medical Record</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
+                    <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
+                    <span class="ml-3">Logout</span>
+                </a>
+            </nav>
+        </aside>
+    </section>
+    
+      
+        <section>
+            
+            <!-- Main content -->
+            <div class="p-4">
+                <header class="flex items-center justify-between p-4 bg-white shadow">
+                    <h2 class="text-xl font-semibold">Appointments</h2>
+                    <div>
+                        <input id="search" type="text" placeholder="Search" class="px-4 py-2 border rounded">
+                    </div>
+                </header>
+                <div class="flex justify-end mt-4 space-x-4">
+                    <button id="addBtn" class="px-4 py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700">Add</button>
+                    <button class="px-4 py-2 text-white bg-green-600 rounded-full hover:bg-green-700">Refresh</button>
+                    <button class="px-4 py-2 text-white bg-gray-600 rounded-full hover:bg-gray-700">Export</button>
+                </div>
+                <main class="p-4 mt-4 overflow-x-auto bg-white rounded shadow">
+                    <table class="w-full table-auto">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 border">Image</th>
+                                <th class="px-4 py-2 border">Name</th>
+                                <th class="px-4 py-2 border">Email</th>
+                                <th class="px-4 py-2 border">Gender</th>
+                                <th class="px-4 py-2 border">Date</th>
+                                <th class="px-4 py-2 border">Time</th>
+                                <th class="px-4 py-2 border">Mobile</th>
+                                <th class="px-4 py-2 border">Doctor</th>
+                                <th class="px-4 py-2 border">Injury/Condition</th>
+                                <th class="px-4 py-2 border">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentTable">
+                            <!-- Sample row for demonstration -->
+                            <tr>
+                                <td class="px-4 py-2 border"><img src="avatar1.jpg" alt="Avatar" class="w-8 h-8 rounded-full"></td>
+                                <td class="px-4 py-2 border">Cara Stevens</td>
+                                <td class="px-4 py-2 border">test@email.com</td>
+                                <td class="px-4 py-2 border"><span class="px-2 py-1 text-green-700 bg-green-200 rounded">Male</span></td>
+                                <td class="px-4 py-2 border">02/25/2018</td>
+                                <td class="px-4 py-2 border">10:18</td>
+                                <td class="px-4 py-2 border">1234567890</td>
+                                <td class="px-4 py-2 border">Dr. Rajesh</td>
+                                <td class="px-4 py-2 border">Fever</td>
+                                <td class="px-4 py-2 border"><button onclick="openModal(this)" class="text-blue-500 hover:text-blue-700">Edit</button></td>
+                            </tr>
+                            <!-- More rows here -->
+                        </tbody>
+                    </table>
+                </main>
+            </div>
+        </section>
+</section>
+
 
     <!-- Modal -->
     <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 modal">
