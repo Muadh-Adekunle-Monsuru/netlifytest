@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Custom scrollbar styling */
@@ -20,15 +21,27 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
-        .hidden-sidebar {
+        /* .hidden-sidebar {
             transform: translateX(-100%);
+        }
+        .transition-transform {
+            transition: transform 0.3s ease-in-out;
+        } */
+        .bg-primary {
+            background-color: #1a73e8;
+        }
+        .text-primary {
+            color: #1a73e8;
+        }
+        .text-secondary {
+            color: #5f6368;
         }
     </style>
 </head>
 <body class="font-sans antialiased bg-gray-100">
 
-<!-- Mobile Menu -->
-<div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+  <!-- Mobile View Navbar -->
+  <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
     <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -42,133 +55,194 @@
     </button>
 </div>
 
-      <section class="flex ">
-        
-          <!-- Sidebar -->
-          <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:static lg:translate-x-0 lg:h-auto">
-              <div class="flex flex-col items-center p-6">
-                  <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
-                  <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
-              </div>
-              <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
-                      <span class="ml-3">Dashboard</span>
-                  </a>
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
-                      <span class="ml-3">Appointments</span>
-                  </a>
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
-                      <span class="ml-3">Book Appointment</span>
-                  </a>
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
-                      <span class="ml-3">Prescriptions</span>
-                  </a>
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
-                      <span class="ml-3">Medical Record</span>
-                  </a>
-                  <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                      <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
-                      <span class="ml-3">Logout</span>
-                  </a>
-              </nav>
-          </aside>
-              <section class="">
-                  
-                  <!-- Main Content -->
-                  <div class="flex flex-col p-4 lg:flex-row lg:ml-44 lg:p-10 lg:mt-10">
-                      <main class="flex-1">
-                          <!-- Dashboard Widgets -->
-                          <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-4">
-                              <!-- Appointments Widget -->
-                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md ">
-                                  <div>
-                                      <h3 class="text-lg font-semibold text-gray-700">Appointments</h3>
-                                      <p class="text-2xl font-bold text-gray-900">650</p>
-                                  </div>
-                                  <div class="p-2 bg-purple-100 rounded-full">
-                                      <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                                      </svg>
-                                  </div>
-                              </div>
-                              <!-- Operations Widget -->
-                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                                  <div>
-                                      <h3 class="text-lg font-semibold text-gray-700">Operations</h3>
-                                      <p class="text-2xl font-bold text-gray-900">54</p>
-                                  </div>
-                                  <div class="p-2 bg-orange-100 rounded-full">
-                                      <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                      </svg>
-                                  </div>
-                              </div>
-                              <!-- New Patients Widget -->
-                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                                  <div>
-                                      <h3 class="text-lg font-semibold text-gray-700">New Patients</h3>
-                                      <p class="text-2xl font-bold text-gray-900">129</p>
-                                  </div>
-                                  <div class="p-2 bg-green-100 rounded-full">
-                                      <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4H8m4 0h4"></path>
-                                      </svg>
-                                  </div>
-                              </div>
-                              <!-- Earning Widget -->
-                              <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                                  <div>
-                                      <h3 class="text-lg font-semibold text-gray-700">Earnings</h3>
-                                      <p class="text-2xl font-bold text-gray-900">$20,125</p>
-                                  </div>
-                                  <div class="p-2 bg-blue-100 rounded-full">
-                                      <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                                      </svg>
-                                  </div>
-                              </div>
-                          </div>
-                  
-                          <!-- Charts -->
-                          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                              <!-- Hospital Survey Chart -->
-                              <div class="p-4 bg-white rounded-lg shadow-md">
-                                  <h3 class="mb-2 text-lg font-semibold text-gray-700">Hospital Survey</h3>
-                                  <canvas id="hospitalSurveyChart"></canvas>
-                              </div>
-                              <!-- Common Diseases Report Chart -->
-                              <div class="p-4 bg-white rounded-lg shadow-md">
-                  
-                                  <h3 class="mb-2 text-lg font-semibold text-gray-700">Common Diseases Report</h3>
-                                  <canvas id="commonDiseasesChart"></canvas>
-                              </div>
-                          </div>
-                      </main>
-                  </div>
-              </section>
-      </section>
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
+    <div>
+        <!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button> -->
+        <nav role="navigation" class="pt-8 pl-4 mt-2">
+            <div class="relative overflow-hidden">
+                <div>
+                    <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
+                    <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
+                </div>
+                <ul class="space-y-8 nav-list" id="nav-list">
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="nurse_dashboard.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-table-columns fa-2x"></i>
+                            <span class="text-xl font-semibold">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="nurse_appointments.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Appointments</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_administration.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Administration</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_medical_history.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-book fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Medical <span>History</span></span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_vitals.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Vitals</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
+
+    <section class="flex flex-col flex-1">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 bg-white shadow-md lg:ml-64">
+            <div>
+                <h1 class="text-2xl font-semibold text-gray-700">Dashboard</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 10A7 7 0 105 10a7 7 0 0014 0zM13 7h.01"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 z-10 hidden w-48 p-2 mt-2 bg-white rounded-md shadow-lg">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 10A7 7 0 105 10a7 7 0 0014 0zM13 7h.01"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 z-10 hidden w-48 p-2 mt-2 bg-white rounded-md shadow-lg">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Notifications</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Messages</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="/src/assets/user.png" alt="User" class="w-10 h-10 rounded-full">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex flex-col p-4 lg:flex-row lg:p-10 lg:mt-5 lg:ml-64">
+            <main class="flex-1">
+                <!-- Dashboard Widgets -->
+                <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Appointments Widget -->
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">Appointments</h3>
+                            <p class="text-2xl font-bold text-gray-900">650</p>
+                        </div>
+                        <div class="p-2 bg-purple-100 rounded-full">
+                            <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Operations Widget -->
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">Operations</h3>
+                            <p class="text-2xl font-bold text-gray-900">54</p>
+                        </div>
+                        <div class="p-2 bg-orange-100 rounded-full">
+                            <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- New Patients Widget -->
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">New Patients</h3>
+                            <p class="text-2xl font-bold text-gray-900">129</p>
+                        </div>
+                        <div class="p-2 bg-green-100 rounded-full">
+                            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4H8m4 0h4"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Earnings Widget -->
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">Earnings</h3>
+                            <p class="text-2xl font-bold text-gray-900">$20,125</p>
+                        </div>
+                        <div class="p-2 bg-blue-100 rounded-full">
+                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <!-- Hospital Survey Chart -->
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <h3 class="mb-2 text-lg font-semibold text-gray-700">Hospital Survey</h3>
+                        <canvas id="hospitalSurveyChart"></canvas>
+                    </div>
+                    <!-- Common Diseases Report Chart -->
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <h3 class="mb-2 text-lg font-semibold text-gray-700">Common Diseases Report</h3>
+                        <canvas id="commonDiseasesChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="p-4 bg-white shadow-md lg:mt-5">
+            <div class="text-center text-gray-700">
+                &copy; 2024 Yabatech Medical Center. All rights reserved.
+            </div>
+        </footer>
+    </section>
+</section>
 
 <script>
-    // Sidebar toggle
-    const sidebar = document.getElementById('sidebar');
-    const openSidebarBtn = document.getElementById('openSidebarBtn');
-    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+     document.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.getElementById('sidebar');
+        const openSidebarBtn = document.getElementById('openSidebarBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        // const closeSidebarMobileBtn = document.getElementById('closeSidebarMobileBtn');
 
-    openSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.remove('hidden-sidebar');
-        openSidebarBtn.classList.add('hidden');
-        closeSidebarBtn.classList.remove('hidden');
-    });
+        openSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            closeSidebarBtn.classList.remove('hidden');
+        });
 
-    closeSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.add('hidden-sidebar');
-        openSidebarBtn.classList.remove('hidden');
-        closeSidebarBtn.classList.add('hidden');
+        closeSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            closeSidebarBtn.classList.add('hidden');
+        });
+
+        // closeSidebarMobileBtn.addEventListener('click', () => {
+        //     sidebar.classList.add('-translate-x-full');
+        //     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
+        // });
     });
 
     // Chart.js configuration

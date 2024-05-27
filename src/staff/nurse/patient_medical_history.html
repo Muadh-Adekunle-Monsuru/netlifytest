@@ -3,41 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Custom scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        .transition-transform {
-            transition: transform 0.3s ease-in-out;
-        }
-        .bg-primary {
-            background-color: #1a73e8;
-        }
-        .text-primary {
-            color: #1a73e8;
-        }
-        .text-secondary {
-            color: #5f6368;
-        }
-    </style>
 </head>
-<body class="font-sans antialiased bg-gray-100">
-
-<!-- Mobile Menu -->
+<body>
+    <!-- Mobile View Navbar -->
 <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
     <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -52,137 +25,82 @@
     </button>
 </div>
 
-<section class="flex">
-    <!-- Sidebar -->
-    <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
-        <div class="fixed top-0 left-0 w-64 h-screen duration-500 bg-white shadow-md lg:w-20 hover:w-64 lg:hover:w-64">
-           <nav role="navigation" class="pt-8 pl-4 mt-2">
-                <div class="relative overflow-hidden mt-">
-                    <div class="">
-                       <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>  
-                        <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
-                    </div>
-  
-                    <ul class="space-y-8 nav-list " id="nav-list">
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                          <a href="doctors.html" class="flex items-center gap-5">
-                             <i class="fa-solid fa-table-columns fa-2x"></i>
-                              <span class="text-xl font-semibold">Dashboard</span>
-                          </a>
-                     </li>
-  
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                             <i class="fa-regular fa-calendar-check fa-2x"></i>
-                                <span class="text-xl font-semibold">Appointments</span>
-                            </a>
-                       </li>
-
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                       <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                        <i class="fa-regular fa-calendar-check fa-2x"></i>
-                           <span class="text-xl font-semibold">Book Appointments</span>
-                       </a>
-                  </li>
-
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="view_appointments.html" class="flex items-center gap-5">
-                             <i class="fa-solid fa-book fa-2x"></i>
-                                <span class="text-xl font-semibold">View Appointments</span>
-                            </a>
-                        </li>
-
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                             <i class="fa-regular fa-calendar-check fa-2x"></i>
-                                <span class="text-xl font-semibold">Patient</span>
-                            </a>
-                       </li>
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                        <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                         <i class="fa-regular fa-calendar-check fa-2x"></i>
-                            <span class="text-xl font-semibold">Patient Check In & Out</span>
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
+    <div>
+        <!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button> -->
+        <nav role="navigation" class="pt-8 pl-4 mt-2">
+            <div class="relative overflow-hidden">
+                <div>
+                    <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
+                    <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
+                </div>
+                <ul class="space-y-8 nav-list" id="nav-list">
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="doctors.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-table-columns fa-2x"></i>
+                            <span class="text-xl font-semibold">Dashboard</span>
                         </a>
-                   </li>
-  
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                          <a href="" class="flex items-center gap-6">
-                             <i class="fa-solid fa-notes-medical fa-2x"></i>
-                             <span class="text-xl font-semibold">Medical History</span>
-                          </a>
-                      </li>
-
-                      <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                        <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                         <i class="fa-regular fa-calendar-check fa-2x"></i>
-                            <span class="text-xl font-semibold">Doctors</span>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="nurse_appointments.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Appointments</span>
                         </a>
-                   </li>
-  
-                      <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                       <a href="" class="flex items-center gap-6">
-                          <i class="fa-solid fa-right-from-bracket fa-2x"></i>
-                          <span class="text-xl font-semibold">Logout</span>
-                       </a>
-                   </li>
-                    </ul>
-                </div>
-           </nav>
-        </div>
-    </aside>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_administration.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Administration</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_medical_history.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-book fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Medical <span>History</span></span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_vitals.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Vitals</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aside>
 
-    <section class="flex flex-col flex-1">
-        <!-- Header -->
-        <header class="flex items-center justify-between p-4 bg-white shadow-md lg:ml-64">
-            <div>
-                <h1 class="text-2xl font-semibold text-gray-700">Dashboard</h1>
-            </div>
-            <div class="flex items-center space-x-4">
-                <div class="relative">
-                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 10A7 7 0 105 10a7 7 0 0014 0zM13 7h.01"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute right-0 z-10 hidden w-48 p-2 mt-2 bg-white rounded-md shadow-lg">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </header>
 
-        <!-- Main Content -->
-        <main class="flex-1 p-4 lg:ml-64">
-            <div class="grid gap-4 mb-8 lg:grid-cols-2 xl:grid-cols-4">
-                <!-- Example card -->
-                <div class="p-4 bg-white shadow-md">
-                    <h2 class="text-xl font-semibold text-gray-700">Card Title</h2>
-                    <p class="text-gray-600">Card content goes here...</p>
-                </div>
-            </div>
-            <!-- More content -->
-        </main>
-    </section>
-</section>
 
 <script>
-    const openSidebarBtn = document.getElementById('openSidebarBtn');
-    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-    const sidebar = document.getElementById('sidebar');
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.getElementById('sidebar');
+        const openSidebarBtn = document.getElementById('openSidebarBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        // const closeSidebarMobileBtn = document.getElementById('closeSidebarMobileBtn');
 
-    openSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.remove('-translate-x-full');
-        closeSidebarBtn.classList.remove('hidden');
-        openSidebarBtn.classList.add('hidden');
-    });
+        openSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            closeSidebarBtn.classList.remove('hidden');
+        });
 
-    closeSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.add('-translate-x-full');
-        closeSidebarBtn.classList.add('hidden');
-        openSidebarBtn.classList.remove('hidden');
+        closeSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            closeSidebarBtn.classList.add('hidden');
+        });
+
+        // closeSidebarMobileBtn.addEventListener('click', () => {
+        //     sidebar.classList.add('-translate-x-full');
+        //     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
+        // });
     });
 </script>
+
 </body>
-</html>
+</html></html>

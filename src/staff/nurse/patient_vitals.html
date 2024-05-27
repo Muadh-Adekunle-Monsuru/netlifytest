@@ -3,345 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Custom scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        .hidden-sidebar {
-            transform: translateX(-100%);
-        }
-        .transition-transform {
-            transition: transform 0.3s ease-in-out;
-        }
-        .bg-primary {
-            background-color: #1a73e8;
-        }
-        .text-primary {
-            color: #1a73e8;
-        }
-        .text-secondary {
-            color: #5f6368;
-        }
+        /* Custom styles for the dashboard */
     </style>
 </head>
-<body class="font-sans antialiased bg-gray-100">
+<body class="bg-gray-100">
 
-<!-- Mobile Menu -->
-<!-- <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
-    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-    <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
-    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-</div> -->
-
-<section class="flex">
-    <!-- Sidebar -->
-    <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
-        <div id="sidebar" class="fixed top-0 left-0 w-20 h-screen duration-500 bg-white shadow-md shadow-black hover:w-72 md:w-72">
-    
-           <nav role="navigation" class="pt-8 pl-4 mt-2">
-                <div class="relative overflow-hidden mt-">
-                    <div class="">
-                       <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>  
-                        <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
-                    </div>
-  
-                    <ul class="space-y-8 nav-list " id="nav-list">
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                          <a href="doctors.html" class="flex items-center gap-5">
-                             <i class="fa-solid fa-table-columns fa-2x"></i>
-                              <span class="text-xl font-semibold">Dashboard</span>
-                          </a>
-                     </li>
-  
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                             <i class="fa-regular fa-calendar-check fa-2x"></i>
-                                <span class="text-xl font-semibold">Appointments</span>
-                            </a>
-                       </li>
-
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                       <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                        <i class="fa-regular fa-calendar-check fa-2x"></i>
-                           <span class="text-xl font-semibold">Book Appointments</span>
-                       </a>
-                  </li>
-
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="view_appointments.html" class="flex items-center gap-5">
-                             <i class="fa-solid fa-book fa-2x"></i>
-                                <span class="text-xl font-semibold">View Appointments</span>
-                            </a>
-                        </li>
-
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                            <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                             <i class="fa-regular fa-calendar-check fa-2x"></i>
-                                <span class="text-xl font-semibold">Patient</span>
-                            </a>
-                       </li>
-                       <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                        <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                         <i class="fa-regular fa-calendar-check fa-2x"></i>
-                            <span class="text-xl font-semibold">Patient Check In & Out</span>
-                        </a>
-                   </li>
-  
-                        <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                          <a href="" class="flex items-center gap-6">
-                             <i class="fa-solid fa-notes-medical fa-2x"></i>
-                             <span class="text-xl font-semibold">Medical History</span>
-                          </a>
-                      </li>
-
-                      <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                        <a href="receptionist_dashboard.html" class="flex items-center gap-5">
-                         <i class="fa-regular fa-calendar-check fa-2x"></i>
-                            <span class="text-xl font-semibold">Doctors</span>
-                        </a>
-                   </li>
-  
-                      <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                       <a href="" class="flex items-center gap-6">
-                          <i class="fa-solid fa-right-from-bracket fa-2x"></i>
-                          <span class="text-xl font-semibold">Logout</span>
-                       </a>
-                   </li>
-                    </ul>
+    <div class="flex flex-col min-h-screen">
+        <!-- Sidebar -->
+        <div class="flex flex-row">
+            <nav class="w-64 h-screen bg-white shadow-md">
+                <div class="p-4">
+                    <h1 class="text-xl font-bold">Cliniva</h1>
                 </div>
-           </nav>
+                <ul class="mt-6">
+                    <li class="px-4 py-2"><a href="#" class="text-gray-700 hover:text-blue-600">Dashboard</a></li>
+                    <li class="px-4 py-2"><a href="#" class="text-gray-700 hover:text-blue-600">Appointments</a></li>
+                    <li class="px-4 py-2"><a href="#" class="text-gray-700 hover:text-blue-600">Doctors</a></li>
+                    <li class="px-4 py-2"><a href="#" class="text-gray-700 hover:text-blue-600">Patients</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-semibold text-gray-700">Dashboard</h2>
+                </div>
+                
+                <!-- Content -->
+                <div class="mt-6">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+                        <!-- Card 1 -->
+                        <div class="p-6 bg-white rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full">
+                                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4a2 2 0 002 2h2m4 0h2a2 2 0 002-2V3m-6 10a4 4 0 100-8 4 4 0 000 8zm0 0v4m0 4h.01"></path></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-gray-700">Total Appointments</h3>
+                                    <p class="text-gray-500">123</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- More Cards... -->
+                    </div>
+                    
+                    <!-- Table -->
+                    <div class="p-6 mt-6 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-gray-700">Recent Appointments</h3>
+                        <table class="w-full mt-4">
+                            <thead>
+                                <tr class="text-left">
+                                    <th class="px-4 py-2">Patient</th>
+                                    <th class="px-4 py-2">Doctor</th>
+                                    <th class="px-4 py-2">Date</th>
+                                    <th class="px-4 py-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="px-4 py-2 border">John Doe</td>
+                                    <td class="px-4 py-2 border">Dr. Smith</td>
+                                    <td class="px-4 py-2 border">2023-05-01</td>
+                                    <td class="px-4 py-2 text-green-600 border">Completed</td>
+                                </tr>
+                                <!-- More rows... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-    </aside>
+    </div>
 
-    <section class="flex flex-col flex-1">
-        <!-- Header -->
-        <header class="flex items-center justify-between p-4 bg-white shadow-md lg:ml-72">
-            <div>
-                <h1 class="text-2xl font-semibold text-gray-700">Dashboard</h1>
-            </div>
-            <div class="flex items-center space-x-4">
-                <div class="relative">
-                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 10A7 7 0 105 10a7 7 0 0014 0zM13 7h.01"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute right-0 z-10 hidden w-48 p-2 mt-2 bg-white rounded-md shadow-lg">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 10A7 7 0 105 10a7 7 0 0014 0zM13 7h.01"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute right-0 z-10 hidden w-48 p-2 mt-2 bg-white rounded-md shadow-lg">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Notifications</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Messages</a>
-                    </div>
-                </div>
-                <div>
-                    <img src="/src/assets/user.png" alt="User" class="w-10 h-10 rounded-full">
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <div class="flex flex-col p-4 lg:flex-row lg:p-10 lg:mt-5 lg:ml-72">
-            <main class="flex-1">
-                <!-- Dashboard Widgets -->
-                <div class="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-4">
-                    <!-- Appointments Widget -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-700">Appointments</h3>
-                            <p class="text-2xl font-bold text-gray-900">650</p>
-                        </div>
-                        <div class="p-2 bg-purple-100 rounded-full">
-                            <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Operations Widget -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-700">Operations</h3>
-                            <p class="text-2xl font-bold text-gray-900">54</p>
-                        </div>
-                        <div class="p-2 bg-orange-100 rounded-full">
-                            <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- New Patients Widget -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-700">New Patients</h3>
-                            <p class="text-2xl font-bold text-gray-900">129</p>
-                        </div>
-                        <div class="p-2 bg-green-100 rounded-full">
-                            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 0v4m0-4H8m4 0h4"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Earnings Widget -->
-                    <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-700">Earnings</h3>
-                            <p class="text-2xl font-bold text-gray-900">$20,125</p>
-                        </div>
-                        <div class="p-2 bg-blue-100 rounded-full">
-                            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Charts -->
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <!-- Hospital Survey Chart -->
-                    <div class="p-4 bg-white rounded-lg shadow-md">
-                        <h3 class="mb-2 text-lg font-semibold text-gray-700">Hospital Survey</h3>
-                        <canvas id="hospitalSurveyChart"></canvas>
-                    </div>
-                    <!-- Common Diseases Report Chart -->
-                    <div class="p-4 bg-white rounded-lg shadow-md">
-                        <h3 class="mb-2 text-lg font-semibold text-gray-700">Common Diseases Report</h3>
-                        <canvas id="commonDiseasesChart"></canvas>
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <!-- Footer -->
-        <footer class="p-4 bg-white shadow-md">
-            <div class="text-center text-gray-700">
-                &copy; 2024 Yabatech Medical Center. All rights reserved.
-            </div>
-        </footer>
-    </section>
-</section>
-
-<script>
-    // Sidebar toggle
-    // const sidebar = document.getElementById('sidebar');
-    // const openSidebarBtn = document.getElementById('openSidebarBtn');
-    // const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-
-    // openSidebarBtn.addEventListener('click', () => {
-    //     sidebar.classList.remove('hidden-sidebar');
-    //     openSidebarBtn.classList.add('hidden');
-    //     closeSidebarBtn.classList.remove('hidden');
-    // });
-
-    // closeSidebarBtn.addEventListener('click', () => {
-    //     sidebar.classList.add('hidden-sidebar');
-    //     openSidebarBtn.classList.remove('hidden');
-    //     closeSidebarBtn.classList.add('hidden');
-    // });
-
-    // Chart.js configuration
-    const hospitalSurveyCtx = document.getElementById('hospitalSurveyChart').getContext('2d');
-    const hospitalSurveyChart = new Chart(hospitalSurveyCtx, {
-        type: 'line',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [
-                {
-                    label: 'New Patients',
-                    data: [50, 60, 70, 80, 60, 70, 90],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1,
-                    fill: true,
-                },
-                {
-                    label: 'Old Patients',
-                    data: [30, 40, 60, 70, 50, 60, 80],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    fill: true,
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    const commonDiseasesCtx = document.getElementById('commonDiseasesChart').getContext('2d');
-    const commonDiseasesChart = new Chart(commonDiseasesCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [
-                {
-                    label: 'Disease A',
-                    data: [30, 40, 50, 60, 70, 80, 90],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Disease B',
-                    data: [20, 30, 40, 50, 60, 70, 80],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Disease C',
-                    data: [10, 20, 30, 40, 50, 60, 70],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sample JavaScript functionality
+            const appointmentsCard = document.querySelector('#total-appointments');
+            const totalAppointments = 123; // Example data
+            appointmentsCard.innerText = totalAppointments;
+        });
+    </script>
 </body>
 </html>
