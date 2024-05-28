@@ -16,11 +16,16 @@
   <body class="font-satoshi">
     <!-- nav bar started/ -->
     <nav
-      class="bg-white shadow-md flex justify-between items-center py-5 px-10"
+      class="bg-white shadow-md flex flex-col gap-3 justify-between items-end py-5 px-10 lg:flex-row lg:w-full fixed md:w-full"
     >
       <div class="flex justify-center items-center gap-24 lg:gap-12">
         <!-- hamburger icon -->
-        <i class="fa-solid fa-bars"></i>
+        <div class="lg:hidden">
+          <i
+            class="fa-solid fa-bars cursor-pointer"
+            onclick="handleToggle()"
+          ></i>
+        </div>
         <!-- yabatech logo and name -->
         <div class="flex justify-center items-center gap-2">
           <img
@@ -33,12 +38,14 @@
           </p>
         </div>
         <!-- arrow icon -->
-        <i class="fa-solid fa-arrows-up-down-left-right flex lg:hidden"></i>
+        <div class="lg:hidden" onclick="arrowToggle()">
+          <i class="fa-solid fa-arrows-up-down-left-right flex"></i>
+        </div>
       </div>
       <!-- nav responsive part -->
       <div
         class="lg:flex lg:gap-4 lg:justify-center lg:items-center hidden"
-        id="nav-toggle"
+        id="arrowbar"
       >
         <i class="fa-solid fa-bell"></i>
         <p>Abdulazeez Olagunju</p>
@@ -49,10 +56,50 @@
         />
       </div>
     </nav>
+    <!-- end of nav section -->
+    <!-- dashboard aside begin -->
+    <aside
+      class="bg-white fixed hidden w-[50%] lg:block h-full top-[68px] lg:w-[20%] transition duration-500"
+      id="sidebar"
+    >
+      <!-- doctors profile -->
+      <div class="my-5 mx-5 flex flex-col justify-center items-center gap-1">
+        <img
+          src="../../assets/yabatech_logo.png"
+          alt="doctors picture"
+          class="w-20 h-20 rounded-xl border border-white shadow-lg"
+        />
+        <p>Olagunju Abdulazeez</p>
+        <p class="-m-2">Doctor</p>
+      </div>
+      <!-- dashboard list container -->
+      <div class="mx-4 flex flex-col justify-start items-start">
+        <ul class="font-medium flex flex-col gap-3 text-gray-600 w-full">
+          <li class="bg-gray-100 hover:bg-white rounded-md py-3 pl-4">
+            <a href="">Dashboard</a>
+          </li>
+          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
+            <a href="">Appointments</a>
+          </li>
+          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
+            <a href="">Medical History</a>
+          </li>
+          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
+            <a href="">Vitals</a>
+          </li>
+          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
+            <a href="">Comments/Observation</a>
+          </li>
+          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
+            <a href="">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
 
     <!-- main section -->
-    <main class="bg-[#F0F3FB]">
-      <p class="py-5 text-2xl font-bold ml-5">Doctor Dashboard</p>
+    <section class="bg-[#F0F3FB] pt-20 lg:ml-64">
+      <p class="py-5 text-2xl font-bold ml-10" id="pdown">Doctor Dashboard</p>
       <!--  Box Container -->
       <div class="flex flex-col gap-7 lg:flex-row lg:mx-10">
         <div
@@ -101,19 +148,26 @@
           <p>10% Higher Than Last Month</p>
         </div>
       </div>
-    </main>
+    </section>
 
     <script>
-      document
-        .getElementById("nav-toggle")
-        .addEventListener("click", function () {
-          var navContent = document.getElementById("nav-content");
-          if (navContent.classList.contains("hidden")) {
-            navContent.classList.remove("hidden");
-          } else {
-            navContent.classList.add("hidden");
-          }
-        });
+      // Sidebar toggle
+      const handleToggle = () => {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      };
+      const arrowToggle = () => {
+        const downbar = document.getElementById("arrowbar");
+        downbar.classList.toggle("hidden");
+        downbar.classList.add(
+          "flex",
+          "justify-center",
+          "items-center",
+          "gap-4"
+        );
+        const goDown = document.getElementById("pdown");
+        goDown.classList.toggle("pt-24");
+      };
     </script>
   </body>
 </html>
