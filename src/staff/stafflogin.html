@@ -3,57 +3,58 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		    <link rel="stylesheet" href="../../src/output.css" />
+		<link rel="stylesheet" href="../../src/output.css" />
 		<title>Medical Staff Login</title>
 	</head>
 	<body class="font-satoshi bg-green-600">
-		 <!-- Register  section -->
-    <section>
-      <div class="flex justify-center mt-4">
-        <img
-          src="../assets/yabatech_logo.png"
-          alt="image is here"
-          class="w-[150px]"
-        />
-      </div>
-      <h1 class="font-bold text-center text-3xl my-6">MEDICAL STAFF'S LOGIN</h1>
-      <!-- <p class="text-center text-2xl my-6" >NOTE : This website is not only for YABA-TECH students.</p> -->
-    </section>
+		<!-- Register  section -->
+		<section>
+			<div class="flex justify-center mt-4">
+				<img
+					src="../assets/yabatech_logo.png"
+					alt="image is here"
+					class="w-[150px]"
+				/>
+			</div>
+			<h1 class="font-bold text-center text-3xl my-6">MEDICAL STAFF'S LOGIN</h1>
+			<!-- <p class="text-center text-2xl my-6" >NOTE : This website is not only for YABA-TECH students.</p> -->
+		</section>
 
-    <!-- Form section -->
-    <section class="bg-gray-100 w-[500px] lg:mx-auto py-6 rounded-md">
-      <p class="font-bold text-2xl text-green-600 text-center">Login</p>
-      <form>
-        <div class="flex-col  mx-24">
+		<!-- Form section -->
+		<section class="bg-gray-100 w-[500px] lg:mx-auto py-6 rounded-md">
+			<p class="font-bold text-2xl text-green-600 text-center">Login</p>
+			<form onsubmit="return handleSubmit(event)">
+				<div class="grid items-center">
+					<p id="error-message" class="text-center text-red-600"></p>
+					<input
+						id="staffId"
+						type="text"
+						placeholder="Enter Staff ID"
+						class="w-[300px] mx-auto my-4 p-2 rounded-md"
+					/>
 
-           <input
-            type="text"
-            placeholder="Enter Staff ID"
-            class="w-[300px] mx-auto my-4 p-2 rounded-md"
-          />
+					<input
+						id="password"
+						type="password"
+						placeholder="Enter Password"
+						class="w-[300px] mx-auto my-4 p-2 rounded-md"
+					/>
 
-           <input
-            type="text"
-            placeholder="Enter Password"
-            class="w-[300px] mx-auto my-4 p-2 rounded-md"
-          />  
-          
-          <button
-            type="submit"
-            class="bg-green-600 w-[300px] mx-auto my-4 p-2 rounded-md"
-          >
-            Login
-          </button>
-        </div>
+					<button
+						type="submit"
+						class="bg-green-600 w-[300px] mx-auto my-4 p-2 rounded-md"
+					>
+						Login
+					</button>
+				</div>
 
-        <!-- div for register and text -->
-        <div class="flex justify-center">
-        <a href="index.html">Homepage</a>
-        </div>
-      </form>
-    </section>
+				<!-- div for register and text -->
+				<div class="flex justify-center">
+					<a href="index.html">Homepage</a>
+				</div>
+			</form>
+		</section>
 
-  
-    <script src="script.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>
