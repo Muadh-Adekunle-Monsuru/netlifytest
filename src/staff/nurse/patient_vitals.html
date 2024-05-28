@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Patient Administration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Custom scrollbar styling */
-        ::-webkit-scrollbar {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMlm5iv09OrJtHJQQV9//0+PzpYfP0ZZENQtX87" crossorigin="anonymous"/>
+   <style>
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
@@ -36,12 +37,12 @@
         .text-secondary {
             color: #5f6368;
         }
-    </style>
-    </head>
-    <body class="font-sans antialiased bg-gray-100">
-    
-    <!-- Mobile View Navbar -->
-    <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+   </style>
+</head>
+<body class="flex flex-col lg:flex-row bg-[#f0f8ff]">
+
+     <!-- Mobile View Navbar -->
+  <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
     <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -53,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
     </button>
-    </div>
-    
-    <!-- Sidebar -->
-    <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
+</div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
     <div>
         <!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -72,19 +73,19 @@
                 <ul class="space-y-8 nav-list" id="nav-list">
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_dashboard.html" class="flex items-center gap-5">
-                            <i class="fa-solid fa-table-columns"></i>
+                            <i class="fa-solid fa-table-columns "></i>
                             <span class="text-xl font-semibold">Dashboard</span>
                         </a>
                     </li>
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_appointments.html" class="flex items-center gap-5">
-                            <i class="fa-regular fa-calendar-check"></i>
+                            <i class="fa-regular fa-calendar-check "></i>
                             <span class="text-xl font-semibold">Appointments</span>
                         </a>
                     </li>
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="patient_administration.html" class="flex items-center gap-5">
-                            <i class="fa-regular fa-calendar-check"></i>
+                            <i class="fa-regular fa-calendar-check "></i>
                             <span class="text-xl font-semibold">Patient Administration</span>
                         </a>
                     </li>
@@ -104,10 +105,64 @@
             </div>
         </nav>
     </div>
-    </aside>
+</aside>
 
 
-    <script>
+    <div class="bg-[#f0f8ff]  md:pl-52 w-full lg:ml-20">
+        <div class="flex items-center gap-4 pl-10 py-7 ">
+            <h2 class="text-xl font-bold">Patient Vitals</h2>
+            <i class="fa-solid fa-angle-right fa-lg"></i>
+            <i class="fa-solid fa-house fa-lg"></i>
+        </div>
+        <!-- DASHBOARD APPOINTMENT -->
+
+        <div class="p-8 bg-white rounded-md shadow-lg lg:mx-5 ">
+            <form id="form" onsubmit="return handleSubmit(event)">
+                <div class="space-y-5 lg:space-y-8">
+                    <h3 class="text-lg font-bold text-green-600">Medical Information</h3>
+                    <select name="blood_group" id="blood_group" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                        <option value="" disabled selected>Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+        
+                    <input type="text" placeholder="Blood Pressure" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+        
+                    <input type="text" placeholder="Sugar Level" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input type="text" placeholder="Genotype" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input type="text" placeholder="Temperature" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input type="text" placeholder="Height" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input type="text" placeholder="Weight" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+        
+                    <input type="text" placeholder="Injury/Condition" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+        
+                    <input type="file" id="files" placeholder="Upload Files" class="w-full max-w-4xl py-10 pl-2 ml-1 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500" />
+        
+                    <div class="flex justify-start pt-4 space-x-4">
+                        <button type="submit" class="px-6 py-2 font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Submit</button>
+                        <button type="button" class="px-6 py-2 font-semibold text-white bg-red-700 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+
+      
+
+
+  <script>
 
 document.addEventListener('DOMContentLoaded', () => {
         const sidebar = document.getElementById('sidebar');
@@ -130,7 +185,25 @@ document.addEventListener('DOMContentLoaded', () => {
         //     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
         // });
     });
-      
-    </script>
+             
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const submitButton = document.getElementById("submit-button");
+                const requiredFields = document.querySelectorAll("[required]");
+    
+                requiredFields.forEach(field => {
+                    field.addEventListener("input", () => {
+                        let allFilled = true;
+                        requiredFields.forEach(input => {
+                            if (!input.value) allFilled = false;
+                        });
+                        submitButton.disabled = !allFilled;
+                    });
+                });
+            });
+        </script>
+    
+    
+
 </body>
 </html>
