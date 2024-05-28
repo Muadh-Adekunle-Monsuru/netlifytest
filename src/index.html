@@ -147,7 +147,7 @@
     <section id="first-section" class="flex flex-row w-full justify-between mt-[70px] px-4 md:px-8 lg:px-20 md:px-10 px-4">
         <div class="flex flex-col max-[841px]:items-center gap-6 ">
             <p class="border border-green-600 w-40 rounded-md text-center font-semibold">Experts In Health</p>
-            <p class="font-medium text-5xl w-[450px] max-[841px]:text-center">Caring About Your Future Health <span class="text-green-600 leading-snug
+            <p class="header-text font-medium text-5xl w-[450px] max-[841px]:text-center">Caring About Your Future Health <span class="text-green-600 leading-snug
                font-medium text-5xl">Today</span></p>
             <div class="flex flex-col max-[841px]:items-center gap-4">
               <p class="text-base lg:w-[320px]">There for you when you need real help, your local practitioner.</p>
@@ -179,25 +179,25 @@
 
 <!--first section-->
   <div class="text-center my-8">
-    <p class="border-2 border-green-600 py-4 px-2 rounded-2xl inline-block mt-20">
+    <p class="border-2 border-green-600 w-40 text-center rounded-2xl inline-block mt-20">
       Our Services
     </p>
-    <h1 class="text-3xl text-green-600 font-bold mt-4">
+    <h1 class="header-text text-3xl text-green-600 font-bold mt-4">
       Services That Help You Heal
     </h1>
     <p class="mt-2">What medical help do you need?</p>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-8">
+  <div id="services-con" class="px-4 md:px-8">
     <div
-      class="flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
     >
       <img
         src="assets/firstaidkit.png"
         alt="General Medicine"
         class="w-24 h-24 mb-4"
       />
-      <h1 class="text-xl font-semibold mb-2">General Medicine</h1>
-      <p class="text-center">
+      <h1 class="service-header text-xl font-semibold mb-2">General Medicine</h1>
+      <p class="service-child text-center">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
         deserunt, tempore quas natus saepe numquam tenetur incidunt iure
         doloribus explicabo maiores et amet labore blanditiis, dicta porro
@@ -205,11 +205,11 @@
       </p>
     </div>
     <div
-      class="flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
     >
       <img src="assets/syringe.png" alt="Immunisation" class="w-24 h-24 mb-4" />
-      <h1 class="text-xl font-semibold mb-2">Immunisation</h1>
-      <p class="text-center">
+      <h1 class="service-header text-xl font-semibold mb-2">Immunisation</h1>
+      <p class="service-child text-center">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
         deserunt, tempore quas natus saepe numquam tenetur incidunt iure
         doloribus explicabo maiores et amet labore blanditiis, dicta porro
@@ -217,15 +217,15 @@
       </p>
     </div>
     <div
-      class="flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
     >
       <img
         src="assets/syringe.png"
         alt="Skin Assessment"
         class="w-24 h-24 mb-4"
       />
-      <h1 class="text-xl font-semibold mb-2">Skin Assessment</h1>
-      <p class="text-center">
+      <h1 class="service-header text-xl font-semibold mb-2">Skin Assessment</h1>
+      <p class="service-child text-center">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
         deserunt, tempore quas natus saepe numquam tenetur incidunt iure
         doloribus explicabo maiores et amet labore blanditiis, dicta porro
@@ -235,7 +235,7 @@
   </div>
 
   <h1
-    class="text-center text-green-600 hover:text-yellow-400 font-semibold text-4xl mt-14"
+    class="text-center text-green-600 font-semibold text-4xl mt-14"
   >
     About Us
   </h1>
@@ -270,7 +270,7 @@
       <div class="flex justify-center lg:justify-start w-full mt-5">
         <a
           href="#"
-          class="block w-32 py-2 px-1 text-center bg-green-600 text-white rounded-lg hover:bg-white hover:text-green-600 font-medium"
+          class="block w-32 py-2 px-1 text-center bg-green-600 text-white rounded-lg shadow-lg hover:bg-white hover:text-green-600 font-medium"
         >
           LEARN MORE
         </a>
@@ -284,7 +284,7 @@
       Your Health Care Team: Here When You Need Us
     </h1>
     <button
-      class="w-48 py-2 px-1 mt-8 mb-5 text-center bg-green-600 text-white rounded-lg hover:bg-white hover:text-green-600 font-medium"
+      class="w-48 py-2 px-1 mt-8 mb-5 text-center bg-green-600 text-white rounded-lg hover:bg-white shadow-lg hover:text-green-600 font-medium"
     >
       <a href="#">BOOK APPOINTMENT</a>
     </button>
