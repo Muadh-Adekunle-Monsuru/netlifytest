@@ -70,7 +70,7 @@
                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
                     <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
                 </div>
-                <ul class="space-y-8 nav-list" id="nav-list">
+                <ul class="space-y-6 nav-list" id="nav-list">
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_dashboard.html" class="flex items-center gap-5">
                             <i class="fa-solid fa-table-columns "></i>
@@ -101,6 +101,13 @@
                             <span class="text-xl font-semibold">Patient Vitals</span>
                         </a>
                     </li>
+
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="../stafflogin.html" class="flex items-center gap-5">
+                           <i class="fa-solid fa-right-from-bracket"></i>
+                           <span class="text-lg font-semibold">Logout</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -120,7 +127,7 @@
             <form id="form" onsubmit="return handleSubmit(event)">
                 <div class="space-y-5 lg:space-y-8">
                     <h3 class="text-lg font-bold text-green-600">Medical Information</h3>
-                    <select name="blood_group" id="blood_group" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <select required name="blood_group" id="blood_group" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
                         <option value="" disabled selected>Blood Group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -132,22 +139,30 @@
                         <option value="O-">O-</option>
                     </select>
         
-                    <input type="text" placeholder="Blood Pressure" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <input required type="text" placeholder="Blood Pressure" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
         
-                    <input type="text" placeholder="Sugar Level" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <input required type="text" placeholder="Sugar Level" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
 
-                    <input type="text" placeholder="Genotype" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <select required name="genotype" id="genotype" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                        <option value="" disabled selected>Genotype</option>
+                        <option value="A+">AA</option>
+                        <option value="A-">AC</option>
+                        <option value="B+">AS</option>
+                        <option value="B-">CC</option>
+                        <option value="AB+">SC</option>
+                        <option value="AB-">SS</option>
+                    </select>
 
-                    <input type="text" placeholder="Temperature" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <!-- <input type="text" placeholder="Genotype" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500"> -->
 
-                    <input type="text" placeholder="Height" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <input required type="text" placeholder="Temperature" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
 
-                    <input type="text" placeholder="Weight" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+                    <input required type="text" placeholder="Height" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input required type="text" placeholder="Weight" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
         
-                    <input type="text" placeholder="Injury/Condition" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
-        
-                    <input type="file" id="files" placeholder="Upload Files" class="w-full max-w-4xl py-10 pl-2 ml-1 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500" />
-        
+                    <input required type="text" placeholder="Injury/Condition" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+         
                     <div class="flex justify-start pt-4 space-x-4">
                         <button type="submit" class="px-6 py-2 font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Submit</button>
                         <button type="button" class="px-6 py-2 font-semibold text-white bg-red-700 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Cancel</button>

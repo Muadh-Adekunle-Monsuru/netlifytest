@@ -40,22 +40,6 @@
    </style>
 </head>
 <body class="flex flex-col lg:flex-row ">
-
-     <!-- Mobile View Navbar -->
-  <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
-    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-    <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
-    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-</div>
-
 <!-- Sidebar -->
 <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
     <div>
@@ -70,22 +54,22 @@
                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
                     <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
                 </div>
-                <ul class="space-y-8 nav-list" id="nav-list">
+                <ul class="space-y-6 nav-list" id="nav-list">
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_dashboard.html" class="flex items-center gap-5">
-                            <i class="fa-solid fa-table-columns "></i>
+                            <i class="fa-solid fa-table-columns"></i>
                             <span class="text-xl font-semibold">Dashboard</span>
                         </a>
                     </li>
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_appointments.html" class="flex items-center gap-5">
-                            <i class="fa-regular fa-calendar-check "></i>
+                            <i class="fa-regular fa-calendar-check"></i>
                             <span class="text-xl font-semibold">Appointments</span>
                         </a>
                     </li>
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="patient_administration.html" class="flex items-center gap-5">
-                            <i class="fa-regular fa-calendar-check "></i>
+                            <i class="fa-regular fa-calendar-check"></i>
                             <span class="text-xl font-semibold">Patient Administration</span>
                         </a>
                     </li>
@@ -99,6 +83,13 @@
                         <a href="patient_vitals.html" class="flex items-center gap-5">
                             <i class="fa-regular fa-calendar-check "></i>
                             <span class="text-xl font-semibold">Patient Vitals</span>
+                        </a>
+                    </li>
+
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="../stafflogin.html" class="flex items-center gap-5">
+                           <i class="fa-solid fa-right-from-bracket"></i>
+                           <span class="text-lg font-semibold">Logout</span>
                         </a>
                     </li>
                 </ul>
