@@ -116,38 +116,31 @@
       ></div>
     </header>
 <!--initial section-->
-    <section class="py-5">
-      <section
-        class="container mx-auto flex flex-col lg:flex-row items-center gap-5 px-4 bg-green-300"
-      >
-        <div
-          class="flex flex-col justify-center items-center text-center gap-2 py-10 lg:py-0 lg:items-start lg:text-left lg:flex-1"
-        >
-          <p class="border-2 border-green-600 px-4 py-2">Expert In Health</p>
-          <h1 class="text-2xl lg:text-4xl font-black py-4">
-            CARING ABOUT<br />
-            YOUR FUTURE HEALTH <span class="text-green-600">TODAY</span>
-          </h1>
-          <p class="mt-5">
-            There for you when you need real help,<br />
-            your local practitioners.
-          </p>
+    <section class="pl-5 lg:pl-16">
+    <div class="lg:flex lg:justify-between lg:mr-14">
+        <div>
+            <p class="border border-green-600 w-40 rounded-md text-center font-semibold text-base my-4">Experts In Health</p>
+            <p class="font-medium leading-snug text-5xl lg:w-[450px]">Caring About Your Future Health <span class="text-green-600 leading-snug
+               font-medium text-5xl">Today</span></p>
+            <p class="text-base p-3 lg:w-[320px]">There for you when you need real help, your local practitioner.</p>
+            <button class="bg-green-600 rounded-md text-white p-2 mb-12">Book an Appointment</button>
         </div>
-        <div class="flex justify-center w-full lg:w-auto">
-          <img
-            src="assets/headerimage.jpeg"
-            alt="Healthcare practitioners offering support"
-            class="w-32 lg:w-64 mt-4 lg:mt-0"
-          />
+        <div class="relative lg:mt-[29px] mr-36">
+            <img src="assets/headerimage1.png" alt="image" class="rounded-lg border border-green-600 w-[260px]  lg:w-auto">
+            <img src="assets/headerimage2.png"  alt="image" class=" top-32  rounded-lg border border-green-600 w-[200px]  absolute left-32 lg:left-48 lg:w-auto">
         </div>
-      </section>
-    </section>
+
+
+
+    </div>
+</section>
+
     <!--initial section end-->
 
 <!--first section-->
 <body>
   <div class="text-center my-8">
-    <p class="border-2 border-green-600 py-4 px-2 rounded-2xl inline-block">
+    <p class="border-2 border-green-600 py-4 px-2 rounded-2xl inline-block mt-20">
       Our Services
     </p>
     <h1 class="text-3xl text-green-600 font-bold mt-4">
@@ -203,7 +196,7 @@
   </div>
 
   <h1
-    class="text-center text-green-600 hover:text-yellow-400 font-semibold text-4xl mt-4"
+    class="text-center text-green-600 hover:text-yellow-400 font-semibold text-4xl mt-14"
   >
     About Us
   </h1>
@@ -260,14 +253,14 @@
 
   <!-- Footer -->
   <footer
-    class="bg-green-600 w-full px-5 py-5 lg:flex lg:flex-col lg:justify-center lg:items-center gap-12"
+    class="bg-gray-700 w-full px-5 py-5 lg:flex lg:flex-col lg:justify-center lg:items-center gap-12"
   >
     <div
       class="lg:flex lg:justify-center lg:gap-10 lg:items-center lg:px-10 w-full"
     >
       <div class="lg:w-1/2">
         <div class="py-3">
-          <p class="font-medium text-white hover:text-black text-center">
+          <p class="font-medium text-white text-center">
             Copyright © 2024 All Rights Reserved. Yabatech Medical Center.
             Powered By Dervac
           </p>
@@ -276,32 +269,29 @@
       <div
         class="flex flex-row justify-evenly items-start lg:w-1/2 lg:justify-center lg:items-center lg:gap-20"
       >
-        <div class="py-5">
-          <ul class="flex flex-col gap-2 font-medium text-white">
-            <h1 class="font-bold text-3xl hover:text-black">Company</h1>
-            <li class="list-disc hover:text-black"><a href="#">About Us</a></li>
-            <li class="list-disc hover:text-black"><a href="#">Blog</a></li>
-            <li class="list-disc hover:text-black">
-              <a href="#">Contact Us</a>
-            </li>
-            <li class="list-disc hover:text-black"><a href="#">Pricing</a></li>
-            <li class="list-disc hover:text-black">
-              <a href="#">Testimonials</a>
-            </li>
-          </ul>
-        </div>
-        <div class="py-5">
-          <ul class="flex flex-col gap-2 font-medium text-white">
-            <h1 class="font-bold text-3xl hover:text-black">Support</h1>
-            <li class="list-disc hover:text-black"><a href="#">FAQ</a></li>
-            <li class="list-disc hover:text-black">
+       <div class="flex flex-col gap-2 font-medium text-white">
+  <h1 class="font-bold text-3xl">Company</h1>
+  <ul class="flex flex-col gap-2">
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Testimonials</a></li>
+  </ul>
+</div>
+
+        <div class="flex flex-col gap-2 font-medium text-white">
+            <h1 class="font-bold text-3xl">Support</h1>
+            <ul class="flex flex-col gap-2">
+            <li ><a href="#">FAQ</a></li>
+            <li>
               <a href="#">Terms of Service</a>
             </li>
-            <li class="list-disc hover:text-black"><a href="#">Legal</a></li>
-            <li class="list-disc hover:text-black">
+            <li><a href="#">Legal</a></li>
+            <li>
               <a href="#">Privacy Policy</a>
             </li>
-            <li class="list-disc hover:text-black">
+            <li>
               <a href="#">Billing Policy</a>
             </li>
           </ul>
@@ -309,7 +299,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js"></script> 
 </body>
 </html>
