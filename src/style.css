@@ -106,5 +106,6 @@
     .header-text{
         font-size: 2rem;
         padding: 0 20px;
+        width: 100%;
     }
 }
