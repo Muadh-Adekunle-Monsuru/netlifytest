@@ -7,24 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="./style.css">
     <title>Yabatech Medical Center</title>
   </head>
   <body class="font-satoshi">
-    <header class="sticky top-0 z-50">
+    <!-- <header class="sticky top-0 z-50">
       <nav
         class="flex items-center justify-between bg-white shadow-md px-4 md:px-8 lg:px-12 xl:px-16"
       >
-        <a href="./index.html" class="flex items-center py-3">
+        <a href="./index.html" class="flex gap-2 items-center py-3">
           <img src="assets/yabatech_logo.png" alt="logo" class="w-14" />
-          <div class="text-black">
-            <p class="leading-3 text-center">
-              <span
-                class="font-semibold text-xl font-sans tracking-widest text-green-600"
-                >YABATECH</span
-              ><br /><span class="font-serif tracking-wide"
-                >Medical center</span
-              >
-            </p>
+          <div>
+            <p class="text-green-600 text-2xl font-bold">YABATECH</p>
+            <p class="font-semibold text-xl">Medical Centre</p>
           </div>
         </a>
 
@@ -37,8 +32,8 @@
             <img src="assets/icon-hamburger.svg" alt="Hamburger image" />
           </div>
         </div>
-        <!-- Desktop Navigation -->
-        <ul
+         Desktop Navigation -->
+        <!-- <ul
           class="hidden lg:flex text-xl items-center gap-8 text-gray-700 font-serif lg:ml-10"
         >
           <li
@@ -73,13 +68,13 @@
           </button>
 
           <button
-            class="border-none bg-green-600 rounded-md px-4 py-2 hover:bg-green-700 text-white text-sm shadow-lg"
+            class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white text-sm shadow-lg"
           >
             <a href="#">Student Dashboard</a>
           </button>
-        </ul>
+        </ul> -->
         <!-- End of Desktop Navigation -->
-
+<!-- 
         <div
           id="sideNav"
           class="fixed top-0 right-0 bg-green-600 text-white w-0 h-full flex items-center overflow-x-hidden duration-500 font-bold z-10 lg:hidden"
@@ -92,8 +87,8 @@
             /></a>
           </div>
 
-          <!-- Mobile Navigation -->
-          <nav>
+          Mobile Navigation -->
+          <!-- <nav>
             <ul
               class="text-left text-3xl font-light font-serif ml-4 sm:text-3xl"
             >
@@ -107,38 +102,82 @@
             </ul>
           </nav>
         </div>
-      </nav>
+      </nav> -->
 
-      <div
+      <!-- <div
         onclick="exitNav()"
         id="sideBar"
         class="fixed top-0 right-0 bg-transparent w-0 overflow-x-hidden duration-500 z-10"
-      ></div>
-    </header>
-<!--initial section-->
-    <section class="pl-5 lg:pl-16">
-    <div class="lg:flex lg:justify-between lg:mr-14">
+      ></div> -->
+    <!-- </header> -->
+    <header class="bg-white shadow-lg py-6 flex items-center justify-between lg:px-20 md:px-10 px-4">
+      <div class="flex gap-2 items-center">
+        <img src="assets/yabatech_logo.png" alt="logo" class="w-14">
         <div>
-            <p class="border border-green-600 w-40 rounded-md text-center font-semibold text-base my-4">Experts In Health</p>
-            <p class="font-medium leading-snug text-5xl lg:w-[450px]">Caring About Your Future Health <span class="text-green-600 leading-snug
+          <p class="text-green-600 text-2xl font-bold">YABATECH</p>
+          <p class="font-semibold text-xl">Medical Centre</p>
+        </div>
+      </div>
+      <!-- <nav class="max-[1090px]:absolute max-[1090px]:flex-col max-[1090px]:bg-green-600 max-[1090px]:w-full max-[1090px]:h-full "> -->
+      <nav class="nav">
+          <ul class="flex gap-6">
+            <div id="close-icon" class="bg-black p-2 rounded-[50%] hidden"><img src="assets/icon-close.svg" alt="Close logo"/></div>
+  
+            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="#">Home</a></li>
+            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Services</a></li>
+            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Blog</a></li>
+            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Testimonial</a></li>
+            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">FAQ</a></li>
+
+            <div id="action-buttons-md" class="flex gap-2">
+              <button class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Student Dashboard</button>
+              <button class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Staff Dashboard</button>
+            </div>
+          </ul>
+      </nav>
+
+      <div id="action-buttons-lg" class="flex gap-2">
+        <button class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Student Dashboard</button>
+        <button class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Staff Dashboard</button>
+      </div>
+
+      <img id="hamburger" src="assets/icon-hamburger.svg" alt="Hamburger image" />
+    </header>
+<!--Hero section-->
+    <section id="first-section" class="flex flex-row w-full justify-between mt-[70px] px-4 md:px-8 lg:px-20 md:px-10 px-4">
+        <div class="flex flex-col max-[841px]:items-center gap-6 ">
+            <p class="border border-green-600 w-40 rounded-md text-center font-semibold">Experts In Health</p>
+            <p class="font-medium text-5xl w-[450px] max-[841px]:text-center">Caring About Your Future Health <span class="text-green-600 leading-snug
                font-medium text-5xl">Today</span></p>
-            <p class="text-base p-3 lg:w-[320px]">There for you when you need real help, your local practitioner.</p>
-            <button class="bg-green-600 rounded-md text-white p-2 mb-12">Book an Appointment</button>
+            <div class="flex flex-col max-[841px]:items-center gap-4">
+              <p class="text-base lg:w-[320px]">There for you when you need real help, your local practitioner.</p>
+              <button class="bg-green-600 hover:bg-green-700 rounded-md text-white py-2 px-6 w-fit text-sm">Book an Appointment</button>
+            </div>
         </div>
-        <div class="relative lg:mt-[29px] mr-36">
-            <img src="assets/headerimage1.png" alt="image" class="rounded-lg border border-green-600 w-[260px]  lg:w-auto">
-            <img src="assets/headerimage2.png"  alt="image" class=" top-32  rounded-lg border border-green-600 w-[200px]  absolute left-32 lg:left-48 lg:w-auto">
+        <div class="hero-image w-[40%] relative">
+          <div class="absolute right-20 flex gap-4 items-start">
+            <img src="assets/headerimage1.png" alt="image">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 0L15 30" stroke="#4CAF4F" stroke-width="10"/>
+              <path d="M30 15L-1.07288e-06 15" stroke="#4CAF4F" stroke-width="10"/>
+            </svg>
+          </div>
+
+          <div class="absolute top-[100px] right-0 flex gap-4 items-end">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 0L15 30" stroke="#4CAF4F" stroke-width="10"/>
+              <path d="M30 15L-1.07288e-06 15" stroke="#4CAF4F" stroke-width="10"/>
+            </svg>
+            <img src="assets/headerimage2.png"  alt="image">
+          </div>
+            
+         
         </div>
+    </section>
 
-
-
-    </div>
-</section>
-
-    <!--initial section end-->
+    <!--Hero section end-->
 
 <!--first section-->
-<body>
   <div class="text-center my-8">
     <p class="border-2 border-green-600 py-4 px-2 rounded-2xl inline-block mt-20">
       Our Services
@@ -299,6 +338,8 @@
       </div>
     </div>
   </footer>
+
+  <div class="cover"></div>
   <script src="script.js"></script> 
 </body>
 </html>
