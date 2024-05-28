@@ -21,15 +21,49 @@
             overflow-y: auto; /* Enables vertical scrolling if the content overflows */
         }
 
-        .hidden-sidebar {
+        /* .hidden-sidebar {
+            transform: translateX(-100%);
+        } */
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* .hidden-sidebar {
             transform: translateX(-100%);
         }
+        .transition-transform {
+            transition: transform 0.3s ease-in-out;
+        } */
+        .bg-primary {
+            background-color: #1a73e8;
+        }
+        .text-primary {
+            color: #1a73e8;
+        }
+        .text-secondary {
+            color: #5f6368;
+        }
+
+        @media (max-width: 640px) {
+        #modal .modal-content {
+            width: 90%;
+        }
+    }
     </style>
 </head>
 <body class="font-sans leading-normal tracking-normal bg-gray-100">
- 
-<!-- Mobile Menu -->
-<div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+      <!-- Mobile View Navbar -->
+  <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
     <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -42,43 +76,57 @@
         </svg>
     </button>
 </div>
-<section class=" lg:flex">
-    
-    <section>
-        
-        <aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform bg-white shadow-lg lg:static lg:translate-x-0 lg:h-auto">
-            <div class="flex flex-col items-center p-6">
-                <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-20 mb-4">
-                <h2 class="text-2xl font-semibold text-green-900">Yabatech Medical Center</h2>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed z-40 w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
+    <div>
+        <!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button> -->
+        <nav role="navigation" class="pt-8 pl-4 mt-2">
+            <div class="relative overflow-hidden">
+                <div>
+                    <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
+                    <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
+                </div>
+                <ul class="space-y-8 nav-list" id="nav-list">
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="nurse_dashboard.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-table-columns fa-2x"></i>
+                            <span class="text-xl font-semibold">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="nurse_appointments.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Appointments</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_administration.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Administration</span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_medical_history.html" class="flex items-center gap-5">
+                            <i class="fa-solid fa-book fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Medical <span>History</span></span>
+                        </a>
+                    </li>
+                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                        <a href="patient_vitals.html" class="flex items-center gap-5">
+                            <i class="fa-regular fa-calendar-check fa-2x"></i>
+                            <span class="text-xl font-semibold">Patient Vitals</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <nav class="flex-1 px-4 pb-4 space-y-2 text-lg font-semibold text-green-900">
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Dashboard" class="w-5">
-                    <span class="ml-3">Dashboard</span>
-                </a>
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Appointments" class="w-5">
-                    <span class="ml-3">Appointments</span>
-                </a>
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Book Appointment" class="w-5">
-                    <span class="ml-3">Book Appointment</span>
-                </a>
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Prescriptions" class="w-5">
-                    <span class="ml-3">Prescriptions</span>
-                </a>
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Medical Record" class="w-5">
-                    <span class="ml-3">Medical Record</span>
-                </a>
-                <a href="#" class="flex items-center px-4 py-2 transition rounded-md hover:bg-gray-100">
-                    <img src="/src/assets/yabatech_logo.png" alt="Logout" class="w-5">
-                    <span class="ml-3">Logout</span>
-                </a>
-            </nav>
-        </aside>
-    </section>
+        </nav>
+    </div>
+</aside>
     
       
         <section>
@@ -136,52 +184,53 @@
 
 
     <!-- Modal -->
-    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 modal">
-        <div class="w-1/3 p-4 bg-white rounded shadow-lg modal-content">
-            <h2 id="modalTitle" class="mb-4 text-xl">Edit Appointment</h2>
-            <form id="appointmentForm">
-                <div class="mb-4">
-                    <label class="block mb-2">Name</label>
-                    <input id="modalName" name="name" type="text" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Email</label>
-                    <input id="modalEmail" name="email" type="email" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Gender</label>
-                    <select id="modalGender" name="gender" class="w-full px-4 py-2 border rounded">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Date</label>
-                    <input id="modalDate" name="date" type="date" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Time</label>
-                    <input id="modalTime" name="time" type="time" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Mobile</label>
-                    <input id="modalMobile" name="mobile" type="text" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Doctor</label>
-                    <input id="modalDoctor" name="doctor" type="text" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2">Injury/Condition</label>
-                    <input id="modalCondition" name="condition" type="text" class="w-full px-4 py-2 border rounded">
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" onclick="closeModal()" class="px-4 py-2 mr-2 text-white bg-gray-500 rounded">Cancel</button>
-                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded">Save</button>
-                </div>
-            </form>
-        </div>
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 modal">
+    <div class="w-full max-w-md p-4 bg-white rounded shadow-lg modal-content">
+        <h2 id="modalTitle" class="mb-4 text-xl">Edit Appointment</h2>
+        <form id="appointmentForm">
+            <div class="mb-4">
+                <label class="block mb-2">Name</label>
+                <input id="modalName" name="name" type="text" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Email</label>
+                <input id="modalEmail" name="email" type="email" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Gender</label>
+                <select id="modalGender" name="gender" class="w-full px-4 py-2 border rounded">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Date</label>
+                <input id="modalDate" name="date" type="date" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Time</label>
+                <input id="modalTime" name="time" type="time" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Mobile</label>
+                <input id="modalMobile" name="mobile" type="text" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Doctor</label>
+                <input id="modalDoctor" name="doctor" type="text" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Injury/Condition</label>
+                <input id="modalCondition" name="condition" type="text" class="w-full px-4 py-2 border rounded">
+            </div>
+            <div class="flex justify-end">
+                <button type="button" onclick="closeModal()" class="px-4 py-2 mr-2 text-white bg-gray-500 rounded">Cancel</button>
+                <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded">Save</button>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <script>
         let editMode = false;
@@ -270,21 +319,26 @@
         });
 
 
-         // Sidebar toggle
-    const sidebar = document.getElementById('sidebar');
-    const openSidebarBtn = document.getElementById('openSidebarBtn');
-    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        document.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.getElementById('sidebar');
+        const openSidebarBtn = document.getElementById('openSidebarBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        // const closeSidebarMobileBtn = document.getElementById('closeSidebarMobileBtn');
 
-    openSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.remove('hidden-sidebar');
-        openSidebarBtn.classList.add('hidden');
-        closeSidebarBtn.classList.remove('hidden');
-    });
+        openSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            closeSidebarBtn.classList.remove('hidden');
+        });
 
-    closeSidebarBtn.addEventListener('click', () => {
-        sidebar.classList.add('hidden-sidebar');
-        openSidebarBtn.classList.remove('hidden');
-        closeSidebarBtn.classList.add('hidden');
+        closeSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            closeSidebarBtn.classList.add('hidden');
+        });
+
+        // closeSidebarMobileBtn.addEventListener('click', () => {
+        //     sidebar.classList.add('-translate-x-full');
+        //     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
+        // });
     });
     </script>
 </body>
