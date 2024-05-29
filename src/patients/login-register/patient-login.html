@@ -3,54 +3,65 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		    <link rel="stylesheet" href="../../output.css" />
+		<link rel="stylesheet" href="../../output.css" />
 		<title>Patients/staff login</title>
 	</head>
 	<body class="font-satoshi bg-green-600">
-		 <!-- Register  section -->
-    <section>
-      <div class="flex justify-center mt-4">
-        <img
-          src="../../assets/yabatech_logo.png"
-          alt="image is here"
-          class="w-[150px]"
-        />
-      </div>
-      <h1 class="font-bold text-center text-3xl my-6">PATIENTS' / STAFFS' LOGIN</h1>
-      <!-- <p class="text-center text-2xl my-6" >NOTE : This website is not only for YABA-TECH students.</p> -->
-    </section>
+		<!-- Register  section -->
+		<section>
+			<div class="flex justify-center mt-4">
+				<img
+					src="../../assets/yabatech_logo.png"
+					alt="image is here"
+					class="w-[150px]"
+				/>
+			</div>
+			<h1 class="font-bold text-center text-3xl my-6">PATIENT'S LOGIN</h1>
+			<p id="error-message" class="text-center text-red-600"></p>
+			<!-- <p class="text-center text-2xl my-6" >NOTE : This website is not only for YABA-TECH students.</p> -->
+		</section>
 
-    <!-- Form section -->
-    <section class="bg-gray-200 w-[500px] lg:mx-auto py-6 rounded-md">
-      <p class="font-bold text-2xl text-green-600 text-center">Login</p>
-      <form>
-        <div class="flex flex-col">
-          <!-- <input
-            type="text"
-            placeholder="Enter Email"
-            class="w-[300px] mx-auto my-4 p-2 rounded-md"
-          /> -->
-          <input
-            type="text"
-            placeholder="Enter Your Matric Number or Staff ID"
-            class="w-[300px] mx-auto my-4 p-2 rounded-md"
-          />
-          <button
-            type="submit"
-            class="bg-green-600 w-[300px] mx-auto my-4 p-2 rounded-md"
-          >
-            Login
-          </button>
-        </div>
+		<!-- Form section -->
+		<section class="bg-gray-200 w-1/2 mx-auto py-6 rounded-md">
+			<p class="font-bold text-2xl text-green-600 text-center">Login</p>
+			<form id="login-form" onsubmit="return handleLogin(event)">
+				<div class="flex flex-col">
+					<div class="flex flex-col w-1/2 mx-auto mt-4 gap-3">
+						<label>Matric/Staff Id</label>
+						<input
+							name="matricno"
+							type="text"
+							placeholder="Enter Your Matric Number or Staff ID"
+							class="p-2 rounded-md"
+						/>
+					</div>
+					<div class="flex flex-col w-1/2 mx-auto mt-4 gap-3">
+						<label> Password </label
+						><input
+							name="password"
+							type="password"
+							placeholder="Password"
+							class="p-2 rounded-md"
+						/>
+					</div>
+					<button
+						type="submit"
+						class="bg-green-600 w-1/2 mx-auto my-4 p-2 rounded-md"
+					>
+						Login
+					</button>
+				</div>
 
-        <!-- div for register and text -->
-        
-        <div class="flex justify-center">
-        <a href="index.html">Homepage</a>
-        </div>
-      </form>
-    </section>
+				<!-- div for register and text -->
 
-    <script src="script.js"></script>
+				<div class="flex justify-center">
+					<a href="./patient_register.html"
+						>New user? <span class="text-blue-900 font-bold">register</span></a
+					>
+				</div>
+			</form>
+		</section>
+
+		<script src="../script.js"></script>
 	</body>
 </html>
