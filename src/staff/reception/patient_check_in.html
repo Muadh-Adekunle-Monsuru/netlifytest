@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Check In & Out</title>
     <link rel="stylesheet" href="/src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .modal {
             display: none;
@@ -30,7 +30,7 @@
     }
     </style>
 </head>
-<body>
+<body class="bg-[#f0f8ff]">
        <!-- Mobile Menu -->
 <div class="flex justify-between p-3 bg-white shadow-md lg:hidden">
     <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
@@ -107,70 +107,109 @@
                 </nav>
         </aside>
 
-        <section>
-            <div>
-                <h3 class="text-lg font-bold mb-2">Recent Appointments</h3>
+        <section class=" md:ml-72">
+            <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
+                <button class="w-20 rounded-md mr-2">
+                   <i class="fa-solid fa-bell fa-xl"></i>
+                </button>
+       
+                <button class="w-20 rounded-md font-bold">
+                   Profile
+                   <i class="fa-solid fa-circle-user fa-xl"></i>
+                </button>
+            </div>
+
+            <div class="py-3 px-5">
+                <h3 class="text-lg font-bold mb-2">Patient Check In-Out</h3>
                 <div class="pr-3 space-y-7">             
                     <div class="overflow-x-auto bg-white rounded-lg shadow-md">
                         <table class="min-w-full bg-white">
                             <thead class="bg-gray-200 text-gray-600">
                                 <tr>
-                                    <th class="py-2 px-4 text-left">Patient</th>
-                                    <th class="py-2 px-4 text-left">Date</th>
-                                    <th class="py-2 px-4 text-left">Time</th>
-                                    <th class="py-2 px-4 text-left">Diseases</th>
+                                    <th class="py-2 px-16 text-left">Patient Name</th>
+                                    <th class="py-2 px-16 text-left">Date</th>
+                                    <th class="py-2 px-16 text-left">Time Check-In</th>
+                                    <th class="py-2 px-16 text-left">Time Check-Out</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">John Doe</td>
-                                    <td class="py-2 px-4">2024-05-26</td>
-                                    <td class="py-2 px-4">10:00 AM</td>
-                                    <td class="py-2 px-4">Fever</td>
+                                    <td class="py-2 px-16">John Doe</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Jane Smith</td>
-                                    <td class="py-2 px-4">2024-05-26</td>
-                                    <td class="py-2 px-4">01:00 PM</td>
-                                    <td class="py-2 px-4">Malaria</td>
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">01:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
     
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Okafor Obi</td>
-                                    <td class="py-2 px-4">2024-04-26</td>
-                                    <td class="py-2 px-4">02:30 PM</td>
-                                    <td class="py-2 px-4">Typhoid</td>
+                                    <td class="py-2 px-16">Okafor Obi</td>
+                                    <td class="py-2 px-16">20216-016-26</td>
+                                    <td class="py-2 px-16">02:30 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
     
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Ajayi Ola</td>
-                                    <td class="py-2 px-4">2024-05-26</td>
-                                    <td class="py-2 px-4">09:30 AM</td>
-                                    <td class="py-2 px-4">Cholera</td>
+                                    <td class="py-2 px-16">Ajayi Ola</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">09:30 AM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
     
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Ben Tola</td>
-                                    <td class="py-2 px-4">2024-05-22</td>
-                                    <td class="py-2 px-4">11:30 AM</td>
-                                    <td class="py-2 px-4">Infection</td>
+                                    <td class="py-2 px-16">Ben Tola</td>
+                                    <td class="py-2 px-16">20216-05-22</td>
+                                    <td class="py-2 px-16">11:30 AM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
     
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Jane Smith</td>
-                                    <td class="py-2 px-4">2024-05-26</td>
-                                    <td class="py-2 px-4">01:30 PM</td>
-                                    <td class="py-2 px-4">Jaundice</td>
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">01:30 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
     
                                 <tr class="border-b">
-                                    <td class="py-2 px-4">Jane Smith</td>
-                                    <td class="py-2 px-4">2024-05-26</td>
-                                    <td class="py-2 px-4">12:00 PM</td>
-                                    <td class="py-2 px-4">Headache</td>
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">12:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
                                 </tr>
-                                <!-- Add more rows as needed -->
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">12:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">12:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">12:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-2 px-16">Jane Smith</td>
+                                    <td class="py-2 px-16">20216-05-26</td>
+                                    <td class="py-2 px-16">12:00 PM</td>
+                                    <td class="py-2 px-16">10:00 AM</td>
+                                </tr>
                             </tbody>
+                            
                         </table>
                     </div>
         </section>
