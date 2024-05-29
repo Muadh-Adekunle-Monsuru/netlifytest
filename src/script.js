@@ -13,8 +13,6 @@ function closeNav() {
 }
 cancel.addEventListener("click", closeNav)
 cover.addEventListener("click", closeNav)
-
-
 /*Close navigation*/
 // function exitNav() {
 //   document.getElementById("sideBar").style.width = "0";
