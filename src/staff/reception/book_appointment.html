@@ -34,7 +34,7 @@
  </style>
 <body>
        <!-- Mobile Menu -->
-       <div class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
+       <div class="fixed z-50 flex justify-between w-full p-4 bg-white shadow-md lg:hidden">
         <div>
             <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -49,61 +49,61 @@
         </div>
             <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
     </div>            
-       <aside id="sidebar" class="fixed w-72 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black ">
-               <nav role="navigation" class="pl-4 pt-8">
-                    <div class="mt- relative overflow-hidden">
+       <aside id="sidebar" class="fixed h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md w-72 shadow-black ">
+               <nav role="navigation" class="pt-8 pl-4">
+                    <div class="relative overflow-hidden mt-">
                         <div class="">
-                           <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name w-28 mx-auto pl-2 pr-3 pb-5"/>  
-                            <h1 hidden id="main" class="md:block text-xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
+                           <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>  
+                            <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
                         </div>
       
-                       <ul class="nav-list space-y-3" id="nav-list">
-                           <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                       <ul class="space-y-3 nav-list" id="nav-list">
+                           <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                               <a href="receptionist_dashboard.html" class="flex items-center gap-5">
                                  <i class="fa-solid fa-table-columns"></i>
                                   <span class="font-semibold">Dashboard</span>
                               </a>
                          </li>
       
-                           <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                           <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                                 <a href="appointment.html" class="flex items-center gap-5">
                                  <i class="fa-regular fa-calendar-check"></i>
-                                    <span class="font-semibold text-lg">Appointment</span>
+                                    <span class="text-lg font-semibold">Appointment</span>
                                 </a>
                            </li>
     
-                           <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                           <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                            <a href="book_appointment.html" class="flex items-center gap-5">
                             <i class="fa-regular fa-calendar-check"></i>
-                               <span class="font-semibold text-lg">Book Appointment</span>
+                               <span class="text-lg font-semibold">Book Appointment</span>
                            </a>
                       </li>
     
-                            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                            <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                                 <a href="view_appointments.html" class="flex items-center gap-5">
                                  <i class="fa-solid fa-book"></i>
-                                    <span class="font-semibold text-lg">View Appointment</span>
+                                    <span class="text-lg font-semibold">View Appointment</span>
                                 </a>
                             </li>
     
-                           <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                           <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                             <a href="patient_check_in.html" class="flex items-center gap-5">
                              <i class="fa-regular fa-calendar-check"></i>
-                                <span class="font-semibold text-lg">Patient Check In & Out</span>
+                                <span class="text-lg font-semibold">Patient Check In & Out</span>
                             </a>
                        </li>
       
-                            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                            <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                               <a href="patients_details.html" class="flex items-center gap-5">
                                  <i class="fa-solid fa-notes-medical"></i>
-                                 <span class="font-semibold text-lg">Medical History</span>
+                                 <span class="text-lg font-semibold">Medical History</span>
                               </a>
                           </li>
     
-                          <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                          <li class="p-2 text-lg text-green-700 nav-item rounded-l-xl">
                            <a href="../stafflogin.html" class="flex items-center gap-6">
                               <i class="fa-solid fa-right-from-bracket"></i>
-                              <span class="font-semibold text-lg">Logout</span>
+                              <span class="text-lg font-semibold">Logout</span>
                            </a>
                        </li>
                         </ul>
@@ -114,12 +114,12 @@
 
    <!-- SECTION MAIN CONTENT -->
    <section class="md:ml-20">
-      <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
-         <button class="w-20 rounded-md mr-2">
+      <div class="w-full py-5 pr-6 text-right bg-white shadow-sm shadow-black">
+         <button class="w-20 mr-2 rounded-md">
             <i class="fa-solid fa-bell fa-xl"></i>
          </button>
 
-         <button class="w-20 rounded-md font-bold">
+         <button class="w-20 font-bold rounded-md">
             Profile
             <i class="fa-solid fa-circle-user fa-xl"></i>
          </button>
@@ -129,15 +129,15 @@
 
       <div class="bg-[#f0f8ff] pl-16 md:pl-52 w-full">
          <div class="flex items-center gap-4 pl-10 py-7">
-            <h2 class="font-bold text-xl">Book Appointments</h2>
+            <h2 class="text-xl font-bold">Book Appointments</h2>
             <i class="fa-solid fa-angle-right fa-lg"></i> 
             <i class="fa-solid fa-house fa-lg"></i>
          </div>
          <!-- DASHBOARD APPOINTMENT -->
          <div class="rounded-md">
             <form id="form" onsubmit="return handleSubmit(event)">
-               <div class="mx-10 md:mx-10 space-y-5 lg:space-y-8">
-                  <h3 class="text-green-600 font-bold">Book Appointments</h3>
+               <div class="mx-10 space-y-5 md:mx-10 lg:space-y-8">
+                  <h3 class="font-bold text-green-600">Book Appointments</h3>
                   <input type="text" placeholder="First name" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
                   rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
 
@@ -167,8 +167,8 @@
                   rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
                </div>
 
-               <div class="py-10 lg:pt-12 mx-10 md:mx-10 space-y-5 lg:space-y-8">
-                  <h3 class="text-green-600 font-bold">Appointment Details</h3>
+               <div class="py-10 mx-10 space-y-5 lg:pt-12 md:mx-10 lg:space-y-8">
+                  <h3 class="font-bold text-green-600">Appointment Details</h3>
                   <input type="date" placeholder="Date Of Appointment" class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
                   rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
 
@@ -189,8 +189,8 @@
                      rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
                      
                      <div>
-                        <button class="bg-blue-700 text-white px-6 py-2 font-semibold rounded-md">Submit</button>
-                        <button class="bg-red-700 text-white px-6 py-2 font-semibold rounded-md">Cancel</button>
+                        <button class="px-6 py-2 font-semibold text-white bg-blue-700 rounded-md">Submit</button>
+                        <button class="px-6 py-2 font-semibold text-white bg-red-700 rounded-md">Cancel</button>
                      </div>
                </div>
 
