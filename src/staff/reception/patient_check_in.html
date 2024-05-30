@@ -7,30 +7,31 @@
     <link rel="shortcut icon" href="/src/assets/yabatech_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .modal {
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal.active {
-            display: flex;
-        }
-        .modal-content {
-            max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
-            overflow-y: auto; /* Enables vertical scrolling if the content overflows */
-        }
-
-        .hidden-sidebar {
-            transform: translateX(-100%);
-        }
-
-        .active{
-        background-color: #f0f8ff;
-       
-    }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+    .modal {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal.active {
+        display: flex;
+    }
+    .modal-content {
+        max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
+        overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+    }
+
+    .hidden-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .active{
+    background-color: #f0f8ff;
+   
+}
+</style>
 <body class="bg-[#f0f8ff]">
        <!-- Mobile Menu -->
        <div class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
