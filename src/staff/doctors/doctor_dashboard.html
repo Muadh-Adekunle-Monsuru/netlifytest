@@ -10,98 +10,172 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
+      ````````````````````````````````````````````````````
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="font-satoshi">
-    <!-- nav bar started/ -->
-    <nav
-      class="bg-white shadow-md flex flex-col gap-3 justify-between items-end py-5 px-10 lg:flex-row lg:w-full fixed md:w-full"
-    >
-      <div class="flex justify-center items-center gap-24 lg:gap-12">
-        <!-- hamburger icon -->
-        <div class="lg:hidden">
-          <i
-            class="fa-solid fa-bars cursor-pointer"
-            onclick="handleToggle()"
-          ></i>
-        </div>
-        <!-- yabatech logo and name -->
-        <div class="flex justify-center items-center gap-2">
-          <img
-            src="../../assets/yabatech_logo.png"
-            alt="yabatech logo"
-            class="w-10 h-10"
-          />
-          <p class="text-green-700 font-semibold max-w-40 leading-4">
-            Yaba College of Technology
-          </p>
-        </div>
-        <!-- arrow icon -->
-        <div class="lg:hidden" onclick="arrowToggle()">
-          <i class="fa-solid fa-arrows-up-down-left-right flex"></i>
-        </div>
-      </div>
-      <!-- nav responsive part -->
-      <div
-        class="lg:flex lg:gap-4 lg:justify-center lg:items-center hidden"
-        id="arrowbar"
+  <style>
+    .modal {
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
+      overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+    }
+
+    .hidden-sidebar {
+      transform: translateX(-100%);
+    }
+
+    .active {
+      background-color: #f0f8ff;
+    }
+  </style>
+
+  <body class="font-satoshi bg-[#f0f8ff]">
+    <!-- Mobile Menu -->
+    <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+      <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+      <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10" />
+      <button
+        id="closeSidebarBtn"
+        class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
       >
-        <i class="fa-solid fa-bell"></i>
-        <p>Abdulazeez Olagunju</p>
-        <img
-          src="../../assets/yabatech_logo.png"
-          alt="profile pic"
-          class="rounded-full w-8 h-8"
-        />
-      </div>
-    </nav>
-    <!-- end of nav section -->
-    <!-- dashboard aside begin -->
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- nav bar on large screen -->
+    <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
+      <button class="w-20 rounded-md mr-2">
+        <i class="fa-solid fa-bell fa-xl"></i>
+      </button>
+
+      <button class="w-20 rounded-md font-bold">
+        Profile
+        <i class="fa-solid fa-circle-user fa-xl"></i>
+      </button>
+    </div>
+
+    <!-- side bar -->
+
     <aside
-      class="bg-white fixed hidden w-[50%] lg:block h-full top-[68px] lg:w-[20%] transition duration-500"
       id="sidebar"
+      class="fixed w-72 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black"
     >
-      <!-- doctors profile -->
-      <div class="my-5 mx-5 flex flex-col justify-center items-center gap-1">
-        <img
-          src="../../assets/yabatech_logo.png"
-          alt="doctors picture"
-          class="w-20 h-20 rounded-xl border border-white shadow-lg"
-        />
-        <p>Olagunju Abdulazeez</p>
-        <p class="-m-2">Doctor</p>
-      </div>
-      <!-- dashboard list container -->
-      <div class="mx-4 flex flex-col justify-start items-start">
-        <ul class="font-medium flex flex-col gap-3 text-gray-600 w-full">
-          <li class="bg-gray-100 hover:bg-white rounded-md py-3 pl-4">
-            <a href="">Dashboard</a>
-          </li>
-          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
-            <a href="">Appointments</a>
-          </li>
-          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
-            <a href="">Medical History</a>
-          </li>
-          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
-            <a href="">Vitals</a>
-          </li>
-          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
-            <a href="">Comments/Observation</a>
-          </li>
-          <li class="hover:bg-gray-100 bg-white rounded-md py-3 pl-4">
-            <a href="">Logout</a>
-          </li>
-        </ul>
-      </div>
+      <nav role="navigation" class="pl-4 pt-8">
+        <div class="mt- relative overflow-hidden">
+          <div class="">
+            <img
+              src="/src/assets/yabatech_logo.png"
+              alt="Yabatech Logo"
+              class="name w-28 mx-auto pl-2 pr-3 pb-5"
+            />
+            <h1
+              hidden
+              id="main"
+              class="md:block text-xl text-green-600 font-bold text-center pb-3"
+            >
+              YABATECH MEDICAL CENTER
+            </h1>
+          </div>
+
+          <ul class="nav-list space-y-3" id="nav-list">
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./doctor_dashboard.html" class="flex items-center gap-5">
+                <i class="fa-solid fa-table-columns"></i>
+                <span class="font-semibold">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./doctors_tasks.html" class="flex items-center gap-5">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span class="font-semibold text-lg">Tasks</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="./patient_medical_history.html"
+                class="flex items-center gap-5"
+              >
+                <i class="fa-solid fa-notes-medical"></i>
+                <span class="font-semibold text-lg"
+                  >Patient Medical History</span
+                >
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./patient_vitals.html" class="flex items-center gap-5">
+                <i class="fa-solid fa-book"></i>
+                <span class="font-semibold text-lg">Patient Vital</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="./view_appointments.html"
+                class="flex items-center gap-5"
+              >
+                <i class="fa-regular fa-calendar-check"></i>
+                <span class="font-semibold text-lg">View Appointment</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="../../staff/stafflogin.html"
+                class="flex items-center gap-6"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="font-semibold text-lg">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </aside>
 
     <!-- main section -->
-    <section class="bg-[#F0F3FB] pt-20 lg:ml-64">
-      <p class="py-5 text-2xl font-bold ml-10" id="pdown">Doctor Dashboard</p>
+    <section class="pt-10 lg:pt-0 lg:ml-64">
+      <p class="py-5 text-2xl font-bold ml-10">Doctor Dashboard</p>
       <!--  Box Container -->
-      <div class="flex flex-col gap-7 lg:flex-row lg:mx-10">
+      <div class="flex flex-col gap-7 lg:flex-row lg:mr-10 lg:ml-14">
         <div
           class="w-[88%] px-5 py-10 text-white bg-gradient-to-r from-blue-950 to-blue-600 rounded-md flex flex-col gap-3 mx-auto"
         >
@@ -150,24 +224,56 @@
       </div>
     </section>
 
+    <!-- patient survey and appointment review -->
+    <section
+      class="mt-10 flex flex-col justify-center items-center gap-5 lg:flex-row lg:gap-10 lg:ml-64 lg:items-start"
+    >
+      <div class="rounded-md">
+        <img
+          src="../../assets/patient-survey-image.PNG"
+          alt="patient survey chat"
+        />
+      </div>
+      <div>
+        <img
+          src="../../assets/apointment-review.PNG"
+          alt="appointment review chat "
+        />
+      </div>
+    </section>
+
     <script>
+      let navList = document.getElementById("nav-list");
+      let items = navList.getElementsByClassName("nav-item ");
+
+      for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+          let current = document.querySelectorAll(".active");
+
+          current.forEach((element) => {
+            element.classList.remove("active");
+          });
+
+          this.classList.add("active");
+        });
+      }
+
       // Sidebar toggle
-      const handleToggle = () => {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("hidden");
-      };
-      const arrowToggle = () => {
-        const downbar = document.getElementById("arrowbar");
-        downbar.classList.toggle("hidden");
-        downbar.classList.add(
-          "flex",
-          "justify-center",
-          "items-center",
-          "gap-4"
-        );
-        const goDown = document.getElementById("pdown");
-        goDown.classList.toggle("pt-24");
-      };
+      const sidebar = document.getElementById("sidebar");
+      const openSidebarBtn = document.getElementById("openSidebarBtn");
+      const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+
+      openSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("hidden-sidebar");
+        openSidebarBtn.classList.add("hidden");
+        closeSidebarBtn.classList.remove("hidden");
+      });
+
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.add("hidden-sidebar");
+        openSidebarBtn.classList.remove("hidden");
+        closeSidebarBtn.classList.add("hidden");
+      });
     </script>
   </body>
 </html>

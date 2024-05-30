@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient vitals</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .modal {
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
+            overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+        }
+
+        .hidden-sidebar {
+            transform: translateX(-100%);
+        }
+
+        .active{
+        background-color: #f0f8ff;
+       
+    }
+    </style>
+</head>
+<body class="bg-[#f0f8ff]">
+       <!-- Mobile Menu -->
+<div class="flex justify-between p-3 bg-white shadow-md lg:hidden">
+    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h16M3 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+    <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
+    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+</div>        
+       <aside
+      id="sidebar"
+      class="fixed w-72 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black"
+    >
+      <nav role="navigation" class="pl-4 pt-8">
+        <div class="mt- relative overflow-hidden">
+          <div class="">
+            <img
+              src="/src/assets/yabatech_logo.png"
+              alt="Yabatech Logo"
+              class="name w-28 mx-auto pl-2 pr-3 pb-5"
+            />
+            <h1
+              hidden
+              id="main"
+              class="md:block text-xl text-green-600 font-bold text-center pb-3"
+            >
+              YABATECH MEDICAL CENTER
+            </h1>
+          </div>
+
+          <ul class="nav-list space-y-3" id="nav-list">
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./doctor_dashboard.html" class="flex items-center gap-5">
+                <i class="fa-solid fa-table-columns"></i>
+                <span class="font-semibold">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./doctors_tasks.html" class="flex items-center gap-5">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span class="font-semibold text-lg">Tasks</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="./patient_medical_history.html"
+                class="flex items-center gap-5"
+              >
+                <i class="fa-solid fa-notes-medical"></i>
+                <span class="font-semibold text-lg"
+                  >Patient Medical History</span
+                >
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a href="./patient_vitals.html" class="flex items-center gap-5">
+                <i class="fa-solid fa-book"></i>
+                <span class="font-semibold text-lg">Patient Vital</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="./view_appointments.html"
+                class="flex items-center gap-5"
+              >
+                <i class="fa-regular fa-calendar-check"></i>
+                <span class="font-semibold text-lg">View Appointment</span>
+              </a>
+            </li>
+
+            <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+              <a
+                href="../../staff/stafflogin.html"
+                class="flex items-center gap-6"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="font-semibold text-lg">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+        <section class="md:ml-72">
+            <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6">
+                <button class="w-20 rounded-md mr-2">
+                   <i class="fa-solid fa-bell fa-xl"></i>
+                </button>
+       
+                <button class="w-20 rounded-md font-bold">
+                   Profile
+                   <i class="fa-solid fa-circle-user fa-xl"></i>
+                </button>
+            </div>
+
+            <div class="pl-5">
+                <h3 class="text-lg font-bold py-5">View Patients Vitals</h3>
+                <div class="pr-3 space-y-7">             
+                    <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-200 text-gray-600">
+                                <tr>
+                                    <th class="py-2 px-2 text-left">First Name</th>
+                                    <th class="py-2 px-2 text-left">Last Name</th>
+                                    <th class="py-2 px-2 text-left">Blood Group</th>
+                                    <th class="py-2 px-2 text-left">Blood Pressure</th>
+                                    <th class="py-2 px-2 text-left">Sugar Level</th>
+                                    <th class="py-2 px-2 text-left">Genotype</th>
+                                    <th class="py-2 px-2 text-left">Temperature</th>
+                                    <th class="py-2 px-2 text-left">Height</th>
+                                    <th class="py-2 px-2 text-left">Weight</th>
+                                    <th class="py-2 px-2 text-left">Injury/Condition</th>
+                                    <th class="py-2 px-2 text-left">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+    
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+    
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+    
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+    
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+    
+                                <tr class="border-b">
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                    <td class="py-2 px-2"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+        </section>
+
+
+        <script>
+                // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const openSidebarBtn = document.getElementById('openSidebarBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+    openSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.remove('hidden-sidebar');
+        openSidebarBtn.classList.add('hidden');
+        closeSidebarBtn.classList.remove('hidden');
+    });
+
+    closeSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.add('hidden-sidebar');
+        openSidebarBtn.classList.remove('hidden');
+        closeSidebarBtn.classList.add('hidden');
+    });
+
+    let navList = document.getElementById("nav-list")
+      let items = navList.getElementsByClassName("nav-item ");
+
+      for(let i = 0; i<items.length; i++){
+
+          items[i].addEventListener("click", function(){
+
+
+              let current = document.querySelectorAll(".active");
+
+
+              current.forEach(element => {
+                  element.classList.remove('active');
+              });
+
+              this.classList.add('active')
+          })
+      }
+        </script>
+</body>
+</html>
