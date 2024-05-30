@@ -18,6 +18,7 @@ const handleRegistration = async (event) => {
 			errormessage.innerHTML = result.message;
 		}
 	} catch (e) {
+		errormessage.innerHTML = 'Error registering, please try again!';
 		console.log('error submitting form' + e);
 	}
 };
@@ -41,6 +42,7 @@ const handleLogin = async (event) => {
 			errormessage.innerHTML = result.message;
 		}
 	} catch (e) {
+		errormessage.innerHTML = 'Error logging in, please try again';
 		console.log('Error logging in ' + e);
 	}
 };
