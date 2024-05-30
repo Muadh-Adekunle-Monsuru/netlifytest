@@ -4,10 +4,13 @@ const handleRegistration = async (event) => {
 	const errormessage = document.querySelector('#error-message');
 	const form = document.querySelector('#registration-form');
 	try {
-		const response = await fetch('http://localhost:8080/patient/register', {
-			method: 'POST',
-			body: new FormData(form),
-		});
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/patient/register',
+			{
+				method: 'POST',
+				body: new FormData(form),
+			}
+		);
 		const result = await response.json();
 		if (response.ok) {
 			window.location.href = '../patient_dashboard.html';
