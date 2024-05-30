@@ -60,8 +60,12 @@ const getData = async () => {
 				credentials: 'include',
 			}
 		);
-		const result = await response.json();
-		console.log(result);
+		if (response.ok) {
+			const result = await response.json();
+			console.log(result);
+		} else {
+			console.log('Error getting user information');
+		}
 	} catch (e) {
 		console.log('Error getting user details');
 		console.log(e);
