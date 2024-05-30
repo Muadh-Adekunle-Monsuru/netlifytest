@@ -37,6 +37,7 @@ const handleLogin = async (event) => {
 		);
 		const result = await response.json();
 		if (response.ok) {
+			document.cookie = `AUTH=${result.authentication.sessionToken}`;
 			window.location.href = '../patient_dashboard.html';
 		} else {
 			errormessage.innerHTML = result.message;
@@ -44,5 +45,23 @@ const handleLogin = async (event) => {
 	} catch (e) {
 		errormessage.innerHTML = 'Error logging in, please try again';
 		console.log('Error logging in ' + e);
+	}
+};
+
+const getData = async () => {
+	console.log(document.cookie);
+	try {
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/patient/info',
+			{
+				method: 'GET',
+				credentials: 'include', // Include cookies in the request
+			}
+		);
+		const result = await response.json();
+		console.log(result);
+	} catch (e) {
+		console.log('Error getting user details');
+		console.log(e);
 	}
 };

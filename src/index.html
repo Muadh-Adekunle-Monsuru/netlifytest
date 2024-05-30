@@ -1,282 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/yabatech_logo.png" size="16x16" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="output.css" />
-    <link rel="stylesheet" href="./style.css">
-    <title>Yabatech Medical Center</title>
-  </head>
-  <body class="font-satoshi">
-    <!-- </header> -->
-    <header class="bg-white shadow-lg py-6 flex items-center justify-between lg:px-20 md:px-10 px-4">
-      <div class="flex gap-2 items-center">
-        <img src="assets/yabatech_logo.png" alt="logo" class="w-14">
-        <div>
-          <p class="text-green-600 text-2xl font-bold tracking-widest">YABATECH</p>
-          <p class="font-semibold text-xl ">Medical Centre</p>
-        </div>
-      </div>
-      <!-- <nav class="max-[1090px]:absolute max-[1090px]:flex-col max-[1090px]:bg-green-600 max-[1090px]:w-full max-[1090px]:h-full "> -->
-      <nav class="nav">
-          <ul class="flex gap-6">
-            <div id="close-icon" class="bg-black p-2 rounded-[50%] hidden"><img src="assets/icon-close.svg" alt="Close logo"/></div>
-  
-            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="#">Home</a></li>
-            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Services</a></li>
-            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Blog</a></li>
-            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">Testimonial</a></li>
-            <li class="text-lg hover:border-b-4 hover:border-green-600 "><a href="">FAQ</a></li>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="assets/yabatech_logo.png" size="16x16" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="output.css" />
+		<link rel="stylesheet" href="./style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
 
-            <div id="action-buttons-md" class="flex gap-2">
-                <a href="./patients/login-register/patient-login.html" class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6"> Dashboard</a>
-             <a href="./staff/stafflogin.html" class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Staff Dashboard</a>
-              </div>
-          </ul>
-      </nav>
+		<title>Yabatech Medical Center</title>
+	</head>
+	<body class="font-satoshi">
+		<!-- </header> -->
+		<header
+			class="bg-white shadow-lg py-6 flex items-center justify-between lg:px-20 md:px-10 px-4"
+		>
+			<div class="flex gap-2 items-center">
+				<img src="assets/yabatech_logo.png" alt="logo" class="w-14" />
+				<div>
+					<p class="text-green-600 text-2xl font-bold tracking-widest">
+						YABATECH
+					</p>
+					<p class="font-semibold text-xl">Medical Centre</p>
+				</div>
+			</div>
+			<!-- <nav class="max-[1090px]:absolute max-[1090px]:flex-col max-[1090px]:bg-green-600 max-[1090px]:w-full max-[1090px]:h-full "> -->
+			<nav class="nav">
+				<ul class="flex gap-6">
+					<div id="close-icon" class="bg-black p-2 rounded-[50%] hidden">
+						<img src="assets/icon-close.svg" alt="Close logo" />
+					</div>
 
-      <div id="action-buttons-lg" class="flex gap-2">
-        <a href="./patients/login-register/patient-login.html" class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Student Dashboard</a>
-      <a href="./staff/stafflogin.html" class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6">Staff Dashboard</a>
-      </div>
-    
-      <img id="hamburger" src="assets/icon-hamburger.svg" alt="Hamburger image" />
-    </header>
-<!--Hero section-->
-    <section id="first-section" class="flex flex-row w-full justify-between mt-[70px] lg:px-20 md:px-10 px-4">
-        <div class="flex flex-col max-[841px]:items-center gap-6 ">
-            <p class="border border-green-600 w-40 rounded-md text-center font-semibold">Experts In Health</p>
-            <p class="header-text font-medium text-5xl  w-[450px] max-[841px]:text-center">Caring About Your Future Health <span class="text-green-600 leading-snug
-               font-medium text-5xl">Today</span></p>
-            <div class="flex flex-col max-[841px]:items-center gap-4">
-              <p class=" font-bold text-2xl">There for you when you need real help, <br>your local practitioner.</p>
-              <p class="text-bold font-medium text-xl ">Advancements in medical technology continue to improve patient care and treatment outcomes.</p>
-              <a href="./patients/login-register/patient-login.html"class="bg-green-600 hover:bg-green-700 rounded-md text-white py-2 px-6 w-fit text-sm">BOOK APPOINTMENT</a>
-            </div>
-        </div>
-        <div class="hero-image w-[40%] relative">
-          <div class="absolute right-20 flex gap-4 items-start">
-            <img src="assets/headerimage1.png" alt="image">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 0L15 30" stroke="red" stroke-width="10"/>
-              <path d="M30 15L-1.07288e-06 15" stroke="red" stroke-width="10"/>
-            </svg>
-          </div>
+					<li class="text-lg hover:border-b-4 hover:border-green-600">
+						<a href="#">Home</a>
+					</li>
+					<li class="text-lg hover:border-b-4 hover:border-green-600">
+						<a href="">Services</a>
+					</li>
+					<li class="text-lg hover:border-b-4 hover:border-green-600">
+						<a href="">Blog</a>
+					</li>
+					<li class="text-lg hover:border-b-4 hover:border-green-600">
+						<a href="">Testimonial</a>
+					</li>
+					<li class="text-lg hover:border-b-4 hover:border-green-600">
+						<a href="">FAQ</a>
+					</li>
 
-          <div class="absolute top-[100px] right-0 flex gap-4 items-end">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 0L15 30" stroke="red" stroke-width="10"/>
-              <path d="M30 15L-1.07288e-06 15" stroke="red" stroke-width="10"/>
-            </svg>
-            <img src="assets/headerimage2.png"  alt="image">
-          </div>
-            
-         
-        </div>
-    </section>
+					<div id="action-buttons-md" class="flex gap-2">
+						<a
+							href="./patients/login-register/patient-login.html"
+							class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6"
+						>
+							Dashboard</a
+						>
+						<a
+							href="./staff/stafflogin.html"
+							class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6"
+							>Staff Dashboard</a
+						>
+					</div>
+				</ul>
+			</nav>
 
-    <!--Hero section end-->
+			<div id="action-buttons-lg" class="flex gap-2">
+				<a
+					href="./patients/login-register/patient-login.html"
+					class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6"
+					>Student Dashboard</a
+				>
+				<a
+					href="./staff/stafflogin.html"
+					class="border-none bg-green-600 rounded-md hover:bg-green-700 text-white py-1 px-6"
+					>Staff Dashboard</a
+				>
+			</div>
 
-<!--first section-->
-  <div class="text-center my-8">
-    <p class="border-2 border-green-600 w-40 text-center rounded-2xl inline-block mt-20">
-      Our Services
-    </p>
-    <h1 class="header-text text-3xl text-green-600 font-bold mt-4">
-      Services That Help You Heal
-    </h1>
-    <p class="mt-2">What medical help do you need?</p>
-  </div>
-  <div id="services-con" class="px-4 md:px-8">
-    <div
-      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
-    >
-      <img
-        src="assets/firstaidkit.png"
-        alt="General Medicine"
-        class="w-24 h-24 mb-4"
-      />
-      <h1 class="service-header text-xl font-semibold mb-2">General Medicine</h1>
-      <p class="service-child text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-        deserunt, tempore quas natus saepe numquam tenetur incidunt iure
-        doloribus explicabo maiores et amet labore blanditiis, dicta porro
-        voluptates ullam exercitationem.
-      </p>
-    </div>
-     <div
-      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
-    >
-      <img
-        src="assets/syringe.png"
-        alt="General Medicine"
-        class="w-24 h-24 mb-4"
-      />
-      <h1 class="service-header text-xl font-semibold mb-2">Immunisation</h1>
-      <p class="service-child text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-        deserunt, tempore quas natus saepe numquam tenetur incidunt iure
-        doloribus explicabo maiores et amet labore blanditiis, dicta porro
-        voluptates ullam exercitationem.
-      </p>
-    </div>
-    <div
-      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
-    >
-      <img src="assets/consultation.png" alt="Immunisation" class="w-24 h-24 mb-4" />
-      <h1 class="service-header text-xl font-semibold mb-2">Free Consultation</h1>
-      <p class="service-child text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-        deserunt, tempore quas natus saepe numquam tenetur incidunt iure
-        doloribus explicabo maiores et amet labore blanditiis, dicta porro
-        voluptates ullam exercitationem.
-      </p>
-    </div>
-    <div
-      class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
-    >
-      <img
-        src="assets/skincare.png"
-        alt="Skin Assessment"
-        class="w-24 h-24 mb-4"
-      />
-      <h1 class="service-header text-xl font-semibold mb-2">Skin Assessment</h1>
-      <p class="service-child text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-        deserunt, tempore quas natus saepe numquam tenetur incidunt iure
-        doloribus explicabo maiores et amet labore blanditiis, dicta porro
-        voluptates ullam exercitationem.
-      </p>
-    </div>
-  </div>
+			<img
+				id="hamburger"
+				src="assets/icon-hamburger.svg"
+				alt="Hamburger image"
+			/>
+		</header>
+		<!--Hero section-->
+		<section
+			id="first-section"
+			class="flex flex-row w-full justify-between mt-[70px] lg:px-20 md:px-10 px-4"
+		>
+			<div class="flex flex-col max-[841px]:items-center gap-6">
+				<p
+					class="border border-green-600 w-40 rounded-md text-center font-semibold"
+				>
+					Experts In Health
+				</p>
+				<p
+					class="header-text font-medium text-5xl w-[450px] max-[841px]:text-center"
+				>
+					Caring About Your Future Health
+					<span class="text-green-600 leading-snug font-medium text-5xl"
+						>Today</span
+					>
+				</p>
+				<div class="flex flex-col max-[841px]:items-center gap-4">
+					<p class="font-bold text-2xl">
+						There for you when you need real help, <br />your local
+						practitioner.
+					</p>
+					<p class="text-bold font-medium text-xl">
+						Advancements in medical technology continue to improve patient care
+						and treatment outcomes.
+					</p>
+					<a
+						href="./patients/login-register/patient-login.html"
+						class="bg-green-600 hover:bg-green-700 rounded-md text-white py-2 px-6 w-fit text-sm"
+						>BOOK APPOINTMENT</a
+					>
+				</div>
+			</div>
+			<div class="hero-image w-[40%] relative">
+				<div class="absolute right-20 flex gap-4 items-start">
+					<img src="assets/headerimage1.png" alt="image" />
+					<svg
+						width="30"
+						height="30"
+						viewBox="0 0 30 30"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M15 0L15 30" stroke="red" stroke-width="10" />
+						<path d="M30 15L-1.07288e-06 15" stroke="red" stroke-width="10" />
+					</svg>
+				</div>
 
-  <!-- second section -->
-  <section class="lg:flex lg:justify-center gap-60">
-    <div class="flex justify-center mt-8 h-96 lg:ml-36">
-        <img src="assets/doctorsimage.png" alt="image" class="rounded-tr-3xl rounded-l-lg">
-    </div>
- 
-     <div class="flex flex-col justify-around items-center gap-2 mt-9 y-10 lg:py-0 lg:items-start lg:flex-1">
-      <h1 class="font-bold text-lg border border-green-600 px-6 rounded-lg">
-    About Us
-  </h1>
-      <p
-        class="text-center text-3xl lg:text-left font-semibold text-green-600 py-4"
-      >
-        Yaba College Of Technology<br> Medical Center
-      </p>
-      <p class=" text-center lg:text-left lg:w-[500px]">
-        At College Hospital, we are committed to providing the highest quality
-        healthcare services to our patients. Our dedicated team of medical
-        professionals strives to ensure that every patient receives personalized
-        and compassionate care. We believe in treating the whole person, not
-        just the illness or injury, and we work closely with our patients to
-        develop individualized treatment plans that address their unique needs
-        and circumstances.
-      </p>
-      <div class="flex justify-center lg:justify-start w-full mt-5">
-        <a
-          href="#"
-          class="block w-32 py-2 px-1 text-center bg-green-600 text-white rounded-lg shadow-lg hover:bg-white hover:text-green-600 font-medium"
-        >
-          LEARN MORE
-        </a>
-      </div>
-    </div> 
-  </section>
-  <!--third section-->
-  <section class="bg-blue-100 p-4 border rounded-md mt-20">
-  <div class="flex flex-col md:flex-row justify-around items-center">
-    <div class="text-center md:text-left mb-4 md:mb-0">
-      <p class="text-3xl">Helping a Local <span class="text-green-600">Community Thrive</span></p>
-      <p class="text-xl">We aren't born yesterday, 70+ years of experience</p>
-    </div>
-    <div class="flex flex-col items-center mb-4 md:mb-0">
-      <img src="assets/contact.png" class="w-6 mb-2"/>
-      <p class="font-bold text-xl">850+</p>
-      <p>Students treated</p>
-    </div>
-    <div class="flex flex-col items-center mb-4 md:mb-0">
-      <img src="assets/employee.png" class="w-6 mb-2"/>
-      <p class="font-bold text-xl">84+</p>
-      <p>Specialist Members</p>
-    </div>
-    <div class="flex flex-col items-center md:items-start">
-      <img src="assets/hearthbeat.png" class="w-14 mb-2"/>
-      <p class="font-bold text-xl">Reach out to us</p>
-      <p class="w-[200px] text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse volutpat, sem quis fringilla dictum.</p>
-    </div>
-  </div>
-</section>
-  <!-- forth section -->
-  <section class="text-center bg-white py-10">
-    <h1 class="text-3xl font-normal">
-      Your Health Care Team: Here When You Need Us
-    </h1>
-    <button
-      class="w-48 py-2 px-1 mt-8 mb-5 text-center bg-green-600 text-white rounded-lg hover:bg-white shadow-lg hover:text-green-600 font-medium"
-    >
-      <a href="#">BOOK APPOINTMENT</a>
-    </button>
-  </section>
-  <!-- Footer -->
-<footer class="bg-gray-700 w-full px-5 py-5 lg:flex lg:flex-col lg:justify-center lg:items-center gap-12 text-white">
-  <div class="lg:flex lg:justify-between lg:gap-10 lg:items-start lg:px-10 w-full">
-    <div class="flex flex-col items-center lg:items-start">
-      <div class="flex gap-2 items-center">
-        <img src="assets/yabatech_logo.png" alt="logo" class="w-14">
-        <div>
-          <p class="text-green-600 text-2xl font-bold tracking-widest">YABATECH</p>
-          <p class="font-semibold text-xl">Medical Centre</p>
-        </div>
-      </div>
-      <div class="lg:w-1/2">
-        <div class="py-3">
-          <p class="font-medium text-center w-[300px] lg:text-left">
-            Copyright © 2024 All Rights Reserved. Yabatech Medical Center. Powered By Dervac
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start lg:gap-20 mt-6 lg:mt-0">
-      <div class="flex flex-col gap-2 font-medium text-green-600">
-        <h1 class="font-bold text-3xl text-white">College</h1>
-        <ul class="flex flex-col gap-2">
-          <li><a href="#" class="hover:underline">About Us</a></li>
-          <li><a href="#" class="hover:underline">Blog</a></li>
-          <li><a href="#" class="hover:underline">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-2 font-medium text-green-600 mt-6 lg:mt-0">
-        <h1 class="font-bold text-3xl text-white">Support</h1>
-        <ul class="flex flex-col gap-2">
-          <li><a href="#" class="hover:underline">FAQ</a></li>
-          <li><a href="#" class="hover:underline">Terms of Service</a></li>
-          <li><a href="#" class="hover:underline">Legal</a></li>
-          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-          <li><a href="#" class="hover:underline">Billing Policy</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-5 mt-6 lg:mt-0">
-        <div class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800">
-          <img src="assets/location.png" class="w-6"/>
-          <p>Yaba College of Technology, Yaba</p>
-        </div>
-        <div class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800">
-          <img src="assets/message.png" class="w-6"/>
-          <p>234 (9021644324)</p>
-        </div>
-        <div class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800">
-          <img src="assets/phone.png" class="w-6"/>
-          <p>hello@yctmedical.com</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-  <script src="script.js"></script>
-</body>
+				<div class="absolute top-[100px] right-0 flex gap-4 items-end">
+					<svg
+						width="30"
+						height="30"
+						viewBox="0 0 30 30"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M15 0L15 30" stroke="red" stroke-width="10" />
+						<path d="M30 15L-1.07288e-06 15" stroke="red" stroke-width="10" />
+					</svg>
+					<img src="assets/headerimage2.png" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!--Hero section end-->
+
+		<!--first section-->
+		<div class="text-center my-8">
+			<p
+				class="border-2 border-green-600 w-40 text-center rounded-2xl inline-block mt-20"
+			>
+				Our Services
+			</p>
+			<h1 class="header-text text-3xl text-green-600 font-bold mt-4">
+				Services That Help You Heal
+			</h1>
+			<p class="mt-2">What medical help do you need?</p>
+		</div>
+		<div id="services-con" class="px-4 md:px-8">
+			<div
+				class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+			>
+				<img
+					src="assets/firstaidkit.png"
+					alt="General Medicine"
+					class="w-24 h-24 mb-4"
+				/>
+				<h1 class="service-header text-xl font-semibold mb-2">
+					General Medicine
+				</h1>
+				<p class="service-child text-center">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+					deserunt, tempore quas natus saepe numquam tenetur incidunt iure
+					doloribus explicabo maiores et amet labore blanditiis, dicta porro
+					voluptates ullam exercitationem.
+				</p>
+			</div>
+			<div
+				class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+			>
+				<img
+					src="assets/syringe.png"
+					alt="General Medicine"
+					class="w-24 h-24 mb-4"
+				/>
+				<h1 class="service-header text-xl font-semibold mb-2">Immunisation</h1>
+				<p class="service-child text-center">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+					deserunt, tempore quas natus saepe numquam tenetur incidunt iure
+					doloribus explicabo maiores et amet labore blanditiis, dicta porro
+					voluptates ullam exercitationem.
+				</p>
+			</div>
+			<div
+				class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+			>
+				<img
+					src="assets/consultation.png"
+					alt="Immunisation"
+					class="w-24 h-24 mb-4"
+				/>
+				<h1 class="service-header text-xl font-semibold mb-2">
+					Free Consultation
+				</h1>
+				<p class="service-child text-center">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+					deserunt, tempore quas natus saepe numquam tenetur incidunt iure
+					doloribus explicabo maiores et amet labore blanditiis, dicta porro
+					voluptates ullam exercitationem.
+				</p>
+			</div>
+			<div
+				class="service-parent w-[300px] flex flex-col justify-center items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-green-600"
+			>
+				<img
+					src="assets/skincare.png"
+					alt="Skin Assessment"
+					class="w-24 h-24 mb-4"
+				/>
+				<h1 class="service-header text-xl font-semibold mb-2">
+					Skin Assessment
+				</h1>
+				<p class="service-child text-center">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+					deserunt, tempore quas natus saepe numquam tenetur incidunt iure
+					doloribus explicabo maiores et amet labore blanditiis, dicta porro
+					voluptates ullam exercitationem.
+				</p>
+			</div>
+		</div>
+
+		<!-- second section -->
+		<section class="lg:flex lg:justify-center gap-60">
+			<div class="flex justify-center mt-8 h-96 lg:ml-36">
+				<img
+					src="assets/doctorsimage.png"
+					alt="image"
+					class="rounded-tr-3xl rounded-l-lg"
+				/>
+			</div>
+
+			<div
+				class="flex flex-col justify-around items-center gap-2 mt-9 y-10 lg:py-0 lg:items-start lg:flex-1"
+			>
+				<h1 class="font-bold text-lg border border-green-600 px-6 rounded-lg">
+					About Us
+				</h1>
+				<p
+					class="text-center text-3xl lg:text-left font-semibold text-green-600 py-4"
+				>
+					Yaba College Of Technology<br />
+					Medical Center
+				</p>
+				<p class="text-center lg:text-left lg:w-[500px]">
+					At College Hospital, we are committed to providing the highest quality
+					healthcare services to our patients. Our dedicated team of medical
+					professionals strives to ensure that every patient receives
+					personalized and compassionate care. We believe in treating the whole
+					person, not just the illness or injury, and we work closely with our
+					patients to develop individualized treatment plans that address their
+					unique needs and circumstances.
+				</p>
+				<div class="flex justify-center lg:justify-start w-full mt-5">
+					<a
+						href="#"
+						class="block w-32 py-2 px-1 text-center bg-green-600 text-white rounded-lg shadow-lg hover:bg-white hover:text-green-600 font-medium"
+					>
+						LEARN MORE
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--third section-->
+		<section class="bg-blue-100 p-4 border rounded-md mt-20">
+			<div class="flex flex-col md:flex-row justify-around items-center">
+				<div class="text-center md:text-left mb-4 md:mb-0">
+					<p class="text-3xl">
+						Helping a Local <span class="text-green-600">Community Thrive</span>
+					</p>
+					<p class="text-xl">
+						We aren't born yesterday, 70+ years of experience
+					</p>
+				</div>
+				<div class="flex flex-col items-center mb-4 md:mb-0">
+					<img src="assets/contact.png" class="w-6 mb-2" />
+					<p class="font-bold text-xl">850+</p>
+					<p>Students treated</p>
+				</div>
+				<div class="flex flex-col items-center mb-4 md:mb-0">
+					<img src="assets/employee.png" class="w-6 mb-2" />
+					<p class="font-bold text-xl">84+</p>
+					<p>Specialist Members</p>
+				</div>
+				<div class="flex flex-col items-center md:items-start">
+					<img src="assets/hearthbeat.png" class="w-14 mb-2" />
+					<p class="font-bold text-xl">Reach out to us</p>
+					<p class="w-[200px] text-center md:text-left">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+						volutpat, sem quis fringilla dictum.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- forth section -->
+		<section class="text-center bg-white py-10">
+			<h1 class="text-3xl font-normal">
+				Your Health Care Team: Here When You Need Us
+			</h1>
+			<button
+				class="w-48 py-2 px-1 mt-8 mb-5 text-center bg-green-600 text-white rounded-lg hover:bg-white shadow-lg hover:text-green-600 font-medium"
+			>
+				<a href="#">BOOK APPOINTMENT</a>
+			</button>
+		</section>
+		<!-- Footer -->
+		<footer
+			class="bg-gray-700 w-full px-5 py-5 lg:flex lg:flex-col lg:justify-center lg:items-center gap-12 text-white"
+		>
+			<div
+				class="lg:flex lg:justify-between lg:gap-10 lg:items-start lg:px-10 w-full"
+			>
+				<div class="flex flex-col items-center lg:items-start">
+					<div class="flex gap-2 items-center">
+						<img src="assets/yabatech_logo.png" alt="logo" class="w-14" />
+						<div>
+							<p class="text-green-600 text-2xl font-bold tracking-widest">
+								YABATECH
+							</p>
+							<p class="font-semibold text-xl">Medical Centre</p>
+						</div>
+					</div>
+					<div class="lg:w-1/2">
+						<div class="py-3">
+							<p class="font-medium text-center w-[300px] lg:text-left">
+								Copyright © 2024 All Rights Reserved. Yabatech Medical Center.
+								Powered By Dervac
+							</p>
+						</div>
+					</div>
+				</div>
+				<div
+					class="flex flex-col lg:flex-row lg:justify-between lg:items-start lg:gap-20 mt-6 lg:mt-0"
+				>
+					<div class="flex flex-col gap-2 font-medium text-green-600">
+						<h1 class="font-bold text-3xl text-white">College</h1>
+						<ul class="flex flex-col gap-2">
+							<li><a href="#" class="hover:underline">About Us</a></li>
+							<li><a href="#" class="hover:underline">Blog</a></li>
+							<li><a href="#" class="hover:underline">Contact Us</a></li>
+						</ul>
+					</div>
+					<div
+						class="flex flex-col gap-2 font-medium text-green-600 mt-6 lg:mt-0"
+					>
+						<h1 class="font-bold text-3xl text-white">Support</h1>
+						<ul class="flex flex-col gap-2">
+							<li><a href="#" class="hover:underline">FAQ</a></li>
+							<li><a href="#" class="hover:underline">Terms of Service</a></li>
+							<li><a href="#" class="hover:underline">Legal</a></li>
+							<li><a href="#" class="hover:underline">Privacy Policy</a></li>
+							<li><a href="#" class="hover:underline">Billing Policy</a></li>
+						</ul>
+					</div>
+					<div class="flex flex-col gap-5 mt-6 lg:mt-0">
+						<div
+							class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800"
+						>
+							<img src="assets/location.png" class="w-6" />
+							<p>Yaba College of Technology, Yaba</p>
+						</div>
+						<div
+							class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800"
+						>
+							<img src="assets/message.png" class="w-6" />
+							<p>234 (9021644324)</p>
+						</div>
+						<div
+							class="flex border gap-2 border-gray-600 shadow-2xl rounded-md p-4 bg-gray-800"
+						>
+							<img src="assets/phone.png" class="w-6" />
+							<p>hello@yctmedical.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="script.js"></script>
+	</body>
 </html>
