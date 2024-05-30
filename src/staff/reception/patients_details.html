@@ -33,19 +33,21 @@
 </head>
 <body class="bg-[#f0f8ff]">
    <!-- Mobile Menu -->
-<div class="flex justify-between p-3 bg-white shadow-md lg:hidden">
-    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h16M3 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-    <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
-    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-</div>        
+   <div class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
+    <div>
+        <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+        <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
+</div>              
         <aside id="sidebar" class="fixed w-72 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black ">
                 <nav role="navigation" class="pl-3 pt-8">
                      <div class="mt- relative overflow-hidden">
