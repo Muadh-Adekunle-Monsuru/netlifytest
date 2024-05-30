@@ -24,10 +24,13 @@ const handleLogin = async (event) => {
 	const form = document.querySelector('#login-form');
 	const errormessage = document.querySelector('#error-message');
 	try {
-		const response = await fetch('http://localhost:8080/patient/login', {
-			method: 'POST',
-			body: new FormData(form),
-		});
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/patient/login',
+			{
+				method: 'POST',
+				body: new FormData(form),
+			}
+		);
 		const result = await response.json();
 		if (response.ok) {
 			window.location.href = '../patient_dashboard.html';

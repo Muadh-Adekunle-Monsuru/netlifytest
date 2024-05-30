@@ -7,13 +7,16 @@ const handleSubmit = async (e) => {
 		password: e.target.password.value,
 	};
 	try {
-		const response = await fetch('http://localhost:8080/auth/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
-			},
-			body: JSON.stringify(userInput),
-		});
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/staff/login',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json;charset=utf-8',
+				},
+				body: JSON.stringify(userInput),
+			}
+		);
 
 		if (response.ok) {
 			const result = await response.json();
