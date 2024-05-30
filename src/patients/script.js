@@ -9,6 +9,7 @@ const handleRegistration = async (event) => {
 			{
 				method: 'POST',
 				body: new FormData(form),
+				credentials: 'include',
 			}
 		);
 		const result = await response.json();
@@ -33,6 +34,7 @@ const handleLogin = async (event) => {
 			{
 				method: 'POST',
 				body: new FormData(form),
+				credentials: 'include',
 			}
 		);
 		const result = await response.json();
@@ -55,7 +57,7 @@ const getData = async () => {
 			'https://yabatech-backend.vercel.app/patient/info',
 			{
 				method: 'GET',
-				credentials: 'include', // Include cookies in the request
+				credentials: 'include',
 			}
 		);
 		const result = await response.json();
