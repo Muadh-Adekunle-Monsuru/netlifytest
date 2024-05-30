@@ -70,7 +70,7 @@
                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pr-5 mx-auto name w-28"/>
                     <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
                 </div>
-                <ul class="space-y-6 nav-list" id="nav-list">
+                <ul class="space-y-2 nav-list" id="nav-list">
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_dashboard.html" class="flex items-center gap-5">
                             <i class="fa-solid fa-table-columns"></i>
@@ -221,9 +221,118 @@
             </main>
         </div>
 
+
+          <!-- Recent Appointments Table -->
+          <section>
+            
+              <div class="lg:ml-72">
+                  <h3 class="mb-2 text-lg font-bold ">Recent Appointments</h3>
+                  <div class="pr-3 space-y-7">             
+                      <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                          <table class="min-w-full bg-white">
+                              <thead class="text-gray-600 bg-gray-200">
+                                  <tr>
+                                      <th class="px-4 py-2 text-left">Patient</th>
+                                      <th class="px-4 py-2 text-left">Date</th>
+                                      <th class="px-4 py-2 text-left">Time</th>
+                                      <th class="px-4 py-2 text-left">Diseases</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">John Doe</td>
+                                      <td class="px-4 py-2">2024-05-26</td>
+                                      <td class="px-4 py-2">10:00 AM</td>
+                                      <td class="px-4 py-2">Fever</td>
+                                  </tr>
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Jane Smith</td>
+                                      <td class="px-4 py-2">2024-05-26</td>
+                                      <td class="px-4 py-2">01:00 PM</td>
+                                      <td class="px-4 py-2">Malaria</td>
+                                  </tr>
+      
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Okafor Obi</td>
+                                      <td class="px-4 py-2">2024-04-26</td>
+                                      <td class="px-4 py-2">02:30 PM</td>
+                                      <td class="px-4 py-2">Typhoid</td>
+                                  </tr>
+      
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Ajayi Ola</td>
+                                      <td class="px-4 py-2">2024-05-26</td>
+                                      <td class="px-4 py-2">09:30 AM</td>
+                                      <td class="px-4 py-2">Cholera</td>
+                                  </tr>
+      
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Ben Tola</td>
+                                      <td class="px-4 py-2">2024-05-22</td>
+                                      <td class="px-4 py-2">11:30 AM</td>
+                                      <td class="px-4 py-2">Infection</td>
+                                  </tr>
+      
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Jane Smith</td>
+                                      <td class="px-4 py-2">2024-05-26</td>
+                                      <td class="px-4 py-2">01:30 PM</td>
+                                      <td class="px-4 py-2">Jaundice</td>
+                                  </tr>
+      
+                                  <tr class="border-b">
+                                      <td class="px-4 py-2">Jane Smith</td>
+                                      <td class="px-4 py-2">2024-05-26</td>
+                                      <td class="px-4 py-2">12:00 PM</td>
+                                      <td class="px-4 py-2">Headache</td>
+                                  </tr>
+                                  <!-- Add more rows as needed -->
+                              </tbody>
+                          </table>
+                      </div>
+      
+                      <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                          <table class="min-w-full bg-white">
+                              <thead class="text-gray-600 bg-gray-200">
+                                  <tr>
+                                      <th class="px-4 py-2 text-left">Doctor Name</th>
+                                      <th class="px-4 py-2 text-left">Specialties</th>
+                                      <th class="px-4 py-2 text-left">Experience</th>
+                                      <th class="px-4 py-2 text-left">Contact</th>
+                                  </tr>
+      
+                                  <tbody>
+                                      <tr class="border-b">
+                                          <td class="px-4 py-2">Dr. Abudu</td>
+                                          <td class="px-4 py-2">Dermatologist</td>
+                                          <td class="px-4 py-2">20yrs</td>
+                                          <td class="px-4 py-2">09058277020</td>
+                                      </tr>
+      
+                                      <tr class="border-b">
+                                          <td class="px-4 py-2">Dr. Adeola</td>
+                                          <td class="px-4 py-2">Neurosurgeon</td>
+                                          <td class="px-4 py-2">5yrs</td>
+                                          <td class="px-4 py-2">09051068912</td>
+                                      </tr>
+      
+                                      <tr class="border-b">
+                                          <td class="px-4 py-2">Dr. Daodu</td>
+                                          <td class="px-4">General Practitionist</td>
+                                          <td class="px-4 py-2">5yrs</td>
+                                          <td class="px-4 py-2">9021644324</td>
+                                      </tr>
+                                  </tbody>
+                              </thead>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
       
     </section>
-</section>
+  </section>
 
 <script>
      document.addEventListener('DOMContentLoaded', () => {

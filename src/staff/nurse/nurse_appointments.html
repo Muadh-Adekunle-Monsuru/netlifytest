@@ -91,7 +91,7 @@
                     <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>
                     <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
                 </div>
-                <ul class="space-y-6 nav-list" id="nav-list">
+                <ul class="space-y-2 nav-list" id="nav-list">
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="nurse_dashboard.html" class="flex items-center gap-5">
                             <i class=" fa-solid fa-table-columns"></i>
@@ -129,12 +129,7 @@
                         </a>
                     </li>
 
-                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
-                        <a href="../stafflogin.html" class="flex items-center gap-5">
-                           <i class="fa-solid fa-right-from-bracket"></i>
-                           <span class="text-lg font-semibold">Logout</span>
-                        </a>
-                    </li>
+                   
                 </ul>
             </div>
         </nav>
@@ -148,20 +143,19 @@
             <div class="p-4">
                 <header class="flex items-center justify-between p-4 bg-white shadow">
                     <h2 class="text-xl font-semibold">Appointments</h2>
-                    <div>
+                    <!-- <div>
                         <input id="search" type="text" placeholder="Search" class="px-4 py-2 border rounded">
-                    </div>
+                    </div> -->
                 </header>
                 <div class="flex justify-end mt-4 space-x-4">
                     <button id="addBtn" class="px-4 py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700">Add</button>
-                    <button class="px-4 py-2 text-white bg-green-600 rounded-full hover:bg-green-700">Refresh</button>
-                    <button class="px-4 py-2 text-white bg-gray-600 rounded-full hover:bg-gray-700">Export</button>
+                   
                 </div>
                 <main class="p-4 mt-4 overflow-x-auto bg-white rounded shadow">
                     <table class="w-full table-auto">
                         <thead>
                             <tr>
-                                <th class="px-4 py-2 border">Image</th>
+                                <!-- <th class="px-4 py-2 border">Image</th> -->
                                 <th class="px-4 py-2 border">Name</th>
                                 <th class="px-4 py-2 border">Email</th>
                                 <th class="px-4 py-2 border">Gender</th>
@@ -176,7 +170,7 @@
                         <tbody id="appointmentTable">
                             <!-- Sample row for demonstration -->
                             <tr>
-                                <td class="px-4 py-2 border"><img src="avatar1.jpg" alt="Avatar" class="w-8 h-8 rounded-full"></td>
+                                <!-- <td class="px-4 py-2 border"><img src="avatar1.jpg" alt="Avatar" class="w-8 h-8 rounded-full"></td> -->
                                 <td class="px-4 py-2 border">Cara Stevens</td>
                                 <td class="px-4 py-2 border">test@email.com</td>
                                 <td class="px-4 py-2 border"><span class="px-2 py-1 text-green-700 bg-green-200 rounded">Male</span></td>
@@ -304,7 +298,7 @@
                 img.classList.add('w-8', 'h-8', 'rounded-full');
                 imgCell.appendChild(img);
                 imgCell.classList.add('px-4', 'py-2', 'border');
-                newRow.appendChild(imgCell);
+                // newRow.appendChild(imgCell);
 
                 const cells = ['name', 'email', 'gender', 'date', 'time', 'mobile', 'doctor', 'condition'];
                 cells.forEach(cell => {
