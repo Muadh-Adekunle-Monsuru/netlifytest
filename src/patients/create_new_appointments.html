@@ -65,7 +65,7 @@
 <body class="font-satoshi">
 
     <!-- Mobile Menu -->
-    <div class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
+    <div class="fixed z-20 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
         <div>
             <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -78,81 +78,80 @@
                 </svg>
             </button>
         </div>
-            <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
-    </div>      
-		<aside id="sidebar" class="fixed w-64 lg:mt-0 mt-16 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black ">
-				<nav role="navigation" class="pl-4 pt-8">
-					 <div class="mt- relative overflow-hidden">
-						 <div class="">
-							<img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name w-28 mx-auto pl-2 pr-3 pb-5"/>  
-							 <h1 hidden id="main" class="md:block text-xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
-						 </div>
-	   
-						<ul class="nav-list space-y-5" id="nav-list">
-							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							   <a href="./patient_dashboard.html" class="flex items-center gap-51">
-								  <i class="fa-solid fa-table-columns"></i>
-								   <span class="font-semibold pl-3">Dashboard</span>
-							   </a>
-						  </li>
-	   
-							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-								 <a href="#" class="flex items-center gap-5">
-								  <i class="fa-regular fa-calendar-check"></i>
-									 <span class="font-semibold text-lg">Appointments</span>
-								 </a>
-							</li>
-	 
-							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							<a href="./create_new_appointments.html" class="flex items-center gap-5">
-							 <i class="fa-regular fa-calendar-check"></i>
-								<span class="font-semibold text-lg">Book Appointments</span>
-							</a>
-					   </li>
-	 
-							 <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-								 <a href="./patient_appointments.html" class="flex items-center gap-5">
-								  <i class="fa-solid fa-book"></i>
-									 <span class="font-semibold text-lg">View Appointments</span>
-								 </a>
-							 </li>
-	 
-	   
-							 <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							   <a href="patients_details.html" class="flex items-center gap-5">
-								  <i class="fa-solid fa-notes-medical"></i>
-								  <span class="font-semibold text-lg">Past Appointment</span>
-							   </a>
-						   </li>
-	 
-						   <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							<a href="../stafflogin.html" class="flex items-center gap-6">
-							   <i class="fa-solid fa-right-from-bracket"></i>
-							   <span class="font-semibold text-lg">Logout</span>
-							</a>
-						</li>
-						 </ul>
-					 </div>
-				</nav>
-		</aside>
+            <img src="/src/assets/yabatech_logo.png" alt="Logo" class="w-10  h-10">
+    </div> 
+    <aside id="sidebar" class="fixed lg:mt-0 mt-16 w-64 h-screen transition-transform duration-1000 ease-in-out transform bg-white shadow-md shadow-black ">
+            <nav role="navigation" class="pl-4 pt-8">
+                 <div class=" relative overflow-x-auto">
+                     <div class="">
+                        <img src="/src/assets/yabatech_logo.png" alt="Yabatech Logo" class="name w-28 mx-auto pl-2 pr-3 pb-5"/>  
+                         <h1 hidden id="main" class="md:block text-xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
+                     </div>
+   
+                    <ul class="nav-list space-y-5" id="nav-list">
+                        <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                           <a href="./patient_dashboard.html" class="flex items-center gap-51">
+                              <i class="fa-solid fa-table-columns"></i>
+                               <span class="font-semibold ml-5">Dashboard</span>
+                           </a>
+                      </li>
+   
+                        <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                             <a href="#" class="flex items-center gap-5">
+                              <i class="fa-regular fa-calendar-check"></i>
+                                 <span class="font-semibold text-lg">Appointments</span>
+                             </a>
+                        </li>
+ 
+                        <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                        <a href="./create_new_appointments.html" class="flex items-center gap-5">
+                         <i class="fa-regular fa-calendar-check"></i>
+                            <span class="font-semibold text-lg">Book Appointments</span>
+                        </a>
+                   </li>
+ 
+                         <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                             <a href="./patient_appointments.html" class="flex items-center gap-5">
+                              <i class="fa-solid fa-book"></i>
+                                 <span class="font-semibold text-lg">View Appointments</span>
+                             </a>
+                         </li>
+ 
+   
+                         <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                           <a href="patients_details.html" class="flex items-center gap-5">
+                              <i class="fa-solid fa-notes-medical"></i>
+                              <span class="font-semibold text-lg">Past Appointment</span>
+                           </a>
+                       </li>
+ 
+                       <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+                        <a href="./login-register/patient-login.html" class="flex items-center gap-6">
+                           <i class="fa-solid fa-right-from-bracket"></i>
+                           <span class="font-semibold text-lg">Logout</span>
+                        </a>
+                    </li>
+                     </ul>
+                 </div>
+            </nav>
+    </aside>
     
 
-        <section class="lg:ml-64">
+<section class="lg:ml-64">
             
             <!-- Main content -->
             <div class="p-4">
                 <header class="flex items-center justify-between p-4 bg-white shadow">
-                    <h2 class="text-xl font-semibold text-center">Create New Appointments</h2>
+                    <h2 class="text-xl font-semibold">Appointments</h2>
                     <!-- <div>
                         <input id="search" type="text" placeholder="Search" class="px-4 py-2 border rounded">
                     </div> -->
                 </header>
                 <div class="flex justify-end mt-4 space-x-4">
                     <button id="addBtn" class="px-4 py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700">Add</button>
-                    <!-- <button class="px-4 py-2 text-white bg-green-600 rounded-full hover:bg-green-700">Refresh</button>
-                    <button class="px-4 py-2 text-white bg-gray-600 rounded-full hover:bg-gray-700">Export</button>
-                    --></div>
-                <main class="p-4 mt-4 overflow-x-hidden bg-white rounded shadow">
+                   
+                </div>
+                <main class="p-4 mt-4 overflow-x-auto bg-white rounded shadow">
                     <table class="w-full table-auto">
                         <thead>
                             <tr>
@@ -190,7 +189,7 @@
         </section>
 
     <!-- Modal -->
-<div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 modal">
+<div id="modal" class="fixed inset-0 items-center justify-center hidden bg-gray-600 bg-opacity-50 modal">
     <div class="w-full max-w-md p-4 bg-white rounded shadow-lg modal-content">
         <h2 id="modalTitle" class="mb-4 text-xl">Edit Appointment</h2>
         <form id="appointmentForm">
