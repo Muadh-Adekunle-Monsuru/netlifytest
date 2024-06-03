@@ -51,7 +51,7 @@ const handleLogin = async (event) => {
 };
 
 const getData = async () => {
-	console.log(document.cookie);
+	const patientName = document.querySelector('#patientName');
 	try {
 		const response = await fetch(
 			'https://yabatech-backend.vercel.app/patient/info',
@@ -63,11 +63,71 @@ const getData = async () => {
 		if (response.ok) {
 			const result = await response.json();
 			console.log(result);
+			patientName.innerText = `${result.firstname} ${result.secondname} `;
 		} else {
 			console.log('Error getting user information');
 		}
 	} catch (e) {
 		console.log('Error getting user details');
 		console.log(e);
+	}
+};
+
+const createAppointment = async (event) => {
+	event.preventDefault();
+	const form = document.querySelector('#appointmentForm');
+	const p = document.querySelector('#message');
+	try {
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/patient/createappointment',
+			{
+				method: 'POST',
+				body: new FormData(form),
+				credentials: 'include',
+			}
+		);
+		if (response.ok) {
+			const result = await response.json();
+			p.innerHTML =
+				'Appointment created successfully , View appointment Page .';
+		} else {
+			errormessage.innerHTML = result.message;
+		}
+	} catch (e) {
+		console.log('Error creating appointment' + e);
+	}
+};
+
+const displayAppointment = async () => {
+	const tbody = document.querySelector('#tbody');
+	try {
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/patient/appointment',
+			{
+				method: 'GET',
+				credentials: 'include',
+			}
+		);
+		if (response.ok) {
+			const result = await response.json();
+			console.log(result);
+			result.map((appointment) => {
+				const tr = document.createElement('tr');
+				tr.innerHTML += `<td class="px-4 py-2 border">${appointment.condition}</td>`;
+				tr.innerHTML += `<td class="px-4 py-2 border">${appointment.date.slice(
+					0,
+					10
+				)}</td>`;
+				tr.innerHTML += `<td class="px-4 py-2 border">${appointment.time}</td>`;
+				tr.innerHTML += `<td class="px-4 py-2 border">${appointment.status}</td>`;
+				tr.innerHTML += `<td class="px-4 py-2 border">${appointment?.doctor}</td>`;
+
+				tbody.prepend(tr);
+			});
+		} else {
+			throw new Error();
+		}
+	} catch (e) {
+		console.log('Error Getting Appointments' + e);
 	}
 };

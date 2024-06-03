@@ -3,237 +3,333 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/src/output.css">
+		<link rel="stylesheet" href="/src/output.css" />
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-		<link rel="shortcut icon" href="../assets/yabatech_logo.png" type="image/x-icon">
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+		/>
+		<link
+			rel="shortcut icon"
+			href="../assets/yabatech_logo.png"
+			type="image/x-icon"
+		/>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>Patient Dashboard</title>
 	</head>
 	<style>
-		 .modal {
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal.active {
-            display: flex;
-        }
-        .modal-content {
-            max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
-            overflow-y: auto; /* Enables vertical scrolling if the content overflows */
-        }
+		.modal {
+			display: none;
+			justify-content: center;
+			align-items: center;
+		}
+		.modal.active {
+			display: flex;
+		}
+		.modal-content {
+			max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
+			overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+		}
 
-        /* .hidden-sidebar {
+		/* .hidden-sidebar {
             transform: translateX(-100%);
         } */
 
-        /* Custom scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        /* .hidden-sidebar {
+		/* Custom scrollbar styling */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+		/* .hidden-sidebar {
             transform: translateX(-100%);
         }
         .transition-transform {
             transition: transform 0.3s ease-in-out;
         } */
-        .bg-primary {
-            background-color: #1a73e8;
-        }
-        .text-primary {
-            color: #1a73e8;
-        }
-        .text-secondary {
-            color: #5f6368;
-        }
+		.bg-primary {
+			background-color: #1a73e8;
+		}
+		.text-primary {
+			color: #1a73e8;
+		}
+		.text-secondary {
+			color: #5f6368;
+		}
 
-        @media (max-width: 640px) {
-        #modal .modal-content {
-            width: 90%;
-        }
-    }
-	 </style>
-	<body class="font-satoshi">
-		
-		 <!-- Mobile View Navbar -->
-  <div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
-    <button id="openSidebarBtn" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-    <img src="../assets/yabatech_logo.png" alt="Logo" class="w-10 h-10">
-    <button id="closeSidebarBtn" class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-</div>
+		@media (max-width: 640px) {
+			#modal .modal-content {
+				width: 90%;
+			}
+		}
+	</style>
+	<body class="font-satoshi" onload="getData()">
+		<!-- Mobile View Navbar -->
+		<div class="flex justify-between p-4 bg-white shadow-md lg:hidden">
+			<button
+				id="openSidebarBtn"
+				class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+			>
+				<svg
+					class="w-6 h-6"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16m-7 6h7"
+					></path>
+				</svg>
+			</button>
+			<img src="../assets/yabatech_logo.png" alt="Logo" class="w-10 h-10" />
+			<button
+				id="closeSidebarBtn"
+				class="hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+			>
+				<svg
+					class="w-6 h-6"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M6 18L18 6M6 6l12 12"
+					></path>
+				</svg>
+			</button>
+		</div>
 
-<!-- Sidebar -->
-<aside id="sidebar" class="fixed w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed">
-    <div>
-        <!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
+		<!-- Sidebar -->
+		<aside
+			id="sidebar"
+			class="fixed w-64 h-full transition-transform duration-300 ease-in-out transform -translate-x-full bg-white shadow-lg lg:translate-x-0 lg:h-screen lg:fixed"
+		>
+			<div>
+				<!-- <button id="closeSidebarMobileBtn" class="absolute text-gray-500 top-4 right-4 lg:hidden hover:text-gray-700 focus:outline-none focus:text-gray-700">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button> -->
-        <nav role="navigation" class="pl-4 pt-8">
-            <div class="mt- relative overflow-hidden">
-                <div class="">
-                   <img src="../assets/yabatech_logo.png" alt="Yabatech Logo" class="name w-28 mx-auto pl-2 pr-3 pb-5"/>  
-                    <h1 hidden id="main" class="md:block text-xl text-green-600 font-bold text-center pb-3">YABATECH MEDICAL CENTER</h1>
-                </div>
+				<nav role="navigation" class="pl-4 pt-8">
+					<div class="mt- relative overflow-hidden">
+						<div class="">
+							<img
+								src="../assets/yabatech_logo.png"
+								alt="Yabatech Logo"
+								class="name w-28 mx-auto pl-2 pr-3 pb-5"
+							/>
+							<h1
+								hidden
+								id="main"
+								class="md:block text-xl text-green-600 font-bold text-center pb-3"
+							>
+								YABATECH MEDICAL CENTER
+							</h1>
+						</div>
 
-               <ul class="nav-list space-y-5" id="nav-list">
-                   <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-                      <a href="./patient_dashboard.html" class="flex items-center gap-51">
-                         <i class="fa-solid fa-table-columns"></i>
-                          <span class="font-semibold ml-5">Dashboard</span>
-                      </a>
-                 </li>
+						<ul class="nav-list space-y-5" id="nav-list">
+							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+								<a
+									href="./patient_dashboard.html"
+									class="flex items-center gap-51"
+								>
+									<i class="fa-solid fa-table-columns"></i>
+									<span class="font-semibold ml-5">Dashboard</span>
+								</a>
+							</li>
 
-                   <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+							<!-- <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
                         <a href="#" class="flex items-center gap-5">
                          <i class="fa-regular fa-calendar-check"></i>
                             <span class="font-semibold text-lg">Appointments</span>
                         </a>
-                   </li>
+                   </li> -->
 
-                   <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-                   <a href="./create_new_appointments.html" class="flex items-center gap-5">
-                    <i class="fa-regular fa-calendar-check"></i>
-                       <span class="font-semibold text-lg">Book Appointments</span>
-                   </a>
-              </li>
+							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+								<a
+									href="./create_new_appointments.html"
+									class="flex items-center gap-5"
+								>
+									<i class="fa-regular fa-calendar-check"></i>
+									<span class="font-semibold text-lg">Book Appointments</span>
+								</a>
+							</li>
 
-                    <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-                        <a href="./patient_appointments.html" class="flex items-center gap-5">
-                         <i class="fa-solid fa-book"></i>
-                            <span class="font-semibold text-lg">View Appointments</span>
-                        </a>
-                    </li>
+							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+								<a
+									href="./patient_appointments.html"
+									class="flex items-center gap-5"
+								>
+									<i class="fa-solid fa-book"></i>
+									<span class="font-semibold text-lg">View Appointments</span>
+								</a>
+							</li>
 
+							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+								<a
+									href="patient_medical_record.html"
+									class="flex items-center gap-5"
+								>
+									<i class="fa-solid fa-notes-medical"></i>
+									<span class="font-semibold text-lg">Past Appointment</span>
+								</a>
+							</li>
 
-                    <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-                      <a href="patients_details.html" class="flex items-center gap-5">
-                         <i class="fa-solid fa-notes-medical"></i>
-                         <span class="font-semibold text-lg">Past Appointment</span>
-                      </a>
-                  </li>
-
-                  <li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-                   <a href="./login-register/patient-login.html" class="flex items-center gap-6">
-                      <i class="fa-solid fa-right-from-bracket"></i>
-                      <span class="font-semibold text-lg">Logout</span>
-                   </a>
-               </li>
-                </ul>
-            </div>
-       </nav>
-    </div>
-</aside>
-
-		 <!-- SECTION MAIN CONTENT -->
-		 <section class="md:ml-24">
-            <div class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6 hidden">
-               <button class="w-20 rounded-md mr-2">
-                  <i class="fa-solid fa-bell fa-xl"></i>
-               </button>
-      
-               <button class="w-20 rounded-md font-bold">
-                  Profile
-                  <i class="fa-solid fa-circle-user fa-xl"></i>
-               </button>
-            </div>
-	  
-	   <!-- main section -->
-	   <section class="bg-[#F0F3FB] lg:ml-40">
-		<div class="flex items-center gap-4 pl-10 py-7">
-            <h2 class="font-bold">Dashboard</h2>
-            <i class="fa-solid fa-angle-right fa-lg"></i> 
-            <i class="fa-solid fa-house fa-lg"></i>
-         </div>
-		 <!-- First section -->
-		 <section class="bg-white shadow-2xl rounded-md lg:mx-10 lg:mt-10 lg:flex lg:flex-row lg:items-center lg:justify-between flex flex-col items-center mx-5">
-			<div>
-				<img src="../assets/welcome.png" alt="An image here" class="lg:w-[1000px] w-96 py-4">
+							<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
+								<a
+									href="./login-register/patient-login.html"
+									class="flex items-center gap-6"
+								>
+									<i class="fa-solid fa-right-from-bracket"></i>
+									<span class="font-semibold text-lg">Logout</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
 			</div>
-			<div class="ml-5">
-				<p class="text-lg  font-semibold">Welcome back</p>
-				<p class="text-3xl font-semibold py-1 text-blue-500">Sarah Smith!</p>
-				<p class="pb-5 pr-3">We would like to take this opportunity to welcome you to our practice and to thank you for choosing our physicians to participate in your healthcare. We look forward to providing you with personalized, comprehensive health care focusing on wellness and prevention.
-				</p>
+		</aside>
+
+		<!-- SECTION MAIN CONTENT -->
+		<section class="md:ml-24">
+			<div
+				class="bg-white shadow-sm shadow-black w-full text-right py-5 pr-6 hidden"
+			>
+				<button class="w-20 rounded-md mr-2">
+					<i class="fa-solid fa-bell fa-xl"></i>
+				</button>
+
+				<button class="w-20 rounded-md font-bold">
+					Profile
+					<i class="fa-solid fa-circle-user fa-xl"></i>
+				</button>
 			</div>
-		 </section>
-		 <!-- First section ends here -->
-		 <!--  Box Container -->
-		 <div class="flex flex-col mx-5 justify-between pb-10 pt-3 lg:flex lg:flex-row lg:mx-10 lg:mt-10">
-			<!-- Big div that hold everything up -->
-		   <div class="bg-white flex justify-between px-5 py-10 items-center rounded-md" >
-		   <div>
-			   <img src="../assets/blood-pressure.png" alt="An image here" class="mr-5">
-		   </div>
-			 <div class="flex flex-col gap-y-5">
-				<p class="font-semibold">Blood pressure</p>
-			   <p class="font-bold text-green-600 text-right">110/70</p>
-			 </div>
-		   </div>
-		   
-		   <!-- second box -->
-		   <div
-		   class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
-		 >
-		 <div>
-			 <img src="../assets/heart-rate.png" alt="An image here" class="mr-5">
-		 </div>
-		   <div class="flex flex-col gap-y-5">
-			  <p class="font-semibold">Blood pressure</p>
-			 <p class="font-bold text-green-600 text-right">650</p>
-		   </div>
-		 </div>
-   
-		   <!-- third box -->
-		   <div
-			 class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
-		   >
-		   <div>
-			   <img src="../assets/glucose.png" alt="An image here" class="pr-5">
-		   </div>
-			 <div class="flex flex-col gap-y-5">
-				<p class="font-semibold">Glucose Level</p>
-			   <p class="font-bold text-green-600 text-right">88-75</p>
-			 </div>
-		   </div>
-   
-		   <!-- fourth box -->
-		   <div
-		   class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
-		 >
-		 <div>
-			 <img src="../assets/blood-count.png" alt="An image here" class="mr-5">
-		 </div>
-		   <div class="flex flex-col gap-y-5">
-			  <p class="font-semibold">Blood Count</p>
-			 <p class="font-bold text-green-600 text-right">9,456m/L</p>
-		   </div>
-		 </div>
-		 
-		 </section>
-		 <!-- Bigger background here down -->
-		 <!-- <section class="bg-[#F0F3FB] pt-10 lg:ml-40"> -->
-			<!-- Bigger background comment -->
-			<!-- <section class="lg:flex lg:justify-evenly lg:mr-6 lg:mx-0 pb-5 ">
+
+			<!-- main section -->
+			<section class="bg-[#F0F3FB] lg:ml-40">
+				<div class="flex items-center gap-4 pl-10 py-7">
+					<h2 class="font-bold">Dashboard</h2>
+					<i class="fa-solid fa-angle-right fa-lg"></i>
+					<i class="fa-solid fa-house fa-lg"></i>
+				</div>
+				<!-- First section -->
+				<section
+					class="bg-white shadow-2xl rounded-md lg:mx-10 lg:mt-10 lg:flex lg:flex-row lg:items-center lg:justify-between flex flex-col items-center mx-5"
+				>
+					<div>
+						<img
+							src="../assets/welcome.png"
+							alt="An image here"
+							class="lg:w-[1000px] w-96 py-4"
+						/>
+					</div>
+					<div class="ml-5">
+						<p class="text-lg font-semibold">Welcome back</p>
+						<p
+							class="text-3xl font-semibold py-1 text-blue-500"
+							id="patientName"
+						></p>
+						<p class="pb-5 pr-3">
+							We would like to take this opportunity to welcome you to our
+							practice and to thank you for choosing our physicians to
+							participate in your healthcare. We look forward to providing you
+							with personalized, comprehensive health care focusing on wellness
+							and prevention.
+						</p>
+					</div>
+				</section>
+				<!-- First section ends here -->
+				<!--  Box Container -->
+				<div
+					class="flex flex-col mx-5 justify-between pb-10 pt-3 lg:flex lg:flex-row lg:mx-10 lg:mt-10"
+				>
+					<!-- Big div that hold everything up -->
+					<div
+						class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
+					>
+						<div>
+							<img
+								src="../assets/blood-pressure.png"
+								alt="An image here"
+								class="mr-5"
+							/>
+						</div>
+						<div class="flex flex-col gap-y-5">
+							<p class="font-semibold">Blood pressure</p>
+							<p class="font-bold text-green-600 text-right">110/70</p>
+						</div>
+					</div>
+
+					<!-- second box -->
+					<div
+						class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
+					>
+						<div>
+							<img
+								src="../assets/heart-rate.png"
+								alt="An image here"
+								class="mr-5"
+							/>
+						</div>
+						<div class="flex flex-col gap-y-5">
+							<p class="font-semibold">Blood pressure</p>
+							<p class="font-bold text-green-600 text-right">650</p>
+						</div>
+					</div>
+
+					<!-- third box -->
+					<div
+						class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
+					>
+						<div>
+							<img
+								src="../assets/glucose.png"
+								alt="An image here"
+								class="pr-5"
+							/>
+						</div>
+						<div class="flex flex-col gap-y-5">
+							<p class="font-semibold">Glucose Level</p>
+							<p class="font-bold text-green-600 text-right">88-75</p>
+						</div>
+					</div>
+
+					<!-- fourth box -->
+					<div
+						class="bg-white flex justify-between px-5 py-10 items-center rounded-md"
+					>
+						<div>
+							<img
+								src="../assets/blood-count.png"
+								alt="An image here"
+								class="mr-5"
+							/>
+						</div>
+						<div class="flex flex-col gap-y-5">
+							<p class="font-semibold">Blood Count</p>
+							<p class="font-bold text-green-600 text-right">9,456m/L</p>
+						</div>
+					</div>
+
+					<!-- Bigger background here down -->
+					<!-- <section class="bg-[#F0F3FB] pt-10 lg:ml-40"> -->
+					<!-- Bigger background comment -->
+					<!-- <section class="lg:flex lg:justify-evenly lg:mr-6 lg:mx-0 pb-5 ">
 		 <div class="lg:ml-10 bg-white m-5 p-5 rounded-xl">
 			<p class="text-gray-400 p-3 font-bold">Resting Heart Rate</p>
 			<p class=" p-3 font-bold">72 bmp <span class="text-gray-400 text-sm">(Average)</span></p>
@@ -250,52 +346,53 @@
 			<img src="../assets/third-graph-patient.jfif" alt="An image here" class="w-72 h-72">
 		 </div>
 		</section> -->
-		<!-- bigger background down -->
-		 <!-- </section> -->
-		 
-		 <!-- big section for all down -->
-   
-	   <script>
-		 let navList = document.getElementById("nav-list")
-      let items = navList.getElementsByClassName("nav-item ");
+					<!-- bigger background down -->
+					<!-- </section> -->
 
-      for(let i = 0; i<items.length; i++){
+					<!-- big section for all down -->
 
-          items[i].addEventListener("click", function(){
+					<script>
+						let navList = document.getElementById('nav-list');
+						let items = navList.getElementsByClassName('nav-item ');
 
+						for (let i = 0; i < items.length; i++) {
+							items[i].addEventListener('click', function () {
+								let current = document.querySelectorAll('.active');
 
-              let current = document.querySelectorAll(".active");
+								current.forEach((element) => {
+									element.classList.remove('active');
+								});
 
+								this.classList.add('active');
+							});
+						}
 
-              current.forEach(element => {
-                  element.classList.remove('active');
-              });
+						document.addEventListener('DOMContentLoaded', () => {
+							const sidebar = document.getElementById('sidebar');
+							const openSidebarBtn = document.getElementById('openSidebarBtn');
+							const closeSidebarBtn =
+								document.getElementById('closeSidebarBtn');
+							// const closeSidebarMobileBtn = document.getElementById('closeSidebarMobileBtn');
 
-              this.classList.add('active')
-          })
-      }
+							openSidebarBtn.addEventListener('click', () => {
+								sidebar.classList.remove('-translate-x-full');
+								closeSidebarBtn.classList.remove('hidden');
+							});
 
-	  document.addEventListener('DOMContentLoaded', () => {
-        const sidebar = document.getElementById('sidebar');
-        const openSidebarBtn = document.getElementById('openSidebarBtn');
-        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-        // const closeSidebarMobileBtn = document.getElementById('closeSidebarMobileBtn');
+							closeSidebarBtn.addEventListener('click', () => {
+								sidebar.classList.add('-translate-x-full');
+								closeSidebarBtn.classList.add('hidden');
+							});
 
-        openSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.remove('-translate-x-full');
-            closeSidebarBtn.classList.remove('hidden');
-        });
-
-        closeSidebarBtn.addEventListener('click', () => {
-            sidebar.classList.add('-translate-x-full');
-            closeSidebarBtn.classList.add('hidden');
-        });
-
-        // closeSidebarMobileBtn.addEventListener('click', () => {
-        //     sidebar.classList.add('-translate-x-full');
-        //     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
-        // });
-    });
-  </script>
+							// closeSidebarMobileBtn.addEventListener('click', () => {
+							//     sidebar.classList.add('-translate-x-full');
+							//     closeSidebarBtn.classList.add('hidden'); // Hide close button when mobile sidebar is closed
+							// });
+						});
+					</script>
+					<script src="./script.js"></script>
+				</div>
+			</section>
+		</section>
 	</body>
 </html>
