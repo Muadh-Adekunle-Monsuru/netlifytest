@@ -1,6 +1,10 @@
 //Patient Registration and Login
 const handleRegistration = async (event) => {
 	event.preventDefault();
+	const button = document.querySelector('#submit');
+	button.disabled = true;
+	button.classList.add('bg-gray-300');
+	button.innerText = 'Loading';
 	const errormessage = document.querySelector('#error-message');
 	const form = document.querySelector('#registration-form');
 	try {
@@ -17,6 +21,9 @@ const handleRegistration = async (event) => {
 			window.location.href = '../patient_dashboard.html';
 		} else {
 			errormessage.innerHTML = result.message;
+			button.disabled = false;
+			button.classList.remove('bg-gray-300');
+			button.innerText = 'Submit';
 		}
 	} catch (e) {
 		errormessage.innerHTML = 'Error registering, please try again!';
@@ -27,6 +34,10 @@ const handleRegistration = async (event) => {
 const handleLogin = async (event) => {
 	event.preventDefault();
 	const form = document.querySelector('#login-form');
+	const button = document.querySelector('#submit');
+	button.disabled = true;
+	button.classList.add('bg-gray-300');
+	button.innerText = 'Loading';
 	const errormessage = document.querySelector('#error-message');
 	try {
 		const response = await fetch(
@@ -43,6 +54,9 @@ const handleLogin = async (event) => {
 			window.location.href = '../patient_dashboard.html';
 		} else {
 			errormessage.innerHTML = result.message;
+			button.disabled = false;
+			button.classList.remove('bg-gray-300');
+			button.innerText = 'Submit';
 		}
 	} catch (e) {
 		errormessage.innerHTML = 'Error logging in, please try again';

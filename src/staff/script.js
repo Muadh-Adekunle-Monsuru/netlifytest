@@ -1,7 +1,11 @@
 //Submit Button Of Staff Login Page
 const handleSubmit = async (e) => {
-	const errormessage = document.querySelector('#error-message');
 	e.preventDefault();
+	const button = document.querySelector('#submit');
+	button.disabled = true;
+	button.classList.add('bg-gray-300');
+	button.innerText = 'Loading';
+	const errormessage = document.querySelector('#error-message');
 	const userInput = {
 		matricno: e.target.staffId.value,
 		password: e.target.password.value,
@@ -35,8 +39,12 @@ const handleSubmit = async (e) => {
 			window.location.href = location;
 		} else {
 			errormessage.innerHTML = 'Error logging you in, please try again.';
+			button.disabled = false;
+			button.classList.remove('bg-gray-300');
+			button.innerText = 'Submit';
 		}
 	} catch (e) {
+		errormessage.innerHTML = 'Error logging you in, please try again.';
 		console.log(`Error trying to log in ${e}`);
 	}
 };
