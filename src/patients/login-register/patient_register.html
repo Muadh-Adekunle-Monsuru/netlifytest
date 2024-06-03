@@ -24,24 +24,24 @@
 		</section>
 
 		<section
-			class="bg-gray-100 lg:w-1/2 lg:mx-auto p-6 rounded-md items-center flex justify-center"
+			class="bg-gray-100 sm:w-3/6 sm:mx-auto md:w-2/4 md:mx-auto mx-4 lg:w-1/2 lg:mx-auto p-6 rounded-md items-center sm:flex sm:flex-col justify-center"
 		>
 			<form
-				class="w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-5"
+				class="w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-5  "
 				id="registration-form"
-				onsubmit="return handleRegistration(event)"
-			>
-				<div class="flex flex-col">
+				onsubmit="return handleRegistration(event)">
+
+				<div class="sm:flex sm:flex-col sm:gap-4">
 					<label>First Name*</label>
 					<input
 						name="firstname"
 						type="text"
 						placeholder="Enter your first name"
-						class="my-2 p-2 rounded-md"
+						class="my-2 p-2 rounded-md sm"
 					/>
 				</div>
 
-				<div class="flex flex-col">
+				<div class="sm:flex sm:flex-col sm:gap-4 md:flex flex-col">
 					<label>Last Name*</label>
 					<input
 						name="secondname"
