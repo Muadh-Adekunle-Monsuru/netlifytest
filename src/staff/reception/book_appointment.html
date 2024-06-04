@@ -22,7 +22,7 @@
    
 }
  </style>
-<body>
+<body class="font-satoshi">
        <!-- Mobile Menu -->
        <div class="fixed z-50 flex justify-between w-full p-4 bg-white shadow-md lg:hidden">
         <div>
@@ -103,75 +103,81 @@
 
       <!-- HOSPITAL CONTENT -->
 
-      <div class="bg-[#f0f8ff] pl-16 md:pl-52 w-full">
+       <div class="bg-[#f0f8ff] pl-16 md:pl-52 w-full">
          <div class="flex items-center gap-4 pl-10 py-7">
             <h2 class="text-xl font-bold">Book Appointments</h2>
             <i class="fa-solid fa-angle-right fa-lg"></i> 
             <i class="fa-solid fa-house fa-lg"></i>
          </div>
-         <!-- DASHBOARD APPOINTMENT -->
-         <div class="rounded-md">
-            <form id="form" onsubmit="return handleSubmit(event)">
-               <div class="mx-10 space-y-5 md:mx-10 lg:space-y-8">
-                  <h3 class="font-bold text-green-600">Book Appointments</h3>
-                  <input type="text" placeholder="First name" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
+          <!-- DASHBOARD APPOINTMENT -->
+         <div class="flex flex-cols justify-center">
+			<div class="w-full mx-5 p-4 bg-white rounded shadow-lg modal-content">
+				<h2 id="modalTitle" class="my-5 text-xl font-semibold">Book Appointment</h2>
+				<form>
+					<div class="">
+						<label class="block mb-2">Complaint/Remarks</label>
+						<input
+							name="condition"
+							type="text"
+							class="w-full px-4 py-2 border rounded"
+						/>
+					</div>
 
-                  <input type="text" placeholder="Last name" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
+					<div class="mb-4">
+						<label class="block mb-2">Address</label>
+						<input
+							name="condition"
+							type="text"
+							class="w-full px-4 py-2 border rounded"
+						/>
+					</div>
+					<div class="mb-4 w-full mr-5">
+						<label class="block mb-2">Date of Birth</label>
+						<input
+							id="modalDate"
+							name="date"
+							type="date"
+							class="w-full px-4 py-2 border rounded"
+						/>
+					</div>
+					<!-- <section class="flex justify-center">
+						<div class="mb-4 w-full mr-5">
+							<label class="block mb-2">Appointment Date</label>
+							<input
+								id="modalDate"
+								name="date"
+								type="date"
+								class="w-full px-4 py-2 border rounded"
+							/>
+						</div>
+						<div class="mb-4 w-full">
+							<label class="block mb-2">Appointment Time</label>
+							<input
+								id="modalTime"
+								name="time"
+								type="time"
+								class="w-full px-4 py-2 border rounded"
+							/>
+						</div>
+					</section> -->
 
-                  <select name="gender" id="gender" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-                  <option value="#">Gender</option>
-                  <option value="">Male</option>
-                  <option value="female">Female</option>
-                  </select>
-
-                  <input type="number" placeholder="Mobile number" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-
-                  <div>
-                     <textarea name="address" id="address" placeholder="Address"
-                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
-                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"></textarea>
-                  </div>
-
-                  <input type="email" placeholder="Email" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-
-                  <input type="text" placeholder="Date Of Birth" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-               </div>
-
-               <div class="py-10 mx-10 space-y-5 lg:pt-12 md:mx-10 lg:space-y-8">
-                  <h3 class="font-bold text-green-600">Appointment Details</h3>
-                  <input type="date" placeholder="Date Of Appointment" class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-
-                  <input type="text" placeholder="Time Of Appointment" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-
-                  <input type="text" placeholder="Injury/Conditon" class="w-[250px] md:w-[400px] lg:w-[450px] bg-transparent py-3 outline-none border-2 border-black 
-                  rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer">
-
-                  <div>
-                     <textarea name="address" id="address" placeholder="Note"
-                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
-                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"></textarea>
-                  </div>
-
-                     <input type="file" id="files" placeholder="Upload Files"
-                     class="w-[250px] md:w-[400px] lg:w-[905px] bg-transparent py-3 outline-none border-2 border-black 
-                     rounded-md pl-2 text-black hover:border-gray-300 placeholder:text-black cursor-pointer"/>
-                     
-                     <div>
-                        <button class="px-6 py-2 font-semibold text-white bg-blue-700 rounded-md">Submit</button>
-                        <button class="px-6 py-2 font-semibold text-white bg-red-700 rounded-md">Cancel</button>
-                     </div>
-               </div>
-
-            </form>
-         </div>
+					<div class="flex justify-start mt-5">
+						<button
+							type="button"
+							class="px-4 py-2 mr-2 text-white bg-gray-500 rounded"
+						>
+							Cancel
+						</button>
+						<button
+							type="submit"
+							class="px-4 py-2 text-white bg-blue-500 rounded"
+						>
+							Create
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
       </div>
    </section>
 
@@ -212,39 +218,6 @@
         closeSidebarBtn.classList.add('hidden');
     });
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        const myform = document.querySelector('#form');
-        const userData = new FormData(myform);
-        console.log('from submitted');
-        try {
-            const response = await fetch (
-               'https://yabatech-backend.vercel.app/submit',
-               {
-                method: 'POST',
-                body: userData,
-               } 
-            );
-
-            const result = await response.json();
-            console.log(result)
-        }catch (e){
-            console.log('Error communicating with backend');
-            console.log(e);
-        }
-        console.log('form submitted')
-        }
-
-
-      const dark = () => {
-          const hidding = document.querySelector('#main');
-          hidding.hidden= false;
-      }
-
-      const undark = () => {
-          const btn = document.querySelector('#main');
-          btn.hidden = true;
-      }
   </script>
 </body>
 </html>
