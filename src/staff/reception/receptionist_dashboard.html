@@ -20,19 +20,6 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<style>
-		.modal {
-			display: none;
-			justify-content: center;
-			align-items: center;
-		}
-		.modal.active {
-			display: flex;
-		}
-		.modal-content {
-			max-height: 80vh; /* Limits the modal content height to 80% of the viewport height */
-			overflow-y: auto; /* Enables vertical scrolling if the content overflows */
-		}
-
 		.hidden-sidebar {
 			transform: translateX(-100%);
 		}
@@ -117,13 +104,6 @@
 						</li>
 
 						<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							<a href="appointment.html" class="flex items-center gap-5">
-								<i class="fa-regular fa-calendar-check"></i>
-								<span class="font-semibold text-lg">Appointment</span>
-							</a>
-						</li>
-
-						<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
 							<a href="book_appointment.html" class="flex items-center gap-5">
 								<i class="fa-regular fa-calendar-check"></i>
 								<span class="font-semibold text-lg">Book Appointment</span>
@@ -143,13 +123,6 @@
 								<span class="font-semibold text-lg"
 									>Patient Check In & Out</span
 								>
-							</a>
-						</li>
-
-						<li class="nav-item text-lg p-2 rounded-l-xl text-green-700">
-							<a href="patients_details.html" class="flex items-center gap-5">
-								<i class="fa-solid fa-notes-medical"></i>
-								<span class="font-semibold text-lg">Medical History</span>
 							</a>
 						</li>
 
