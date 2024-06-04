@@ -46,6 +46,42 @@ const handleSubmit = async (e) => {
 	} catch (e) {
 		errormessage.innerHTML = 'Error logging you in, please try again.';
 		console.log(`Error trying to log in ${e}`);
+		button.disabled = false;
+		button.classList.remove('bg-gray-300');
+		button.innerText = 'Submit';
 	}
 };
 //End of Submit Button Function
+
+const displayAllAppointment = async () => {
+	const tbody = document.querySelector('#tbody');
+	const upcomming = document.querySelector('#upcomming-appointments');
+	try {
+		const response = await fetch(
+			'https://yabatech-backend.vercel.app/appointments',
+			{
+				method: 'GET',
+				credentials: 'include',
+			}
+		);
+		if (response.ok) {
+			const result = await response.json();
+			console.log(result);
+			upcomming.innerHTML = `${result.length}`;
+			result.map((val) => {
+				const tr = document.createElement('tr');
+				tr.innerHTML += `<td>${val.firstname} ${val.secondname}</td>`;
+				tr.innerHTML += `<td>${val.date.slice(0, 10)}</td>`;
+				tr.innerHTML += `<td>${val.time}</td>`;
+				tr.innerHTML += `<td>${val.condition}</td>`;
+				tr.innerHTML += `<td>${val.status}</td>`;
+
+				tbody.prepend(tr);
+			});
+		} else {
+			console.log('Error getting all appointments' + response);
+		}
+	} catch (e) {
+		console.log('Error getting all appointments' + e);
+	}
+};
