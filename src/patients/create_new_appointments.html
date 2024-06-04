@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Book Appointment</title>
+		<link rel="shortcut icon" href="../assets/yabatech_logo.png" type="image/x-icon">
 		<link rel="stylesheet" href="../output.css" />
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<link
@@ -217,11 +218,11 @@
 
 		<!-- Modal -->
 		<div class=" lg:ml-64 flex flex-cols justify-center">
-			<div class="w-full mx-5 h-96 p-4 bg-white rounded shadow-lg modal-content">
+			<div class="w-full mx-5 h-screen p-4 bg-white rounded shadow-lg modal-content">
 				<h2 id="modalTitle" class="mb-4 text-xl mt-5">Create Appointment</h2>
 				<form id="appointmentForm" onsubmit="return createAppointment(event)">
 					<div class="mb-4">
-						<label class="block mb-2">Complaint</label>
+						<label class="block mb-2">Complaint/Remarks</label>
 						<input
 							id="modalCondition"
 							name="condition"
@@ -229,9 +230,27 @@
 							class="w-full px-4 py-2 border rounded"
 						/>
 					</div>
+					<div class="mb-4">
+						<label class="block mb-2">Address</label>
+						<input
+							id="modalCondition"
+							name="condition"
+							type="text"
+							class="w-full px-4 py-2 border rounded"
+						/>
+					</div>
+					<div class="mb-4 w-full mr-5">
+						<label class="block mb-2">Date of Birth</label>
+						<input
+							id="modalDate"
+							name="date"
+							type="date"
+							class="w-full px-4 py-2 border rounded"
+						/>
+					</div>
 					<section class="flex justify-center">
 						<div class="mb-4 w-full mr-5">
-							<label class="block mb-2">Date</label>
+							<label class="block mb-2">Appointment Date</label>
 							<input
 								id="modalDate"
 								name="date"
@@ -240,7 +259,7 @@
 							/>
 						</div>
 						<div class="mb-4 w-full">
-							<label class="block mb-2">Time</label>
+							<label class="block mb-2">Appointment Time</label>
 							<input
 								id="modalTime"
 								name="time"
