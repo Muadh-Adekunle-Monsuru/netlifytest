@@ -28,6 +28,6 @@ mongoose.connect(
 	'mongodb+srv://muadh117a:Rbi7FlqLHLzl5Sdo@cluster0.lncvfhp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 );
 mongoose.connection.on('error', (error) => console.log(error));
-app.use('/api/', router());
+app.use('/', router());
 
 export const handler = serverless(api);
