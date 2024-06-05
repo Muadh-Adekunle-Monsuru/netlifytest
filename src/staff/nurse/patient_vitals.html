@@ -84,12 +84,12 @@
                             <span class="text-xl font-semibold">Appointments</span>
                         </a>
                     </li>
-                    <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
+                    <!-- <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="patient_administration.html" class="flex items-center gap-5">
                             <i class="fa-regular fa-calendar-check "></i>
                             <span class="text-xl font-semibold">Patient Administration</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="p-2 text-xl text-green-700 nav-item rounded-l-xl">
                         <a href="patient_medical_history.html" class="flex items-center gap-5">
                             <i class="fa-solid fa-book "></i>
@@ -128,6 +128,10 @@
             <form id="form" onsubmit="return handleSubmit(event)">
                 <div class="space-y-5 lg:space-y-8">
                     <h3 class="text-lg font-bold text-green-600">Medical Information</h3>
+                    <input required type="text" placeholder="StaffID/MatricNo" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
+                    <input required type="text" placeholder="Plus Rate" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
+
                     <select required name="blood_group" id="blood_group" class="w-full max-w-md py-3 pl-2 text-black bg-transparent border-2 border-gray-300 border-dotted rounded-md outline-none cursor-pointer hover:border-gray-500 placeholder:text-gray-500">
                         <option value="" disabled selected>Blood Group</option>
                         <option value="A+">A+</option>
