@@ -32,7 +32,7 @@
     }
     </style>
 </head>
-<body class="bg-[#f0f8ff]">
+<body class="bg-[#f0f8ff] font-satoshi">
        <!-- Mobile Menu -->
        <div class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden">
         <div>
@@ -109,78 +109,25 @@
                 </button>
             </div>
 
-            <div class="pl-5">
+            <div class="px-5">
                 <h3 class="text-lg font-bold py-5">View Appointments</h3>
-                <div class="pr-3 space-y-7">             
-                    <div class="overflow-x-auto bg-white rounded-lg shadow-md">
-                        <table class="min-w-full bg-white">
-                            <thead class="bg-gray-200 text-gray-600">
-                                <tr>
-                                    <th class="py-2 px-2 text-left">First Name</th>
-                                    <th class="py-2 px-2 text-left">Last Name</th>
-                                    <th class="py-2 px-2 text-left">Gender</th>
-                                    <th class="py-2 px-2 text-left">Mobile</th>
-                                    <th class="py-2 px-2 text-left">Address</th>
-                                    <th class="py-2 px-2 text-left">Email</th>
-                                    <th class="py-2 px-2 text-left">DOB</th>
-                                    <th class="py-2 px-2 text-left">Appointment Date</th>
-                                    <th class="py-2 px-2 text-left">Appointment Timee</th>
-                                    <th class="py-2 px-2 text-left">Condition</th>
-                                    <th class="py-2 px-2 text-left">Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-    
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-    
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-    
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-    
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-    
-                                <tr class="border-b">
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                    <td class="py-2 px-2"></td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                <main class="p-4 overflow-x-auto bg-white rounded shadow">
+					<table class="w-full table-auto">
+						<thead>
+							<tr>
+                                <th class="py-2 border">Matric/Staff ID</th>
+								<th class="py-2 border">Complaint/Remarks</th>
+                                <th class="py-2 border">Address</th>
+                                <th class="py-2 border">DOB</th>
+								<th class="py-2 border">Appointment Date</th>
+								<th class="py-2 border">Appointment Time</th>
+								<th class="py-2 border">Doctor</th>
+								<th class="py-2 border">Status</th>
+							</tr>
+						</thead>
+						<tbody id="tbody"></tbody>
+					</table>
+				</main>
         </section>
 
 

@@ -44,7 +44,7 @@
                     <div class="relative overflow-hidden mt-">
                         <div class="">
                            <img src="../../assets/yabatech_logo.png" alt="Yabatech Logo" class="pb-5 pl-2 pr-3 mx-auto name w-28"/>  
-                            <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:block">YABATECH MEDICAL CENTER</h1>
+                            <h1 hidden id="main" class="pb-3 text-xl font-bold text-center text-green-600 md:">YABATECH MEDICAL CENTER</h1>
                         </div>
       
                        <ul class="space-y-3 nav-list" id="nav-list">
@@ -103,74 +103,100 @@
 
       <!-- HOSPITAL CONTENT -->
 
-       <div class="bg-[#f0f8ff] pl-16 md:pl-52 w-full">
-         <div class="flex items-center gap-4 pl-10 py-7">
+       <div class="bg-[#f0f8ff] h-screen pl-16 md:pl-52 w-full">
+         <div class="flex items-center gap-4 pl-5 py-7">
             <h2 class="text-xl font-bold">Book Appointments</h2>
             <i class="fa-solid fa-angle-right fa-lg"></i> 
             <i class="fa-solid fa-house fa-lg"></i>
          </div>
           <!-- DASHBOARD APPOINTMENT -->
          <div class="flex flex-cols justify-center">
-			<div class="w-full mx-5 p-4 bg-white rounded shadow-lg modal-content">
-				<h2 id="modalTitle" class="my-5 text-xl font-semibold">Book Appointment</h2>
-				<form>
-					<div class="">
-						<label class="block mb-2">Complaint/Remarks</label>
-						<input
+			<div class="w-full mx-5 p-4 bg-white rounded-md shadow-md shadow-black">
+				<h2 class="my-5 text-xl font-bold text-green-700">Book Appointment</h2>
+				<form class="space-y-5">
+                    <!-- MATRIC -->
+                    <div class="space-y-3">
+						<label for="condition" class="text-base font-semibold">Matric Number/Staff ID</label>
+						<input id="condition"
 							name="condition"
 							type="text"
-							class="w-full px-4 py-2 border rounded"
+							class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
+						/>
+					</div>
+                 <!-- COMPLAINTS -->
+					<div class="space-y-3">
+						<label for="condition" class="text-base font-semibold">Complaint/Remarks</label>
+						<input id="condition"
+							name="condition"
+							type="text"
+							class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
 						/>
 					</div>
 
-					<div class="mb-4">
-						<label class="block mb-2">Address</label>
-						<input
-							name="condition"
+                    <!-- ADDRESS -->
+					<div class="space-y-3">
+						<label for="address" class="text-base font-semibold">Address</label>
+						<input id="address"
+							name="address"
 							type="text"
-							class="w-full px-4 py-2 border rounded"
+							class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
 						/>
 					</div>
-					<div class="mb-4 w-full mr-5">
-						<label class="block mb-2">Date of Birth</label>
-						<input
-							id="modalDate"
+
+                    <!-- DATE OF BIRTH -->
+					<div class="space-y-3">
+						<label for="birth" class="text-base font-semibold">Date of Birth</label>
+						<input id="birth"
 							name="date"
 							type="date"
-							class="w-full px-4 py-2 border rounded"
+							class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
 						/>
 					</div>
-					<!-- <section class="flex justify-center">
-						<div class="mb-4 w-full mr-5">
-							<label class="block mb-2">Appointment Date</label>
-							<input
-								id="modalDate"
+                    <!-- APPOINTMENT -->
+					<section class=" flex justify-center space-x-5">
+                        <!-- DATE -->
+						<div class="space-y-3 w-full">
+							<label for="date" class="text-base font-semibold">Appointment Date</label>
+							<input id="date"
 								name="date"
 								type="date"
-								class="w-full px-4 py-2 border rounded"
+								class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
 							/>
 						</div>
-						<div class="mb-4 w-full">
-							<label class="block mb-2">Appointment Time</label>
-							<input
-								id="modalTime"
+                        <!-- TIME -->
+						<div class="space-y-3 w-full">
+							<label for="time" class="text-base font-semibold">Appointment Time</label>
+							<input id="time"
 								name="time"
 								type="time"
-								class="w-full px-4 py-2 border rounded"
+								class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
 							/>
 						</div>
-					</section> -->
 
-					<div class="flex justify-start mt-5">
+                        <!-- DOCTOR -->
+                        <div class="space-y-3 w-full">
+							<label for="doctor" class="text-base font-semibold">Doctor</label>
+							<input id="doctor"
+								name="doctor"
+								type="text"
+								class="w-full px-4 py-2 border-2 border-slate-400 rounded-md cursor-pointer"
+							/>
+						</div>
+					</section>
+
+                    <!-- BUTTON -->
+					<div class="flex justify-start space-x-4">
+                        <!-- CANCEL BUTTON -->
 						<button
 							type="button"
-							class="px-4 py-2 mr-2 text-white bg-gray-500 rounded"
+							class="px-5 py-2 text-white bg-gray-500 rounded hover:scale-105 transition-transform duration-500"
 						>
 							Cancel
 						</button>
+                        <!-- SUBMIT BUTTON -->
 						<button
 							type="submit"
-							class="px-4 py-2 text-white bg-blue-500 rounded"
+							class="px-5 py-2 text-white bg-blue-500 rounded hover:scale-105 transition-transform duration-500"
 						>
 							Create
 						</button>

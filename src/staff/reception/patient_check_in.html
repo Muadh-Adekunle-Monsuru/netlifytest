@@ -41,7 +41,7 @@
 			background-color: #f0f8ff;
 		}
 	</style>
-	<body class="bg-[#f0f8ff]">
+	<body class="bg-[#f0f8ff] font-satoshi">
 		<!-- Mobile Menu -->
 		<div
 			class="fixed z-50 w-full flex justify-between p-4 bg-white shadow-md lg:hidden"
@@ -165,150 +165,176 @@
 
 			<div class="py-3 px-5">
 				<h3 class="text-lg font-bold mb-2">Patient Check In-Out</h3>
-				<div class="pr-3 space-y-7">
-					<div class="overflow-x-auto bg-white rounded-lg shadow-md">
-						<table class="min-w-full bg-white">
-							<thead class="bg-gray-200 text-gray-600">
-								<tr>
-									<th class="py-2 px-16 text-left">Patient Name</th>
-									<th class="py-2 px-16 text-left">Date</th>
-									<th class="py-2 px-16 text-left">Time Check-In</th>
-									<th class="py-2 px-16 text-left">Time Check-Out</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="border-b">
-									<td class="py-2 px-16">John Doe</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td
-										class="py-2 px-16"
-										id="checkin1"
-										onclick="checkedIn('checkin1')"
+				<main class="p-4 overflow-x-auto bg-white rounded shadow">
+					<table class="w-full table-auto">
+						<thead class="bg-gray-200 text-gray-600 rounded-t-md">
+							<tr>
+                                <th class="py-2 border-r border-black">Patient Name</th>
+								<th class="py-2 border-r border-black">Date</th>
+                                <th class="py-2 border-r border-black">Time-Check-In</th>
+								<th class="">Time-Check-Out</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="">
+								<td class="py-2 px-16 border-r border-black">John Doe</td>
+								<td class="py-2 px-16 border-r border-black"
+									id="datein1"
+									onclick="date('datein1')"
 									>
-										<button class="p-1 bg-blue-600">Check In</button>
-									</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td
-										class="py-2 px-16"
-										id="checkin2"
-										onclick="checkedIn('checkin2')"
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Date In</button>
+								</td>
+								<td
+									class="py-2 px-16 border-r border-black"
+									id="checkin1"
+									onclick="checkedIn('checkin1')"
+								>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Check In</button>
+								</td>
+								<td
+									class="py-2 px-16"
+										id="checkout1"
+										onclick="checkedIn('checkout1')"
+								>
+								<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+								hover:scale-105 transition-transform duration-500">Check Out</button>
+								</td>
+							</tr>
+
+							<tr class="">
+								<td class="py-2 px-16 border-r border-black">Jane Smith</td>
+								<td class="py-2 px-16 border-r border-black"
+									id="datein2"
+									onclick="date('datein2')"
 									>
-										<button class="p-1 bg-blue-600">Check In</button>
-									</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Date In</button>
+								</td>
+								<td
+									class="py-2 px-16 border-r border-black"
+									id="checkin2"
+									onclick="checkedIn('checkin2')"
+								>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Check In</button>
+								</td>
+								<td
+									class="py-2 px-16"
+										id="checkout2"
+										onclick="checkedIn('checkout2')"
+								>
+								<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+								hover:scale-105 transition-transform duration-500">Check Out</button>
+								</td>
+							</tr>
 
-								<tr class="border-b">
-									<td class="py-2 px-16">Okafor Obi</td>
-									<td class="py-2 px-16">20216-016-26</td>
-									<td class="py-2 px-16">02:30 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
+							<tr class="">
+								<td class="py-2 px-16 border-r border-black">John Dickson</td>
+								<td class="py-2 px-16 border-r border-black"
+									id="datein3"
+									onclick="date('datein3')"
+									>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Date In</button>
+								</td>
+								<td
+									class="py-2 px-16 border-r border-black"
+									id="checkin3"
+									onclick="checkedIn('checkin3')"
+								>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Check In</button>
+								</td>
+								<td
+									class="py-2 px-16"
+										id="checkout3"
+										onclick="checkedIn('checkout3')"
+								>
+								<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+								hover:scale-105 transition-transform duration-500">Check Out</button>
+								</td>
+							</tr>
 
-								<tr class="border-b">
-									<td class="py-2 px-16">Ajayi Ola</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">09:30 AM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Ben Tola</td>
-									<td class="py-2 px-16">20216-05-22</td>
-									<td class="py-2 px-16">11:30 AM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">01:30 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">12:00 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">12:00 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">12:00 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">12:00 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-
-								<tr class="border-b">
-									<td class="py-2 px-16">Jane Smith</td>
-									<td class="py-2 px-16">20216-05-26</td>
-									<td class="py-2 px-16">12:00 PM</td>
-									<td class="py-2 px-16">10:00 AM</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<script>
-						const checkedIn = (value) => {
-							const td = document.querySelector(`#${value}`);
-							let date = new Date();
-							td.innerHTML = date.toTimeString().slice(0, 8);
-						};
-
-						// Sidebar toggle
-						const sidebar = document.getElementById('sidebar');
-						const openSidebarBtn = document.getElementById('openSidebarBtn');
-						const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-
-						openSidebarBtn.addEventListener('click', () => {
-							sidebar.classList.remove('hidden-sidebar');
-							openSidebarBtn.classList.add('hidden');
-							closeSidebarBtn.classList.remove('hidden');
-						});
-
-						closeSidebarBtn.addEventListener('click', () => {
-							sidebar.classList.add('hidden-sidebar');
-							openSidebarBtn.classList.remove('hidden');
-							closeSidebarBtn.classList.add('hidden');
-						});
-
-						let navList = document.getElementById('nav-list');
-						let items = navList.getElementsByClassName('nav-item ');
-
-						for (let i = 0; i < items.length; i++) {
-							items[i].addEventListener('click', function () {
-								let current = document.querySelectorAll('.active');
-
-								current.forEach((element) => {
-									element.classList.remove('active');
-								});
-
-								this.classList.add('active');
-							});
-						}
-					</script>
-				</div>
+							<tr class="">
+								<td class="py-2 px-16 border-r border-black">Kroos Doe</td>
+								<td class="py-2 px-16 border-r border-black"
+									id="datein"
+									onclick="date('datein')"
+									>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Date In</button>
+								</td>
+								<td
+									class="py-2 px-16 border-r border-black"
+									id="checkin4"
+									onclick="checkedIn('checkin4')"
+								>
+									<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+									hover:scale-105 transition-transform duration-500">Check In</button>
+								</td>
+								<td
+									class="py-2 px-16"
+										id="checkout4"
+										onclick="checkedIn('checkout4')"
+								>
+								<button class="p-1 px-4 bg-green-600 text-white font-semibold rounded
+								hover:scale-105 transition-transform duration-500">Check Out</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</main>
+			    
 			</div>
 		</section>
+
+
+		<script>
+			const checkedIn = (value) => {
+				const td = document.querySelector(`#${value}`);
+				let date = new Date();
+				td.innerHTML = date.toTimeString().slice(0, 8);
+			};
+
+			const date = (value) => {
+				const td = document.querySelector(`#${value}`);
+				let date = new Date();
+				td.innerHTML = date.toDateString();
+			}
+
+			// Sidebar toggle
+			const sidebar = document.getElementById('sidebar');
+			const openSidebarBtn = document.getElementById('openSidebarBtn');
+			const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+			openSidebarBtn.addEventListener('click', () => {
+				sidebar.classList.remove('hidden-sidebar');
+				openSidebarBtn.classList.add('hidden');
+				closeSidebarBtn.classList.remove('hidden');
+			});
+
+			closeSidebarBtn.addEventListener('click', () => {
+				sidebar.classList.add('hidden-sidebar');
+				openSidebarBtn.classList.remove('hidden');
+				closeSidebarBtn.classList.add('hidden');
+			});
+
+			let navList = document.getElementById('nav-list');
+			let items = navList.getElementsByClassName('nav-item ');
+
+			for (let i = 0; i < items.length; i++) {
+				items[i].addEventListener('click', function () {
+					let current = document.querySelectorAll('.active');
+
+					current.forEach((element) => {
+						element.classList.remove('active');
+					});
+
+					this.classList.add('active');
+				});
+			}
+		</script>
 	</body>
 </html>
