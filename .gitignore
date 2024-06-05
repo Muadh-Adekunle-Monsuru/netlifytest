@@ -1,3 +1,6 @@
 node_modules/
 output.css
 src/input.css
+
+# Local Netlify folder
+.netlify
